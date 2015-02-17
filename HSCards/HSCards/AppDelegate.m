@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "../ECSlidingViewController/ECSlidingViewController.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong) ECSlidingViewController *slidingViewController;
 @end
 
 @implementation AppDelegate
@@ -17,7 +18,58 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    UIViewController *topViewController        = [[UIViewController alloc] init];
+    UIViewController *underLeftViewController  = [[UIViewController alloc] init];
+    UIViewController *underRightViewController = [[UIViewController alloc] init];
+    
+    // configure top view controller
+    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
+    topViewController.navigationItem.title = @"Layout Demo";
+    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+    topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
+    topViewController.view.backgroundColor = [UIColor whiteColor];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
+    
+    // configure under left view controller
+    underLeftViewController.view.layer.borderWidth     = 20;
+    underLeftViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
+    underLeftViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
+    underLeftViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeLeft; // don't go under the top view
+    
+    // configure under right view controller
+    underRightViewController.view.layer.borderWidth     = 20;
+    underRightViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
+    underRightViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
+    underRightViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight; // don't go under the top view
+    
+    // configure sliding view controller
+    self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
+    self.slidingViewController.underLeftViewController  = underLeftViewController;
+    self.slidingViewController.underRightViewController = underRightViewController;
+    
+    // enable swiping on the top view
+    [navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    
+    // configure anchored layout
+    self.slidingViewController.anchorRightPeekAmount  = 100.0;
+    self.slidingViewController.anchorLeftRevealAmount = 250.0;
+    
+    self.window.rootViewController = self.slidingViewController;
+    
+    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)anchorRight {
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+}
+
+- (void)anchorLeft {
+    [self.slidingViewController anchorTopViewToLeftAnimated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
