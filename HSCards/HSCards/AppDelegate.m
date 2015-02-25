@@ -20,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self initCards];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     MainTopViewController *topViewController        = [[MainTopViewController alloc] init];
@@ -95,5 +97,49 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (void)initCards
+{
+    //DB
+    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"json"];
+    NSString * dbNewPath = [[[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory]
+                            stringByAppendingPathComponent:@"cards.json"];
+    //BOOL isOpen = NO;
+    if (![[FileHelp shareInstance] isFileExist:dbNewPath])
+    {
+        NSError *error = nil;
+        [[FileHelp shareInstance] copyItemFrom:dbPath to:dbNewPath error:error];
+        if (!error) {
+            DLog(@"copy Item COMPLETE!");
+            [self readJsonFileFrom:dbNewPath];
+        }
+    }
+    else
+    {
+        DLog(@"CHECK File Exist COMPLETE!");
+        [self readJsonFileFrom:dbNewPath];
+    }
+}
+
+-(void)readJsonFileFrom:(NSString*)path
+{
+    NSData* dataContent = [NSData dataWithContentsOfFile:path];
+    NSError* err = nil;
+    id obj = [NSJSONSerialization JSONObjectWithData:dataContent options:0 error:&err];
+    if ([obj isKindOfClass:[NSArray class]])
+    {
+        NSArray* arr = obj;
+        DLog(@"arr.count = %zd", arr.count);
+        DLog(@"arr[0] = %@", arr[0]);
+        for (int i = 0; i < arr.count; i++) {
+            NSString* strName = [[arr[i] objectForKey:@"CardName"] objectForKey:@"zhCN"];
+            DLog(@"arr[%d].name = %@", i, strName);
+        }
+    }
+}
+
+
+
 
 @end
