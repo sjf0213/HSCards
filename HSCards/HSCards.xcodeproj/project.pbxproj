@@ -19,6 +19,8 @@
 		F0AFD2C31A93218F00E9B2DD /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BC1A93218F00E9B2DD /* ECSlidingViewController.m */; };
 		F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */; };
 		F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */; };
+		F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */; };
+		F0D9DE8D1A9DA15800FDCBCB /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = F0D9DE8C1A9DA15800FDCBCB /* cards.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		F0D9DE7C1A9D744100FDCBCB /* MainTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTopViewController.h; sourceTree = "<group>"; };
 		F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTopViewController.m; sourceTree = "<group>"; };
 		F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		F0D9DE881A9DA12A00FDCBCB /* FileHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelp.h; sourceTree = "<group>"; };
+		F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelp.m; sourceTree = "<group>"; };
+		F0D9DE8C1A9DA15800FDCBCB /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +68,8 @@
 		F096E08B1A92DF6800F4A69F = {
 			isa = PBXGroup;
 			children = (
+				F0D9DE8B1A9DA15800FDCBCB /* HSData */,
+				F0D9DE871A9DA11600FDCBCB /* OtherFiles */,
 				F096E0961A92DF6800F4A69F /* HSCards */,
 				F0AFD2B11A93218F00E9B2DD /* ECSlidingViewController */,
 				F096E0951A92DF6800F4A69F /* Products */,
@@ -123,6 +130,23 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		F0D9DE871A9DA11600FDCBCB /* OtherFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F0D9DE881A9DA12A00FDCBCB /* FileHelp.h */,
+				F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */,
+			);
+			path = OtherFiles;
+			sourceTree = "<group>";
+		};
+		F0D9DE8B1A9DA15800FDCBCB /* HSData */ = {
+			isa = PBXGroup;
+			children = (
+				F0D9DE8C1A9DA15800FDCBCB /* cards.json */,
+			);
+			path = HSData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -181,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F096E0A81A92DF6800F4A69F /* LaunchScreen.xib in Resources */,
+				F0D9DE8D1A9DA15800FDCBCB /* cards.json in Resources */,
 				F096E0A51A92DF6800F4A69F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +220,7 @@
 				F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
 				F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */,
+				F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */,
 				F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */,
 				F0AFD2C21A93218F00E9B2DD /* ECSlidingSegue.m in Sources */,
 				F096E09A1A92DF6800F4A69F /* main.m in Sources */,

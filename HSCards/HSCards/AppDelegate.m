@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainTopViewController.h"
+#import "../OtherFiles/FileHelp.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
