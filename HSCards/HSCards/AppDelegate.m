@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
+#import "MainTopViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -20,7 +21,7 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIViewController *topViewController        = [[UIViewController alloc] init];
+    MainTopViewController *topViewController        = [[MainTopViewController alloc] init];
     UIViewController *underLeftViewController  = [[UIViewController alloc] init];
     UIViewController *underRightViewController = [[UIViewController alloc] init];
     
@@ -30,7 +31,7 @@
     topViewController.navigationItem.title = @"Layout Demo";
     topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
-    topViewController.view.backgroundColor = [UIColor whiteColor];
+    //topViewController.view.backgroundColor = [UIColor whiteColor];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
     
