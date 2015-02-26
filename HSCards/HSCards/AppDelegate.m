@@ -10,6 +10,7 @@
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainTopViewController.h"
 #import "../OtherFiles/FileHelp.h"
+#import "CardsBox.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -132,10 +133,11 @@
         NSArray* arr = obj;
         DLog(@"arr.count = %zd", arr.count);
         DLog(@"arr[0] = %@", arr[0]);
-        for (int i = 0; i < arr.count; i++) {
-            NSString* strName = [[arr[i] objectForKey:@"CardName"] objectForKey:@"zhCN"];
-            DLog(@"arr[%d].name = %@", i, strName);
-        }
+//        for (int i = 0; i < arr.count; i++) {
+//            NSString* strName = [[arr[i] objectForKey:@"CardName"] objectForKey:@"zhCN"];
+//            DLog(@"arr[%d].name = %@", i, strName);
+//        }
+        [[CardsBox shareInstance] addCardsByArray:arr];
     }
 }
 

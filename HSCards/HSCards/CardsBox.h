@@ -10,4 +10,9 @@
 
 @interface CardsBox : NSObject
 
+@property(nonatomic, readonly)NSArray* cardList;
+
++(CardsBox*)shareInstance;
+-(void)addCardsByArray:(NSArray*)arr;
+
 @end

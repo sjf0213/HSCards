@@ -23,6 +23,8 @@
 		F0D9DE8D1A9DA15800FDCBCB /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = F0D9DE8C1A9DA15800FDCBCB /* cards.json */; };
 		F0D9DE951A9DB3A600FDCBCB /* CardItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */; };
 		F0D9DE981A9DB3F800FDCBCB /* CardsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE971A9DB3F800FDCBCB /* CardsBox.m */; };
+		F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */; };
+		F0D9DE9E1A9EBF0800FDCBCB /* CardListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE9D1A9EBF0800FDCBCB /* CardListCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,10 @@
 		F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardItemInfo.m; sourceTree = "<group>"; };
 		F0D9DE961A9DB3F800FDCBCB /* CardsBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsBox.h; sourceTree = "<group>"; };
 		F0D9DE971A9DB3F800FDCBCB /* CardsBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardsBox.m; sourceTree = "<group>"; };
+		F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDataSource.h; sourceTree = "<group>"; };
+		F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDataSource.m; sourceTree = "<group>"; };
+		F0D9DE9C1A9EBF0800FDCBCB /* CardListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardListCell.h; sourceTree = "<group>"; };
+		F0D9DE9D1A9EBF0800FDCBCB /* CardListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardListCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,8 @@
 		F096E0961A92DF6800F4A69F /* HSCards */ = {
 			isa = PBXGroup;
 			children = (
+				F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */,
+				F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */,
 				F096E09B1A92DF6800F4A69F /* AppDelegate.h */,
 				F096E09C1A92DF6800F4A69F /* AppDelegate.m */,
 				F096E09E1A92DF6800F4A69F /* ViewController.h */,
@@ -107,6 +115,8 @@
 				F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */,
 				F0D9DE961A9DB3F800FDCBCB /* CardsBox.h */,
 				F0D9DE971A9DB3F800FDCBCB /* CardsBox.m */,
+				F0D9DE9C1A9EBF0800FDCBCB /* CardListCell.h */,
+				F0D9DE9D1A9EBF0800FDCBCB /* CardListCell.m */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -229,6 +239,7 @@
 			files = (
 				F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
+				F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */,
 				F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */,
 				F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */,
 				F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */,
@@ -238,6 +249,7 @@
 				F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */,
 				F0D9DE981A9DB3F800FDCBCB /* CardsBox.m in Sources */,
 				F0AFD2C01A93218F00E9B2DD /* ECSlidingAnimationController.m in Sources */,
+				F0D9DE9E1A9EBF0800FDCBCB /* CardListCell.m in Sources */,
 				F0D9DE951A9DB3A600FDCBCB /* CardItemInfo.m in Sources */,
 				F0AFD2BF1A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m in Sources */,
 			);

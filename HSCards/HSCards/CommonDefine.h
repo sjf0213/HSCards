@@ -27,6 +27,10 @@
 #endif
 #endif
 
+
+#define KA_COMMON_FONT_OF_SIZE(__SIZE__)   [UIFont fontWithName:@"HelveticaNeue-Light" size:__SIZE__]
+
+
 #define MainList_Row_H   100
 
 #endif
