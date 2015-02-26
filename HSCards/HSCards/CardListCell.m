@@ -9,7 +9,9 @@
 #import "CardListCell.h"
 #import "CommonDefine.h"
 @interface CardListCell()
+@property(nonatomic, strong)UILabel* cardID;
 @property(nonatomic, strong)UILabel* cardName;
+@property(nonatomic, strong)UIImageView* cardPic;
 @end
 @implementation CardListCell
 
@@ -17,11 +19,21 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.cardName = [[UILabel alloc] initWithFrame:CGRectMake(64, 12, 190, 20)];
-        self.cardName.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
-        self.cardName.text = @"";
-        self.cardName.font = KA_COMMON_FONT_OF_SIZE(18);
-        [self addSubview:self.cardName];
+        _cardID = [[UILabel alloc] initWithFrame:CGRectMake(80, 32, 190, 20)];
+        _cardID.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+        _cardID.text = @"";
+        _cardID.font = KA_COMMON_FONT_OF_SIZE(12);
+        [self addSubview:_cardID];
+        
+        _cardName = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 190, 20)];
+        _cardName.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+        _cardName.text = @"";
+        _cardName.font = KA_COMMON_FONT_OF_SIZE(18);
+        [self addSubview:_cardName];
+        
+        _cardPic = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 80)];
+        _cardPic.image = nil;
+        [self addSubview:_cardPic];
     }
     return self;
 }
@@ -34,12 +46,16 @@
 
 -(void)clearData
 {
-    self.cardName.text = @"";
+    _cardID.text = @"";
+    _cardName.text = @"";
+    _cardPic.image = nil;
 }
 
 -(void)loadCellData:(CardItemInfo*)data
 {
-    self.cardName.text = data.cardName;
+    _cardID.text = data.cardID;
+    _cardName.text = data.cardName;
+    _cardPic.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",data.cardID]];
 }
 
 @end

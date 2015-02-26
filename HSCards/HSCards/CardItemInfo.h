@@ -10,6 +10,7 @@
 
 @interface CardItemInfo : NSObject
 
+@property(nonatomic, readonly)NSString* cardID;
 @property(nonatomic, readonly)NSString* cardName;
 
 -(id)initWithDic:(NSDictionary*)dic;

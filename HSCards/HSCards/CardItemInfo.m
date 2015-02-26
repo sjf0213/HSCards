@@ -9,6 +9,7 @@
 #import "CardItemInfo.h"
 @interface CardItemInfo()
 @property(nonatomic, strong)NSString* cardName;
+@property(nonatomic, strong)NSString* cardID;
 @end
 @implementation CardItemInfo
 
@@ -17,6 +18,7 @@
     self = [super init];
     if(self)
     {
+        _cardID = [dic objectForKey:@"CardID"];
         NSDictionary* dicTemp = [dic objectForKey:@"CardName"];
         if ([dicTemp isKindOfClass:[NSDictionary class]])
         {
