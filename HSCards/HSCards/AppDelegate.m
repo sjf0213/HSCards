@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainTopViewController.h"
+#import "MainRightViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
 
@@ -27,7 +28,7 @@
     
     MainTopViewController *topViewController        = [[MainTopViewController alloc] init];
     UIViewController *underLeftViewController  = [[UIViewController alloc] init];
-    UIViewController *underRightViewController = [[UIViewController alloc] init];
+    MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
     
     // configure top view controller
     UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
@@ -46,11 +47,11 @@
     underLeftViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeLeft; // don't go under the top view
     
     // configure under right view controller
-    underRightViewController.view.layer.borderWidth     = 20;
-    underRightViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
-    underRightViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
-    underRightViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight; // don't go under the top view
-    
+//    underRightViewController.view.layer.borderWidth     = 20;
+//    underRightViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
+//    underRightViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
+//    underRightViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight; // don't go under the top view
+//    
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
     self.slidingViewController.underLeftViewController  = underLeftViewController;
@@ -60,8 +61,8 @@
     [navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     // configure anchored layout
-    self.slidingViewController.anchorRightPeekAmount  = 100.0;
-    self.slidingViewController.anchorLeftRevealAmount = 250.0;
+    self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
+    self.slidingViewController.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
     
     self.window.rootViewController = self.slidingViewController;
     
