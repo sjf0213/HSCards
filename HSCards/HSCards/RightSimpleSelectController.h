@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ArrayDataSource.h"
 
 @interface RightSimpleSelectController : UIViewController
 
+@property(atomic, strong) ArrayDataSource *arrayDataSource;
+
+-(id)initWithDataArray:(NSArray*)arr;
+
+-(void)reloadData;
 @end

@@ -40,9 +40,9 @@
     _title.text = @"";
 }
 
--(void)loadCellData:(NSDictionary*)data
+-(void)loadCellData:(NSString*)data
 {
-    _title.text = [data objectForKey:@"title"];
+    _title.text = data;
 }
 
 

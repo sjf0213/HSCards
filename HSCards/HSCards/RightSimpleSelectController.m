@@ -7,23 +7,50 @@
 //
 
 #import "RightSimpleSelectController.h"
+#import "CommonDefine.h"
+#define SimpleSelectCellIdentifier @"SimpleSelectCell"
 
 @interface RightSimpleSelectController ()
-
+@property(nonatomic, strong)UITableView* mainTable;
 @end
 
 @implementation RightSimpleSelectController
 
+-(id)initWithDataArray:(NSArray*)arr
+{
+    self = [super init];
+    if (self) {
+        self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
+        TableViewCellConfigureBlock configureCell = ^(UITableViewCell* cell, NSString* data) {
+            cell.textLabel.text = @"";
+            if ([data isKindOfClass:[NSString class]]) {
+                cell.textLabel.text = data;
+            }
+        };
+        self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:SimpleSelectCellIdentifier configureCellBlock:configureCell];
+        _mainTable = [[UITableView alloc] initWithFrame:self.view.bounds];
+        _mainTable.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0.7 alpha:1.0];
+        _mainTable.rowHeight = 44;
+        [_mainTable registerClass:[UITableViewCell class] forCellReuseIdentifier:SimpleSelectCellIdentifier];
+        _mainTable.dataSource = self.arrayDataSource;
+        //_mainTable.delegate = self;
+        [self.view addSubview:_mainTable];
+        
+        [self.arrayDataSource appendWithItems:arr];
+    }
+    return self;
+}
+
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [_mainTable reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,14 +58,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)reloadData
+{
+    [_mainTable reloadData];
 }
-*/
 
 @end

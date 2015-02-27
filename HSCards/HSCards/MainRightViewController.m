@@ -39,9 +39,7 @@
         [cell loadCellData:data];
     };
     self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:FilterTableCellIdentifier configureCellBlock:configureCell];
-    
-    //_mainTable = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - SlidingAnchorLeftRevealAmount, 64, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height - 64)];
-    _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height)];
+    _mainTable =  _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height)];
     DLog(@" _mainTable.frame.size.width = %f", _mainTable.frame.size.width);
     _mainTable.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
     _mainTable.rowHeight = 60;
@@ -49,15 +47,22 @@
     _mainTable.dataSource = self.arrayDataSource;
     _mainTable.delegate = self;
     [self.view addSubview:_mainTable];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    DLog(@"------------width = %f", self.view.frame.size.width);
     // Do any additional setup after loading the view.
-    _filterDataArr = @[@{@"title":@"消耗"},
-                       ];
-    
-    [self.arrayDataSource appendWithItems:@[@{@"title":@"消耗"}]];
+    NSString * dataPath = [[NSBundle mainBundle] pathForResource:@"filter" ofType:@"plist"];
+    _filterDataArr = [NSArray arrayWithContentsOfFile:dataPath];
+    DLog(@"_filterDataArr = %@", _filterDataArr);
+    NSMutableArray* levelOneArray = [NSMutableArray array];
+    for (NSDictionary* item in _filterDataArr) {
+        NSString* title = [item objectForKey:@"title"];
+        [levelOneArray addObject:title];
+    }
+    [self.arrayDataSource appendWithItems:levelOneArray];
     [_mainTable reloadData];
 }
 
@@ -69,7 +74,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLog(@"---------------didSelectRowAtIndexPath------------------");
-    RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] init];
+    NSDictionary* dicAll = [_filterDataArr objectAtIndex:indexPath.row];
+    NSArray* condition = [dicAll objectForKey:@"condition"];
+    
+    RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] initWithDataArray:condition];
     [self.navigationController pushViewController:secondController animated:YES];
 }
 
