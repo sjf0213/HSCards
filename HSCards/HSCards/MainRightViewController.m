@@ -10,12 +10,15 @@
 #import "ArrayDataSource.h"
 #import "FilterListCell.h"
 #import "CommonDefine.h"
+#import "RightSimpleSelectController.h"
+#import "../ECSlidingViewController/ECSlidingViewController.h"
 
 #define FilterTableCellIdentifier @"FilterTableCell"
 
 @interface MainRightViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
+@property(nonatomic, strong)NSArray* filterDataArr;
 @end
 
 @implementation MainRightViewController
@@ -25,6 +28,12 @@
     [super loadView];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.5 green:1 blue:1 alpha:1.0];
+    self.navigationItem.title = @"筛选";
+    UIBarButtonItem *OKButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(onTapOK)];
+    self.navigationItem.rightBarButtonItem  = OKButton;
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(onTapCancel)];
+    self.navigationItem.leftBarButtonItem  = cancelButton;
+    
     TableViewCellConfigureBlock configureCell = ^(FilterListCell* cell, NSDictionary* data) {
         [cell clearData];
         [cell loadCellData:data];
@@ -45,6 +54,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _filterDataArr = @[@{@"title":@"消耗"},
+                       ];
     
     [self.arrayDataSource appendWithItems:@[@{@"title":@"消耗"}]];
     [_mainTable reloadData];
@@ -58,8 +69,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DLog(@"---------------didSelectRowAtIndexPath------------------");
-    UIViewController* secondController = [[UIViewController alloc] init];
-    secondController.view.backgroundColor = [UIColor yellowColor];
+    RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] init];
     [self.navigationController pushViewController:secondController animated:YES];
 }
 
@@ -72,5 +82,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)onTapOK
+{
+    DLog(@"-*-*-*-onTapOK*-*-*-*");
+    [self resetTopController];
+}
+-(void)onTapCancel
+{
+    DLog(@"-*-*-*-onTapCancel*-*-*-*");
+    [self resetTopController];
+}
+
+-(void)resetTopController
+{
+    if ([self.navigationController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController* navi = self.navigationController;
+        if ([navi.parentViewController isKindOfClass:[ECSlidingViewController class]]) {
+            ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
+            [ec resetTopViewAnimated:YES];
+        }
+    }
+}
+
 
 @end

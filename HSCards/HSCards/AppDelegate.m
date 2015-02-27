@@ -33,9 +33,9 @@
     
     
     // configure top view controller
-    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
-    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
-    topViewController.navigationItem.title = @"Layout Demo";
+    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"ME" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
+    topViewController.navigationItem.title = @"MAIN LIST";
     topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
     //topViewController.view.backgroundColor = [UIColor whiteColor];
