@@ -12,7 +12,6 @@
 #import "MainRightViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
-#import "KAInnerNavigateController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
