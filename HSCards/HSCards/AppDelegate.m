@@ -12,6 +12,7 @@
 #import "MainRightViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
+#import "KAInnerNavigateController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -29,6 +30,8 @@
     MainTopViewController *topViewController        = [[MainTopViewController alloc] init];
     UIViewController *underLeftViewController  = [[UIViewController alloc] init];
     MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
+    UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:underRightViewController];
+    
     
     // configure top view controller
     UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
@@ -51,11 +54,12 @@
 //    underRightViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
 //    underRightViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
 //    underRightViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight; // don't go under the top view
-//    
+    rightNaviController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight;
+//
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
     self.slidingViewController.underLeftViewController  = underLeftViewController;
-    self.slidingViewController.underRightViewController = underRightViewController;
+    self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view
     [navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];

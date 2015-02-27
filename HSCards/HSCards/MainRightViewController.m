@@ -13,7 +13,7 @@
 
 #define FilterTableCellIdentifier @"FilterTableCell"
 
-@interface MainRightViewController ()
+@interface MainRightViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 @end
@@ -23,6 +23,7 @@
 - (void)loadView
 {
     [super loadView];
+    
     self.view.backgroundColor = [UIColor colorWithRed:0.5 green:1 blue:1 alpha:1.0];
     TableViewCellConfigureBlock configureCell = ^(FilterListCell* cell, NSDictionary* data) {
         [cell clearData];
@@ -30,11 +31,14 @@
     };
     self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:FilterTableCellIdentifier configureCellBlock:configureCell];
     
-    _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - SlidingAnchorLeftRevealAmount, 64, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height - 64)];
+    //_mainTable = [[UITableView alloc] initWithFrame:CGRectMake(self.view.bounds.size.width - SlidingAnchorLeftRevealAmount, 64, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height - 64)];
+    _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height)];
+    DLog(@" _mainTable.frame.size.width = %f", _mainTable.frame.size.width);
     _mainTable.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
     _mainTable.rowHeight = 60;
     [_mainTable registerClass:[FilterListCell class] forCellReuseIdentifier:FilterTableCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
+    _mainTable.delegate = self;
     [self.view addSubview:_mainTable];
 }
 
@@ -49,6 +53,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DLog(@"---------------didSelectRowAtIndexPath------------------");
+    UIViewController* secondController = [[UIViewController alloc] init];
+    secondController.view.backgroundColor = [UIColor yellowColor];
+    [self.navigationController pushViewController:secondController animated:YES];
 }
 
 /*
