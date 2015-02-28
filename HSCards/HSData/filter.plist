@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>cost</string>
+		<string>费用</string>
 		<key>condition</key>
 		<array>
 			<string>全部</string>
@@ -16,6 +16,19 @@
 			<string>5</string>
 			<string>6</string>
 			<string>7+</string>
+		</array>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>稀有度</string>
+		<key>condition</key>
+		<array>
+			<string>0自带</string>
+			<string>1普通</string>
+			<string>2不确定</string>
+			<string>3蓝色稀有</string>
+			<string>4紫色传奇</string>
+			<string>5金色史诗</string>
 		</array>
 	</dict>
 </array>

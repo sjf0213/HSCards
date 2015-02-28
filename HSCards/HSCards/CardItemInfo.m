@@ -11,6 +11,7 @@
 @property(nonatomic, strong)NSString* cardName;
 @property(nonatomic, strong)NSString* cardID;
 @property(nonatomic, assign)NSUInteger cost;
+@property(nonatomic, assign)NSUInteger rarity;
 @end
 @implementation CardItemInfo
 
@@ -19,6 +20,8 @@
     self = [super init];
     if(self)
     {
+        NSNumber* num = nil;
+        
         // 卡牌代码
         _cardID = [dic objectForKey:@"CardID"];
         
@@ -34,11 +37,16 @@
         }
         
         // 费用，法力值消耗
-        NSNumber* num = [dic objectForKey:@"Cost"];
+        num = [dic objectForKey:@"Cost"];
         if ([num isKindOfClass:[NSNumber class]]) {
             _cost = [num unsignedIntegerValue];
         }
         
+        // 稀有程度
+        num = [dic objectForKey:@"Rarity"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _rarity = [num unsignedIntegerValue];
+        }
     }
     return self;
 }
