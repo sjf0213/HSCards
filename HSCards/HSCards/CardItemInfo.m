@@ -10,6 +10,7 @@
 @interface CardItemInfo()
 @property(nonatomic, strong)NSString* cardName;
 @property(nonatomic, strong)NSString* cardID;
+@property(nonatomic, assign)NSUInteger cost;
 @end
 @implementation CardItemInfo
 
@@ -18,7 +19,10 @@
     self = [super init];
     if(self)
     {
+        // 卡牌代码
         _cardID = [dic objectForKey:@"CardID"];
+        
+        // 卡牌名称
         NSDictionary* dicTemp = [dic objectForKey:@"CardName"];
         if ([dicTemp isKindOfClass:[NSDictionary class]])
         {
@@ -28,6 +32,13 @@
                 _cardName = strTemp;
             }
         }
+        
+        // 费用，法力值消耗
+        NSNumber* num = [dic objectForKey:@"Cost"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _cost = [num unsignedIntegerValue];
+        }
+        
     }
     return self;
 }

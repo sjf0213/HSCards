@@ -27,7 +27,7 @@
         _title.font = KA_COMMON_FONT_OF_SIZE(15);
         [self addSubview:_title];
         
-        _optResult = [[UILabel alloc] initWithFrame:CGRectMake(250-75, 10, 40, 40)];
+        _optResult = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width-75, 10, 40, 40)];
         _optResult.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _optResult.textAlignment = NSTextAlignmentRight;
         _optResult.text = @"";

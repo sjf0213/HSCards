@@ -10,9 +10,9 @@
 
 @interface CardItemInfo : NSObject
 
-@property(nonatomic, readonly)NSString* cardID;
-@property(nonatomic, readonly)NSString* cardName;
-
+@property(nonatomic, readonly)NSString* cardID;// 代码
+@property(nonatomic, readonly)NSString* cardName;// 名称
+@property(nonatomic, readonly)NSUInteger cost;// 费用，法力值消耗
 -(id)initWithDic:(NSDictionary*)dic;
 
 @end
