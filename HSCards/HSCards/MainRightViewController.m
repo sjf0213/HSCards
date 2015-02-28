@@ -71,6 +71,7 @@
     NSArray* condition = [dicAll objectForKey:@"condition"];
     
     RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] initWithDataArray:condition];
+    secondController.view.tag = indexPath.row;// 哪一个category
     [self.navigationController pushViewController:secondController animated:YES];
 }
 
@@ -93,13 +94,29 @@
 -(void)updateSingleCellAtIndex:(NSUInteger)index withText:(NSString*)str
 {
     NSMutableArray* levelOneArray = [NSMutableArray array];
-    for (NSDictionary* item in [FilterData shareInstance].displayTextArray) {
-        NSString* title = [item objectForKey:@"title"];
-        [levelOneArray addObject:@{@"title":title,
-                                   @"result":str}];
+//    for (NSDictionary* item in [FilterData shareInstance].displayTextArray)
+//    {
+//        
+//        NSString* title = [item objectForKey:@"title"];
+//        [levelOneArray addObject:@{@"title":title,
+//                                   @"result":str}];
+//    }
+//    [self.arrayDataSource removeAllItems];
+//    [self.arrayDataSource appendWithItems:levelOneArray];
+    
+    for (int i = 0; i < self.arrayDataSource.items.count; i++)
+    {
+        NSDictionary* dic = [self.arrayDataSource.items objectAtIndex:i];
+        if (index == i){
+            [levelOneArray addObject:@{@"title":[dic objectForKey:@"title"],
+                                       @"result":str}];
+        }else{
+            [levelOneArray addObject:dic];
+        }
     }
     [self.arrayDataSource removeAllItems];
     [self.arrayDataSource appendWithItems:levelOneArray];
+
     [_mainTable reloadData];
 }
 
@@ -114,6 +131,7 @@
             // 存储过滤条件
             for (int i = 0; i < self.arrayDataSource.items.count; i++)
             {
+#warning 处理多种过滤条件有问题
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:i];
                 DLog(@"cellDataDic  =  %@", cellDataDic);
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];

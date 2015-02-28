@@ -71,7 +71,7 @@
     if ([controller isKindOfClass: [MainRightViewController class]]) {
         MainRightViewController* rc = (MainRightViewController*)controller;
         UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-        [rc updateSingleCellAtIndex:indexPath.row withText:cell.textLabel.text];
+        [rc updateSingleCellAtIndex:self.view.tag withText:cell.textLabel.text];
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
