@@ -31,22 +31,16 @@
     };
     self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:CardListCellIdentifier configureCellBlock:configureCell];
     
-    
     _mainTable = [[UITableView alloc] initWithFrame:self.view.bounds];
     _mainTable.rowHeight = MainList_Row_H;
     [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
     [self.view addSubview:_mainTable];
-    
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DLog(@"=========View did load===========");
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0 alpha:0.5];
-    
     [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
     [_mainTable reloadData];
 }
@@ -56,14 +50,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

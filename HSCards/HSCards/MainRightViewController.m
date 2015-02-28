@@ -12,13 +12,13 @@
 #import "CommonDefine.h"
 #import "RightSimpleSelectController.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
+#import "FilterData.h"
 
 #define FilterTableCellIdentifier @"FilterTableCell"
 
 @interface MainRightViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
-@property(nonatomic, strong)NSArray* filterDataArr;
 @end
 
 @implementation MainRightViewController
@@ -40,30 +40,18 @@
     };
     self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:FilterTableCellIdentifier configureCellBlock:configureCell];
     _mainTable =  _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height)];
-    DLog(@" _mainTable.frame.size.width = %f", _mainTable.frame.size.width);
     _mainTable.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
     _mainTable.rowHeight = 60;
     [_mainTable registerClass:[FilterListCell class] forCellReuseIdentifier:FilterTableCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
     _mainTable.delegate = self;
     [self.view addSubview:_mainTable];
-    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DLog(@"------------width = %f", self.view.frame.size.width);
     // Do any additional setup after loading the view.
-    NSString * dataPath = [[NSBundle mainBundle] pathForResource:@"filter" ofType:@"plist"];
-    _filterDataArr = [NSArray arrayWithContentsOfFile:dataPath];
-    DLog(@"_filterDataArr = %@", _filterDataArr);
-    NSMutableArray* levelOneArray = [NSMutableArray array];
-    for (NSDictionary* item in _filterDataArr) {
-        NSString* title = [item objectForKey:@"title"];
-        [levelOneArray addObject:title];
-    }
-    [self.arrayDataSource appendWithItems:levelOneArray];
-    [_mainTable reloadData];
+    [self updateDisplayData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,34 +59,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    DLog(@"---------------Main Right viewWillAppear------------------");
+    [self updateDisplayData];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DLog(@"---------------didSelectRowAtIndexPath------------------");
-    NSDictionary* dicAll = [_filterDataArr objectAtIndex:indexPath.row];
+    NSDictionary* dicAll = [[FilterData shareInstance].displayTextArray objectAtIndex:indexPath.row];
     NSArray* condition = [dicAll objectForKey:@"condition"];
     
     RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] initWithDataArray:condition];
     [self.navigationController pushViewController:secondController animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)updateDisplayData
+{
+    NSMutableArray* levelOneArray = [NSMutableArray array];
+    for (NSDictionary* item in [FilterData shareInstance].displayTextArray) {
+        NSString* title = [item objectForKey:@"title"];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].cost];
+        [levelOneArray addObject:@{@"title":title,
+                                   @"result":resultText}];
+    }
+    [self.arrayDataSource removeAllItems];
+    [self.arrayDataSource appendWithItems:levelOneArray];
+    [_mainTable reloadData];
 }
-*/
 
 -(void)onTapOK
 {
-    DLog(@"-*-*-*-onTapOK*-*-*-*");
     [self resetTopController];
 }
 -(void)onTapCancel
 {
-    DLog(@"-*-*-*-onTapCancel*-*-*-*");
     [self resetTopController];
 }
 

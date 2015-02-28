@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
 } mana_cost;
 
 @interface FilterData : NSObject
-
+@property(atomic, readonly)NSArray* displayTextArray;
 @property(atomic, assign)mana_cost cost;
 
 +(FilterData*)shareInstance;

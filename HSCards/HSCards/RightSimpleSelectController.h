@@ -14,6 +14,6 @@
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 
 -(id)initWithDataArray:(NSArray*)arr;
-
 -(void)reloadData;
+
 @end

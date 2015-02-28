@@ -10,6 +10,7 @@
 #import "CommonDefine.h"
 @interface FilterListCell()
 @property(nonatomic, strong)UILabel* title;
+@property(nonatomic, strong)UILabel* optResult;
 @end
 @implementation FilterListCell
 
@@ -25,6 +26,13 @@
         _title.text = @"";
         _title.font = KA_COMMON_FONT_OF_SIZE(15);
         [self addSubview:_title];
+        
+        _optResult = [[UILabel alloc] initWithFrame:CGRectMake(250-75, 10, 40, 40)];
+        _optResult.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+        _optResult.textAlignment = NSTextAlignmentRight;
+        _optResult.text = @"";
+        _optResult.font = KA_COMMON_FONT_OF_SIZE(15);
+        [self addSubview:_optResult];
     }
     return self;
 }
@@ -38,11 +46,13 @@
 -(void)clearData
 {
     _title.text = @"";
+    _optResult.text = @"";
 }
 
--(void)loadCellData:(NSString*)data
+-(void)loadCellData:(NSDictionary*)data
 {
-    _title.text = data;
+    _title.text = [data objectForKey:@"title"];
+    _optResult.text = [data objectForKey:@"result"];
 }
 
 

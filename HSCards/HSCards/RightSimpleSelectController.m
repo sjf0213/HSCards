@@ -8,9 +8,10 @@
 
 #import "RightSimpleSelectController.h"
 #import "CommonDefine.h"
+#import "FilterData.h"
 #define SimpleSelectCellIdentifier @"SimpleSelectCell"
 
-@interface RightSimpleSelectController ()
+@interface RightSimpleSelectController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @end
 
@@ -33,7 +34,7 @@
         _mainTable.rowHeight = 44;
         [_mainTable registerClass:[UITableViewCell class] forCellReuseIdentifier:SimpleSelectCellIdentifier];
         _mainTable.dataSource = self.arrayDataSource;
-        //_mainTable.delegate = self;
+        _mainTable.delegate = self;
         [self.view addSubview:_mainTable];
         
         [self.arrayDataSource appendWithItems:arr];
@@ -61,6 +62,12 @@
 -(void)reloadData
 {
     [_mainTable reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [FilterData shareInstance].cost = indexPath.row;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

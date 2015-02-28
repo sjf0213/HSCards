@@ -36,7 +36,8 @@ static FilterData * m_Instance;
     self = [super init];
     if(self)
     {
-        
+        NSString * dataPath = [[NSBundle mainBundle] pathForResource:@"filter" ofType:@"plist"];
+        _displayTextArray = [NSArray arrayWithContentsOfFile:dataPath];
     }
     return self;
 }
