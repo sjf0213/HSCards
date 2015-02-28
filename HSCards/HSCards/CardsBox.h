@@ -11,8 +11,9 @@
 @interface CardsBox : NSObject
 
 @property(nonatomic, readonly)NSArray* cardList;
+@property(nonatomic, readonly)NSMutableArray* filtedList;
 
 +(CardsBox*)shareInstance;
 -(void)addCardsByArray:(NSArray*)arr;
-
+-(void)fillFiltedList;
 @end

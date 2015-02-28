@@ -34,4 +34,5 @@
 #define SlidingAnchorLeftRevealAmount 250.0
 #define MainList_Row_H   100
 
+#define Notification_UpdateMainList   @"Notification_UpdateMainList"
 #endif

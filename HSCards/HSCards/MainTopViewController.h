@@ -11,4 +11,7 @@
 
 @interface MainTopViewController : UIViewController
 
+
+-(void)updateDisplayData;
+
 @end

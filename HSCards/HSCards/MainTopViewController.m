@@ -36,6 +36,8 @@
     [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
     [self.view addSubview:_mainTable];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDisplayData) name:Notification_UpdateMainList object:nil];
 }
 
 - (void)viewDidLoad {
@@ -48,6 +50,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)updateDisplayData
+{
+    [[CardsBox shareInstance] fillFiltedList];
+    [self.arrayDataSource removeAllItems];
+    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
+    [_mainTable reloadData];
 }
 
 

@@ -8,6 +8,7 @@
 
 #import "CardsBox.h"
 #import "CardItemInfo.h"
+#import "FilterData.h"
 
 @interface CardsBox()
 
@@ -38,6 +39,7 @@ static CardsBox * m_Instance;
     if(self)
     {
         _cardList = [[NSArray alloc] init];
+        _filtedList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -57,6 +59,63 @@ static CardsBox * m_Instance;
         }
     }
     _cardList = [_cardList arrayByAddingObjectsFromArray:resultArr];
+}
+
+-(void)fillFiltedList
+{
+    [_filtedList removeAllObjects];
+    for (CardItemInfo* item in _cardList) {
+        switch ([FilterData shareInstance].cost) {
+            case mana_cost_all:
+                [_filtedList addObjectsFromArray:_cardList];
+                break;
+            case mana_cost_0:
+                if (item.cost == 0) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_1:
+                if (item.cost == 1) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_2:
+                if (item.cost == 2) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_3:
+                if (item.cost == 3) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_4:
+                if (item.cost == 4) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_5:
+                if (item.cost == 5) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_6:
+                if (item.cost == 6) {
+                    [_filtedList addObject:item];
+                }
+                break;
+            case mana_cost_7P:
+                if (item.cost > 6) {
+                    [_filtedList addObject:item];
+                }
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+    
 }
 
 @end

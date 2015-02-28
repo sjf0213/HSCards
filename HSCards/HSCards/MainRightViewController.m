@@ -91,14 +91,21 @@
 
 -(void)onTapOK
 {
-    [self resetTopController];
-}
--(void)onTapCancel
-{
-    [self resetTopController];
+    if ([self.navigationController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController* navi = self.navigationController;
+        if ([navi.parentViewController isKindOfClass:[ECSlidingViewController class]]) {
+            ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
+            [ec resetTopViewAnimated:YES];
+            
+//            if ([ec.topViewController isKindOfClass:NSClassFromString(@"MainTopViewController")]) {
+//                [ec.topViewController performSelector:@selector(updateDisplayData)];
+//            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:Notification_UpdateMainList object:nil];
+        }
+    }
 }
 
--(void)resetTopController
+-(void)onTapCancel
 {
     if ([self.navigationController isKindOfClass:[UINavigationController class]]) {
         UINavigationController* navi = self.navigationController;
@@ -109,5 +116,9 @@
     }
 }
 
+- (void)dealloc
+{
+    DLog(@"----------------dealloc");
+}
 
 @end
