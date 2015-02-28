@@ -10,4 +10,6 @@
 
 @interface MainRightViewController : UIViewController
 
+-(void)updateSingleCellAtIndex:(NSUInteger)index withText:(NSString*)str;
+
 @end

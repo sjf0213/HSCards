@@ -62,7 +62,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     DLog(@"---------------Main Right viewWillAppear------------------");
-    [self updateDisplayData];
+    //[self updateDisplayData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,6 +89,20 @@
     [_mainTable reloadData];
 }
 
+// 选择之后暂时显示，点击确定之前不存储过滤条件
+-(void)updateSingleCellAtIndex:(NSUInteger)index withText:(NSString*)str
+{
+    NSMutableArray* levelOneArray = [NSMutableArray array];
+    for (NSDictionary* item in [FilterData shareInstance].displayTextArray) {
+        NSString* title = [item objectForKey:@"title"];
+        [levelOneArray addObject:@{@"title":title,
+                                   @"result":str}];
+    }
+    [self.arrayDataSource removeAllItems];
+    [self.arrayDataSource appendWithItems:levelOneArray];
+    [_mainTable reloadData];
+}
+
 -(void)onTapOK
 {
     if ([self.navigationController isKindOfClass:[UINavigationController class]]) {
@@ -97,9 +111,24 @@
             ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
             [ec resetTopViewAnimated:YES];
             
-//            if ([ec.topViewController isKindOfClass:NSClassFromString(@"MainTopViewController")]) {
-//                [ec.topViewController performSelector:@selector(updateDisplayData)];
-//            }
+            // 存储过滤条件
+            for (int i = 0; i < self.arrayDataSource.items.count; i++)
+            {
+                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:i];
+                DLog(@"cellDataDic  =  %@", cellDataDic);
+                NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:i];
+                NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
+                for (int i = 0; i < arrCondition.count; i++)
+                {
+                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                        [FilterData shareInstance].cost = i;
+                        DLog(@"真正改变 FilterData 过滤条件值 cost = %d", i);
+                        break;
+                    }
+                }
+            }
+            // 刷新列表
             [[NSNotificationCenter defaultCenter] postNotificationName:Notification_UpdateMainList object:nil];
         }
     }
@@ -111,7 +140,10 @@
         UINavigationController* navi = self.navigationController;
         if ([navi.parentViewController isKindOfClass:[ECSlidingViewController class]]) {
             ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
-            [ec resetTopViewAnimated:YES];
+            [ec resetTopViewAnimated:YES onComplete:^{
+                // 恢复之前已经确定的过滤选项
+                [self updateDisplayData];
+            }];
         }
     }
 }

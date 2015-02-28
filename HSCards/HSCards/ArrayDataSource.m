@@ -63,7 +63,6 @@
     if (anItems != nil) {
        [self.items addObjectsFromArray:anItems];
     }
-    
 }
 
 - (void)removeAllItems
