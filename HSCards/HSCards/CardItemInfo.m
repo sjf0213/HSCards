@@ -54,7 +54,7 @@
         // 稀有程度
         num = [dic objectForKey:@"Rarity"];
         if ([num isKindOfClass:[NSNumber class]]) {
-            _cardSet = [num unsignedIntegerValue];
+            _rarity = [num unsignedIntegerValue];
         }
         
         // 所属职业
