@@ -30,10 +30,27 @@ typedef enum : NSUInteger {
     card_rarity_5 = 6,
 } card_rarity;
 
+typedef enum : NSUInteger {
+    card_career_all = 0,
+    card_career_0 = 1,
+    card_career_1 = 2,
+    card_career_2 = 3,
+    card_career_3 = 4,
+    card_career_4 = 5,
+    card_career_5 = 6,
+    card_career_6 = 7,
+    card_career_7 = 8,
+    card_career_8 = 9,
+    card_career_9 = 10,
+    card_career_10 = 11,
+    card_career_11 = 12,
+} card_career;
+
 @interface FilterData : NSObject
 @property(atomic, readonly)NSArray* displayTextArray;
 @property(atomic, assign)mana_cost cost;
 @property(atomic, assign)card_rarity rarity;
+@property(atomic, assign)card_career career;
 +(FilterData*)shareInstance;
 
 @end

@@ -14,10 +14,10 @@
 @property(nonatomic, strong)UILabel* cardName;
 @property(nonatomic, strong)UILabel* cardCost;
 @property(nonatomic, strong)UILabel* cardRarity;
+@property(nonatomic, strong)UILabel* cardCareer;
 
 @property(nonatomic, strong)UILabel* cardSet;
 @property(nonatomic, strong)UILabel* cardType;
-@property(nonatomic, strong)UILabel* cardClass;
 @property(nonatomic, strong)UILabel* collectible;
 @end
 @implementation CardListCell
@@ -55,26 +55,27 @@
         _cardRarity.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardRarity];
         
+        _cardCareer = [[UILabel alloc] initWithFrame:CGRectMake(80, 64, 50, 14)];
+        _cardCareer.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+        _cardCareer.text = @"";
+        _cardCareer.font = KA_COMMON_FONT_OF_SIZE(12);
+        [self addSubview:_cardCareer];
         
-        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(80, 64, 50, 14)];
+        
+        
+        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 14)];
         _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardSet.text = @"";
         _cardSet.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardSet];
         
-        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(130, 64, 50, 14)];
+        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(130, 80, 50, 14)];
         _cardType.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardType.text = @"";
         _cardType.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardType];
         
-        _cardClass = [[UILabel alloc] initWithFrame:CGRectMake(180, 64, 50, 14)];
-        _cardClass.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
-        _cardClass.text = @"";
-        _cardClass.font = KA_COMMON_FONT_OF_SIZE(12);
-        [self addSubview:_cardClass];
-        
-        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(230, 64, 50, 14)];
+        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
         _collectible.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _collectible.text = @"";
         _collectible.font = KA_COMMON_FONT_OF_SIZE(12);
@@ -96,10 +97,10 @@
     _cardName.text = @"";
     _cardCost.text = @"";
     _cardRarity.text = @"";
+    _cardCareer.text = @"";
     
     _cardSet.text = @"";
     _cardType.text = @"";
-    _cardClass.text = @"";
     _collectible.text = @"";
 }
 
@@ -110,10 +111,10 @@
     _cardName.text = data.cardName;
     _cardCost.text = [NSString stringWithFormat:@"费: %zd", data.cost];
     _cardRarity.text = [NSString stringWithFormat:@"稀: %zd", data.rarity];
+    _cardCareer.text = [NSString stringWithFormat:@"职: %zd", data.career];
     
     _cardSet.text = [NSString stringWithFormat:@"set: %zd", data.cardSet];
     _cardType.text = [NSString stringWithFormat:@"type: %zd", data.cardType];
-    _cardClass.text = [NSString stringWithFormat:@"cls: %zd", data.cardClass];
     _collectible.text = [NSString stringWithFormat:@"coll: %zd", data.collectible];;
 }
 

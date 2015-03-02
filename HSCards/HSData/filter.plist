@@ -32,5 +32,25 @@
 			<string>5金色史诗</string>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>职业</string>
+		<key>condition</key>
+		<array>
+			<string>all全部</string>
+			<string>0中立</string>
+			<string>1未知</string>
+			<string>2德鲁伊</string>
+			<string>3猎人</string>
+			<string>4法师</string>
+			<string>5圣骑士</string>
+			<string>6牧师</string>
+			<string>7潜行者</string>
+			<string>8萨满</string>
+			<string>9术士</string>
+			<string>10战士</string>
+			<string>11梦境</string>
+		</array>
+	</dict>
 </array>
 </plist>

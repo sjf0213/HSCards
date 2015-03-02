@@ -64,94 +64,126 @@ static CardsBox * m_Instance;
 -(void)fillFiltedList
 {
     [_filtedList removeAllObjects];
-    NSMutableArray* costList = [NSMutableArray array];
-    // 过滤费用
     
-    for (CardItemInfo* item in _cardList) {
+    
+    // 1, 过滤费用
+    NSMutableArray* costList = [NSMutableArray array];
+    if ([FilterData shareInstance].cost == mana_cost_all)
+    {
+        [costList addObjectsFromArray:_cardList];
+    }
+    else
+    {
         switch ([FilterData shareInstance].cost) {
-            case mana_cost_all:
-                [costList addObjectsFromArray:_cardList];
-                break;
             case mana_cost_0:
-                if (item.cost == 0) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 0) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_1:
-                if (item.cost == 1) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 1) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_2:
-                if (item.cost == 2) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 2) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_3:
-                if (item.cost == 3) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 3) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_4:
-                if (item.cost == 4) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 4) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_5:
-                if (item.cost == 5) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 5) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_6:
-                if (item.cost == 6) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost == 6) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
             case mana_cost_7P:
-                if (item.cost > 6) {
-                    [costList addObject:item];
+                for (CardItemInfo* item in _cardList){
+                    if (item.cost > 6) {
+                        [costList addObject:item];
+                    }
                 }
                 break;
-                
             default:
                 break;
         }
     }
-    //过滤
+    //2,过滤稀有度
     NSMutableArray* rarityList = [NSMutableArray array];
-    for (CardItemInfo* item in costList) {
+    if ([FilterData shareInstance].rarity == card_rarity_all)
+    {
+        [rarityList addObjectsFromArray:costList];
+    }
+    else
+    {
         switch ([FilterData shareInstance].rarity) {
-            case card_rarity_all:
-                [rarityList addObjectsFromArray:costList];
-                break;
             case card_rarity_0:
-                if (item.rarity == 0) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 0) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             case card_rarity_1:
-                if (item.rarity == 1) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 1) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             case card_rarity_2:
-                if (item.rarity == 2) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 2) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             case card_rarity_3:
-                if (item.rarity == 3) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 3) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             case card_rarity_4:
-                if (item.rarity == 4) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 4) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             case card_rarity_5:
-                if (item.rarity == 5) {
-                    [rarityList addObject:item];
+                for (CardItemInfo* item in costList) {
+                    if (item.rarity == 5) {
+                        [rarityList addObject:item];
+                    }
                 }
                 break;
             default:
@@ -159,7 +191,104 @@ static CardsBox * m_Instance;
         }
     }
     
-    [_filtedList addObjectsFromArray:rarityList];
+    //过滤职业
+    NSMutableArray* careerList = [NSMutableArray array];
+    if ([FilterData shareInstance].career == card_career_all)
+    {
+        [careerList addObjectsFromArray:rarityList];
+    }
+    else
+    {
+        switch ([FilterData shareInstance].career) {
+            case card_career_0:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 0) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_1:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 1) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_2:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 2) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_3:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 3) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_4:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 4) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_5:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 5) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_6:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 6) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_7:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 7) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_8:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 8) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_9:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 9) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_10:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 10) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            case card_career_11:
+                for (CardItemInfo* item in rarityList) {
+                    if (item.career == 11) {
+                        [careerList addObject:item];
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    [_filtedList addObjectsFromArray:careerList];
 }
 
 @end

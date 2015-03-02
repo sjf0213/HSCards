@@ -13,13 +13,13 @@
 @property(nonatomic, strong)NSString* cardID;
 @property(nonatomic, assign)NSUInteger cost;
 @property(nonatomic, assign)NSUInteger rarity;
+@property(nonatomic, assign)NSUInteger career;// 所属职业
 @property(nonatomic, assign)NSUInteger atk;// 攻击力（随从和武器牌才有，法术牌没有）
 @property(nonatomic, assign)NSUInteger health;// 生命值（随从和武器牌才有，法术牌没有）
 @property(nonatomic, assign)NSUInteger durability;// 耐久度（武器牌专属）
 
 @property(nonatomic, assign)NSUInteger cardSet;
 @property(nonatomic, assign)NSUInteger cardType;
-@property(nonatomic, assign)NSUInteger cardClass;
 @property(nonatomic, assign)NSUInteger collectible;
 @end
 @implementation CardItemInfo
@@ -57,6 +57,11 @@
             _cardSet = [num unsignedIntegerValue];
         }
         
+        // 所属职业
+        num = [dic objectForKey:@"Class"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _career = [num unsignedIntegerValue];
+        }
         
         
         // 意义未知属性
@@ -67,10 +72,6 @@
         num = [dic objectForKey:@"CardType"];
         if ([num isKindOfClass:[NSNumber class]]) {
             _cardType = [num unsignedIntegerValue];
-        }
-        num = [dic objectForKey:@"Class"];
-        if ([num isKindOfClass:[NSNumber class]]) {
-            _cardClass = [num unsignedIntegerValue];
         }
         num = [dic objectForKey:@"Collectible"];
         if ([num isKindOfClass:[NSNumber class]]) {

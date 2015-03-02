@@ -158,6 +158,22 @@
                     }
                 }
             }
+            
+            //
+            {
+                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:2];
+                NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:2];
+                NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
+                for (int i = 0; i < arrCondition.count; i++)
+                {
+                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                        [FilterData shareInstance].career = i;
+                        DLog(@"真正改变 FilterData 过滤条件值 career = %d", i);
+                        break;
+                    }
+                }
+            }
             // 刷新列表
             [[NSNotificationCenter defaultCenter] postNotificationName:Notification_UpdateMainList object:nil];
         }
