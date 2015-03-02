@@ -64,58 +64,102 @@ static CardsBox * m_Instance;
 -(void)fillFiltedList
 {
     [_filtedList removeAllObjects];
+    NSMutableArray* costList = [NSMutableArray array];
+    // 过滤费用
+    
     for (CardItemInfo* item in _cardList) {
         switch ([FilterData shareInstance].cost) {
             case mana_cost_all:
-                [_filtedList addObjectsFromArray:_cardList];
+                [costList addObjectsFromArray:_cardList];
                 break;
             case mana_cost_0:
                 if (item.cost == 0) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_1:
                 if (item.cost == 1) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_2:
                 if (item.cost == 2) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_3:
                 if (item.cost == 3) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_4:
                 if (item.cost == 4) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_5:
                 if (item.cost == 5) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_6:
                 if (item.cost == 6) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
             case mana_cost_7P:
                 if (item.cost > 6) {
-                    [_filtedList addObject:item];
+                    [costList addObject:item];
                 }
                 break;
                 
             default:
                 break;
         }
-        
+    }
+    //过滤
+    NSMutableArray* rarityList = [NSMutableArray array];
+    for (CardItemInfo* item in costList) {
+        switch ([FilterData shareInstance].rarity) {
+            case card_rarity_all:
+                [rarityList addObjectsFromArray:costList];
+                break;
+            case card_rarity_0:
+                if (item.rarity == 0) {
+                    [rarityList addObject:item];
+                }
+                break;
+            case card_rarity_1:
+                if (item.rarity == 1) {
+                    [rarityList addObject:item];
+                }
+                break;
+            case card_rarity_2:
+                if (item.rarity == 2) {
+                    [rarityList addObject:item];
+                }
+                break;
+            case card_rarity_3:
+                if (item.rarity == 3) {
+                    [rarityList addObject:item];
+                }
+                break;
+            case card_rarity_4:
+                if (item.rarity == 4) {
+                    [rarityList addObject:item];
+                }
+                break;
+            case card_rarity_5:
+                if (item.rarity == 5) {
+                    [rarityList addObject:item];
+                }
+                break;
+            default:
+                break;
+        }
     }
     
+    [_filtedList addObjectsFromArray:rarityList];
 }
 
 @end

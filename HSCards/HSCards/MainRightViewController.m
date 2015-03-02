@@ -129,19 +129,31 @@
             [ec resetTopViewAnimated:YES];
             
             // 存储过滤条件
-            for (int i = 0; i < self.arrayDataSource.items.count; i++)
             {
-#warning 处理多种过滤条件有问题
-                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:i];
-                DLog(@"cellDataDic  =  %@", cellDataDic);
+                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:0];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:i];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:0];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
                     if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
                         [FilterData shareInstance].cost = i;
                         DLog(@"真正改变 FilterData 过滤条件值 cost = %d", i);
+                        break;
+                    }
+                }
+            }
+            //
+            {
+                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:1];
+                NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:1];
+                NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
+                for (int i = 0; i < arrCondition.count; i++)
+                {
+                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                        [FilterData shareInstance].rarity = i;
+                        DLog(@"真正改变 FilterData 过滤条件值 rarity = %d", i);
                         break;
                     }
                 }
