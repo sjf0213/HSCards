@@ -191,7 +191,7 @@ static CardsBox * m_Instance;
         }
     }
     
-    //过滤职业
+    //3，过滤职业
     NSMutableArray* careerList = [NSMutableArray array];
     if ([FilterData shareInstance].career == card_career_all)
     {
@@ -288,7 +288,99 @@ static CardsBox * m_Instance;
                 break;
         }
     }
-    [_filtedList addObjectsFromArray:careerList];
+    
+    //4，过滤卡类型
+    NSMutableArray* typeList = [NSMutableArray array];
+    if ([FilterData shareInstance].type == card_type_all)
+    {
+        [typeList addObjectsFromArray:careerList];
+    }
+    else
+    {
+        
+        switch ([FilterData shareInstance].type) {
+            case card_type_0:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 0) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_1:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 1) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_2:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 2) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_3:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 3) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_4:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 4) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_5:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 5) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_6:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 6) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_7:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 7) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_8:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 8) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_9:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 9) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            case card_type_10:
+                for (CardItemInfo* item in careerList) {
+                    if (item.cardType == 10) {
+                        [typeList addObject:item];
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    [_filtedList addObjectsFromArray:typeList];
 }
 
 @end

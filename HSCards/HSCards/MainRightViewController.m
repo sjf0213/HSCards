@@ -128,7 +128,7 @@
             ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
             [ec resetTopViewAnimated:YES];
             
-            // 存储过滤条件
+            // 存储过滤条件 cost
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:0];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
@@ -143,7 +143,7 @@
                     }
                 }
             }
-            //
+            // rarity
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:1];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
@@ -159,7 +159,7 @@
                 }
             }
             
-            //
+            // career
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:2];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
@@ -170,6 +170,22 @@
                     if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
                         [FilterData shareInstance].career = i;
                         DLog(@"真正改变 FilterData 过滤条件值 career = %d", i);
+                        break;
+                    }
+                }
+            }
+            
+            // type
+            {
+                NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:3];
+                NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:3];
+                NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
+                for (int i = 0; i < arrCondition.count; i++)
+                {
+                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                        [FilterData shareInstance].type = i;
+                        DLog(@"真正改变 FilterData 过滤条件值 type = %d", i);
                         break;
                     }
                 }

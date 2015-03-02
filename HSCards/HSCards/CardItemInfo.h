@@ -18,10 +18,11 @@
 @property(nonatomic, readonly)NSUInteger atk;// 攻击力（随从和武器牌才有，法术牌没有）
 @property(nonatomic, readonly)NSUInteger health;// 生命值（随从和武器牌才有，法术牌没有）
 @property(nonatomic, readonly)NSUInteger durability;// 耐久度（武器牌专属）
+@property(nonatomic, readonly)NSUInteger collectible;// 是否衍生卡牌
+@property(nonatomic, readonly)NSUInteger cardType;// 卡牌类型（法术，随从，武器，英雄技能）
 
 @property(nonatomic, readonly)NSUInteger cardSet;
-@property(nonatomic, readonly)NSUInteger cardType;
-@property(nonatomic, readonly)NSUInteger collectible;
+
 -(id)initWithDic:(NSDictionary*)dic;
 
 @end
