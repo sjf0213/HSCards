@@ -57,6 +57,16 @@
     [[CardsBox shareInstance] fillFiltedList];
     [self.arrayDataSource removeAllItems];
     [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
+    // 打印前两个卡牌
+    {
+        int n = [CardsBox shareInstance].filtedList.count;
+        n = n > 10 ? 10 : n;
+        for (int i = 0; i < n; i++)
+        {
+            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
+            DLog(@"obj = %@", obj);
+        }
+    }
     [_mainTable reloadData];
 }
 

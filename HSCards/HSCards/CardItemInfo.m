@@ -8,10 +8,19 @@
 
 #import "CardItemInfo.h"
 @interface CardItemInfo()
+@property(nonatomic, strong)NSDictionary* otherInfo;
 @property(nonatomic, strong)NSString* cardName;
 @property(nonatomic, strong)NSString* cardID;
 @property(nonatomic, assign)NSUInteger cost;
 @property(nonatomic, assign)NSUInteger rarity;
+@property(nonatomic, assign)NSUInteger atk;// 攻击力（随从和武器牌才有，法术牌没有）
+@property(nonatomic, assign)NSUInteger health;// 生命值（随从和武器牌才有，法术牌没有）
+@property(nonatomic, assign)NSUInteger durability;// 耐久度（武器牌专属）
+
+@property(nonatomic, assign)NSUInteger cardSet;
+@property(nonatomic, assign)NSUInteger cardType;
+@property(nonatomic, assign)NSUInteger cardClass;
+@property(nonatomic, assign)NSUInteger collectible;
 @end
 @implementation CardItemInfo
 
@@ -21,7 +30,7 @@
     if(self)
     {
         NSNumber* num = nil;
-        
+        _otherInfo = dic;
         // 卡牌代码
         _cardID = [dic objectForKey:@"CardID"];
         
@@ -45,10 +54,36 @@
         // 稀有程度
         num = [dic objectForKey:@"Rarity"];
         if ([num isKindOfClass:[NSNumber class]]) {
-            _rarity = [num unsignedIntegerValue];
+            _cardSet = [num unsignedIntegerValue];
+        }
+        
+        
+        
+        // 意义未知属性
+        num = [dic objectForKey:@"CardSet"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _cardType = [num unsignedIntegerValue];
+        }
+        num = [dic objectForKey:@"CardType"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _cardType = [num unsignedIntegerValue];
+        }
+        num = [dic objectForKey:@"Class"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _cardClass = [num unsignedIntegerValue];
+        }
+        num = [dic objectForKey:@"Collectible"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _collectible = [num unsignedIntegerValue];
         }
     }
     return self;
+}
+
+-(NSString*)description
+{
+    return [NSString stringWithFormat:@"-----------!----------%@\n%@",_cardName, [_otherInfo description]];
+    //return [NSString stringWithFormat:@"id:%@, name:%@, cost:%d, rarity:%d", _cardID, _cardName, _cost, _rarity];
 }
 
 @end

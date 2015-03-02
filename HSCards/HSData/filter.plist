@@ -24,9 +24,9 @@
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>0自带</string>
-			<string>1普通</string>
-			<string>2不确定</string>
+			<string>0衍生卡牌</string>
+			<string>1白卡</string>
+			<string>2无条件得到</string>
 			<string>3蓝色稀有</string>
 			<string>4紫色传奇</string>
 			<string>5金色史诗</string>
