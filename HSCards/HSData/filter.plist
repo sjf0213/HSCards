@@ -57,17 +57,11 @@
 		<key>condition</key>
 		<array>
 			<string>all全部</string>
-			<string>0</string>
 			<string>1</string>
 			<string>2</string>
 			<string>3</string>
 			<string>4奖励卡</string>
 			<string>5</string>
-			<string>6</string>
-			<string>7</string>
-			<string>8</string>
-			<string>9</string>
-			<string>10</string>
 		</array>
 	</dict>
 </array>

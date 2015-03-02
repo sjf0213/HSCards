@@ -207,13 +207,6 @@ static CardsBox * m_Instance;
                     }
                 }
                 break;
-            case card_career_1:
-                for (CardItemInfo* item in rarityList) {
-                    if (item.career == 1) {
-                        [careerList addObject:item];
-                    }
-                }
-                break;
             case card_career_2:
                 for (CardItemInfo* item in rarityList) {
                     if (item.career == 2) {
@@ -299,13 +292,6 @@ static CardsBox * m_Instance;
     {
         
         switch ([FilterData shareInstance].type) {
-            case card_type_0:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 0) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
             case card_type_1:
                 for (CardItemInfo* item in careerList) {
                     if (item.cardType == 1) {
@@ -327,7 +313,7 @@ static CardsBox * m_Instance;
                     }
                 }
                 break;
-            case card_type_4:
+            case card_type_4bonus:
                 for (CardItemInfo* item in careerList) {
                     if (item.cardType == 4) {
                         [typeList addObject:item];
@@ -337,41 +323,6 @@ static CardsBox * m_Instance;
             case card_type_5:
                 for (CardItemInfo* item in careerList) {
                     if (item.cardType == 5) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
-            case card_type_6:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 6) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
-            case card_type_7:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 7) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
-            case card_type_8:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 8) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
-            case card_type_9:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 9) {
-                        [typeList addObject:item];
-                    }
-                }
-                break;
-            case card_type_10:
-                for (CardItemInfo* item in careerList) {
-                    if (item.cardType == 10) {
                         [typeList addObject:item];
                     }
                 }

@@ -76,7 +76,7 @@
         // 意义未知属性
         num = [dic objectForKey:@"CardSet"];
         if ([num isKindOfClass:[NSNumber class]]) {
-            _cardType = [num unsignedIntegerValue];
+            _cardSet = [num unsignedIntegerValue];
         }
         
     }
