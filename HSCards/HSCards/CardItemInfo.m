@@ -55,8 +55,6 @@
         if ([num isKindOfClass:[NSNumber class]]) {
             _collectible = [num boolValue];
         }
-        
-        _cardSet = @"";
     }
     return self;
 }

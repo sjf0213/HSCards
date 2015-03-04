@@ -76,11 +76,11 @@
         _collectible.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_collectible];
         
-        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
-        _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
-        _cardSet.text = @"";
-        _cardSet.font = KA_COMMON_FONT_OF_SIZE(12);
-        [self addSubview:_cardSet];
+//        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
+//        _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+//        _cardSet.text = @"";
+//        _cardSet.font = KA_COMMON_FONT_OF_SIZE(12);
+//        [self addSubview:_cardSet];
     }
     return self;
 }
@@ -101,7 +101,7 @@
     _cardCareer.text = @"职: ";
     _cardType.text = @"类: ";
     _collectible.text = @"收集: ";
-    _cardSet.text = @"集合: ";
+    //_cardSet.text = @"集合: ";
 }
 
 -(void)loadCellData:(CardItemInfo*)data
@@ -121,7 +121,7 @@
     }
     _collectible.text = [NSString stringWithFormat:@"收集: %zd", data.collectible];
     
-    _cardSet.text = [NSString stringWithFormat:@"集合: %@", data.cardSet];
+    //_cardSet.text = [NSString stringWithFormat:@"集合: %@", data.cardSet];
 }
 
 @end

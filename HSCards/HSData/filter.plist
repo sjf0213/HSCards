@@ -24,12 +24,11 @@
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>0衍生卡牌</string>
-			<string>1白卡</string>
-			<string>2无条件得到</string>
-			<string>3蓝色稀有</string>
-			<string>4紫色传奇</string>
-			<string>5金色史诗</string>
+			<string>0Free</string>
+			<string>1Common白卡</string>
+			<string>2Rare蓝色稀有</string>
+			<string>3Epic紫色史诗</string>
+			<string>4Legendary橙色传奇</string>
 		</array>
 	</dict>
 	<dict>
@@ -38,17 +37,16 @@
 		<key>condition</key>
 		<array>
 			<string>all全部</string>
-			<string>0中立</string>
-			<string>2德鲁伊</string>
-			<string>3猎人</string>
-			<string>4法师</string>
-			<string>5圣骑士</string>
-			<string>6牧师</string>
-			<string>7潜行者</string>
-			<string>8萨满</string>
-			<string>9术士</string>
-			<string>10战士</string>
-			<string>11梦境</string>
+			<string>1德鲁伊</string>
+			<string>2猎人</string>
+			<string>3法师</string>
+			<string>4圣骑士</string>
+			<string>5牧师</string>
+			<string>6潜行者</string>
+			<string>7萨满</string>
+			<string>8术士</string>
+			<string>9战士</string>
+			<string>10梦境</string>
 		</array>
 	</dict>
 	<dict>
@@ -57,11 +55,12 @@
 		<key>condition</key>
 		<array>
 			<string>all全部</string>
-			<string>1</string>
-			<string>2</string>
-			<string>3</string>
-			<string>4奖励卡</string>
-			<string>5</string>
+			<string>1minion随从</string>
+			<string>2spell法术</string>
+			<string>3weapon武器</string>
+			<string>4hero英雄</string>
+			<string>5heropower英雄技能</string>
+			<string>6Enchantment附加效果</string>
 		</array>
 	</dict>
 </array>

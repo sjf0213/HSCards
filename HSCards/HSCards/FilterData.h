@@ -22,36 +22,35 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     card_rarity_all = 0,
-    card_rarity_0,
-    card_rarity_1,
-    card_rarity_2,
-    card_rarity_3,
-    card_rarity_4,
-    card_rarity_5,
+    card_rarity_free,//免费
+    card_rarity_common,//白色普通
+    card_rarity_rare,//蓝色稀有
+    card_rarity_epic,//紫色史诗
+    card_rarity_legendary,//橙色传奇
 } card_rarity;
 
 typedef enum : NSUInteger {
     card_career_all = 0,
-    card_career_0,
-    card_career_2,
-    card_career_3,
-    card_career_4,
-    card_career_5,
-    card_career_6,
-    card_career_7,
-    card_career_8,
-    card_career_9,
-    card_career_10,
-    card_career_11,
+    card_career_druid,//德鲁伊
+    card_career_hunter,//猎人
+    card_career_mage,//法师
+    card_career_paladin,//圣骑士
+    card_career_priest,//牧师
+    card_career_rogue,//潜行者
+    card_career_shaman,//萨满
+    card_career_warlock,//术士
+    card_career_warrior,// 战士
+    card_career_dream,// 梦境
 } card_career;
 
 typedef enum : NSUInteger {
     card_type_all = 0,
-    card_type_1,
-    card_type_2,
-    card_type_3,
-    card_type_4bonus,
-    card_type_5,
+    card_type_minion,//随从
+    card_type_spell,//法术
+    card_type_weapon,//武器
+    card_type_hero,//英雄
+    card_type_heropower,//英雄技能
+    card_type_enchantment,//不清楚
     
 } card_type;
 
