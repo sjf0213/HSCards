@@ -57,15 +57,42 @@
     [[CardsBox shareInstance] fillFiltedList];
     [self.arrayDataSource removeAllItems];
     [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
-    // 打印前两个卡牌
+    // 打印前N个卡牌
+//    {
+//        int n = [CardsBox shareInstance].filtedList.count;
+//        n = n > 50 ? 50 : n;
+//        for (int i = 0; i < n; i++)
+//        {
+//            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
+//            DLog(@"obj = %@", obj);
+//        }
+//    }
+    // 打印某种属性的所有枚举
     {
-        int n = [CardsBox shareInstance].filtedList.count;
-        n = n > 10 ? 10 : n;
-        for (int i = 0; i < n; i++)
+        NSMutableArray* arr = [NSMutableArray array];
+        for (CardItemInfo* item in [CardsBox shareInstance].filtedList)
         {
-            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
-            DLog(@"obj = %@", obj);
+            NSString* str = item.race;
+            if ([str isKindOfClass:[NSString class]])
+            {
+                if (0 == arr.count) {
+                    [arr addObject:str];
+                }else{
+                    if ([str isKindOfClass:[NSString class]]){
+                        for (int i = 0; i < arr.count; i++){
+                            NSString* alreadyHave = arr[i];
+                            if ([str isEqualToString:alreadyHave]){
+                                break;
+                            }
+                            if (i == arr.count - 1){
+                                [arr addObject:str];
+                            }
+                        }
+                    }
+                }
+            }
         }
+        DLog(@"--------------------*---race.arr = %@", arr);
     }
     [_mainTable reloadData];
 }

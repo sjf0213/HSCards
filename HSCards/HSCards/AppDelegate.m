@@ -158,9 +158,9 @@
             arr = [arr arrayByAddingObjectsFromArray:subArr];
         }
         DLog(@"arr.count = %zd", arr.count);
-        for (int  i = 300; i  < 400; i++) {
-            DLog(@"--------------------------------arr[i] = %@", arr[i]);
-        }
+//        for (int  i = 300; i  < 400; i++) {
+//            DLog(@"--------------------------------arr[i] = %@", arr[i]);
+//        }
         
         [[CardsBox shareInstance] addCardsByArray:arr];
     }

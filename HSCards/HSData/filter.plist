@@ -63,5 +63,20 @@
 			<string>Enchantment附加效果</string>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>种族</string>
+		<key>condition</key>
+		<array>
+			<string> 全部</string>
+			<string>Murloc鱼人</string>
+			<string>Demon恶魔</string>
+			<string>Beast野兽</string>
+			<string>Totem图腾</string>
+			<string>Pirate海盗</string>
+			<string>Dragon龙</string>
+			<string>Mech机械</string>
+		</array>
+	</dict>
 </array>
 </plist>

@@ -16,6 +16,7 @@
 @property(nonatomic, readonly)NSString* rarity;// 稀有程度
 @property(nonatomic, readonly)NSString* cardType;// 卡牌类型（随从，法术，武器，英雄，英雄技能，XXX）
 @property(nonatomic, readonly)NSString* career;// 所属职业
+@property(nonatomic, readonly)NSString* race;// 所属种族：鱼人，机械等
 @property(nonatomic, readonly)BOOL collectible;// 是否衍生卡牌
 
 @property(nonatomic, readonly)NSUInteger atk;// 攻击力（随从和武器牌才有，法术牌没有）

@@ -301,11 +301,66 @@ static CardsBox * m_Instance;
                 }
             }
             break;
-        default:
-            break;
         
     }
-    [_filtedList addObjectsFromArray:typeList];
+    
+    //4，过滤卡类型
+    NSMutableArray* raceList = [NSMutableArray array];
+    switch ([FilterData shareInstance].race) {
+        case card_race_all:
+            [raceList addObjectsFromArray:typeList];
+            break;
+        case card_race_beast:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Beast"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_demon:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Demon"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_dragon:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Dragon"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_mech:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Mech"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_murloc:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Murloc"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_pirate:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Pirate"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+        case card_race_totem:
+            for (CardItemInfo* item in typeList) {
+                if ([item.race isEqualToString:@"Totem"]) {
+                    [raceList addObject:item];
+                }
+            }
+            break;
+    }
+    [_filtedList addObjectsFromArray:raceList];
 }
 
 @end

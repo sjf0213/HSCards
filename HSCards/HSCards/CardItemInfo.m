@@ -15,6 +15,7 @@
 @property(nonatomic, assign)NSString* rarity;
 @property(nonatomic, assign)NSString* cardType;// 卡牌类型（随从，法术，武器，英雄，英雄技能，XXX）
 @property(nonatomic, assign)NSString* career;// 所属职业
+@property(nonatomic, assign)NSString* race;// 所属种族
 @property(nonatomic, assign)BOOL collectible;// 是否衍生卡牌
 @property(nonatomic, assign)NSString*  cardSet;
 
@@ -48,6 +49,8 @@
         _rarity = [dic objectForKey:@"rarity"];
         // 所属职业
         _career = [dic objectForKey:@"playerClass"];
+        // 种族
+        _race = [dic objectForKey:@"race"];
         // 卡牌类型
         _cardType = [dic objectForKey:@"type"];
         // 是否可收集

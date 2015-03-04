@@ -54,12 +54,25 @@ typedef enum : NSUInteger {
     
 } card_type;
 
+typedef enum : NSUInteger {
+    card_race_all = 0,
+    card_race_murloc,//鱼人
+    card_race_demon,//恶魔
+    card_race_beast,//野兽
+    card_race_totem,//图腾
+    card_race_pirate,//海盗
+    card_race_dragon,//龙
+    card_race_mech,//机械
+    
+} card_race;
+
 @interface FilterData : NSObject
 @property(atomic, readonly)NSArray* displayTextArray;
 @property(atomic, assign)mana_cost cost;
 @property(atomic, assign)card_rarity rarity;
 @property(atomic, assign)card_career career;
 @property(atomic, assign)card_type type;
+@property(atomic, assign)card_race race;
 +(FilterData*)shareInstance;
 
 @end
