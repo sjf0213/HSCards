@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F07229641AA04C1B0004ADDA /* RightSimpleSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */; };
 		F07229661AA056F10004ADDA /* filter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07229651AA056F10004ADDA /* filter.plist */; };
+		F072296D1AA54FAA0004ADDA /* AllSets.zhCN.json in Resources */ = {isa = PBXBuildFile; fileRef = F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */; };
 		F096E09A1A92DF6800F4A69F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E0991A92DF6800F4A69F /* main.m */; };
 		F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09C1A92DF6800F4A69F /* AppDelegate.m */; };
 		F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09F1A92DF6800F4A69F /* ViewController.m */; };
@@ -1129,6 +1130,7 @@
 		F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSimpleSelectController.h; sourceTree = "<group>"; };
 		F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSimpleSelectController.m; sourceTree = "<group>"; };
 		F07229651AA056F10004ADDA /* filter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = filter.plist; sourceTree = "<group>"; };
+		F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSets.zhCN.json; sourceTree = "<group>"; };
 		F096E0941A92DF6800F4A69F /* HSCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F096E0981A92DF6800F4A69F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F096E0991A92DF6800F4A69F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -2366,6 +2368,7 @@
 		F0D9DE8B1A9DA15800FDCBCB /* HSData */ = {
 			isa = PBXGroup;
 			children = (
+				F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */,
 				F0D9DE8C1A9DA15800FDCBCB /* cards.json */,
 				F07229651AA056F10004ADDA /* filter.plist */,
 			);
@@ -4320,6 +4323,7 @@
 				F0D9E60D1A9EF71400FDCBCB /* EX1_248.png in Resources */,
 				F0D9E46C1A9EF71400FDCBCB /* EX1_596.jpg in Resources */,
 				F0D9E5991A9EF71400FDCBCB /* DS1_233.png in Resources */,
+				F072296D1AA54FAA0004ADDA /* AllSets.zhCN.json in Resources */,
 				F0D9E3871A9EF71400FDCBCB /* EX1_016.jpg in Resources */,
 				F0D9E6961A9EF71400FDCBCB /* EX1_608.png in Resources */,
 				F0D9E4D11A9EF71400FDCBCB /* NEW1_021.jpg in Resources */,

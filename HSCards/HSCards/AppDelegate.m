@@ -107,9 +107,15 @@
 - (void)initCards
 {
     //DB
-    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"json"];
+//    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"cards" ofType:@"json"];
+//    NSString * dbNewPath = [[[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory]
+//                            stringByAppendingPathComponent:@"cards.json"];
+    
+    // new data json
+    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"AllSets.zhCN" ofType:@"json"];
     NSString * dbNewPath = [[[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory]
-                            stringByAppendingPathComponent:@"cards.json"];
+                            stringByAppendingPathComponent:@"AllSets.zhCN.json"];
+    
     //BOOL isOpen = NO;
     if (![[FileHelp shareInstance] isFileExist:dbNewPath])
     {
@@ -141,6 +147,21 @@
 //            NSString* strName = [[arr[i] objectForKey:@"CardName"] objectForKey:@"zhCN"];
 //            DLog(@"arr[%d].name = %@", i, strName);
 //        }
+        [[CardsBox shareInstance] addCardsByArray:arr];
+    }
+    else if ([obj isKindOfClass:[NSDictionary class]])
+    {
+        NSDictionary* dic = obj;
+        NSArray* arr = [NSArray array];
+        NSArray* temparr = dic.allValues;
+        for (NSArray* subArr in temparr) {
+            arr = [arr arrayByAddingObjectsFromArray:subArr];
+        }
+        DLog(@"arr.count = %zd", arr.count);
+        for (int  i = 300; i  < 400; i++) {
+            DLog(@"--------------------------------arr[i] = %@", arr[i]);
+        }
+        
         [[CardsBox shareInstance] addCardsByArray:arr];
     }
 }

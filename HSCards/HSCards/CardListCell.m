@@ -43,43 +43,44 @@
         _cardID.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardID];
         
-        _cardCost = [[UILabel alloc] initWithFrame:CGRectMake(80, 50, 50, 14)];
+        // 第一行
+        _cardCost = [[UILabel alloc] initWithFrame:CGRectMake(80, 50, 100, 14)];
         _cardCost.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardCost.text = @"";
         _cardCost.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardCost];
         
-        _cardRarity = [[UILabel alloc] initWithFrame:CGRectMake(130, 50, 50, 14)];
+        _cardRarity = [[UILabel alloc] initWithFrame:CGRectMake(180, 50, 100, 14)];
         _cardRarity.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardRarity.text = @"";
         _cardRarity.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardRarity];
         
-        _cardCareer = [[UILabel alloc] initWithFrame:CGRectMake(80, 64, 50, 14)];
+        // 第二行
+        _cardCareer = [[UILabel alloc] initWithFrame:CGRectMake(80, 64, 100, 14)];
         _cardCareer.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardCareer.text = @"";
         _cardCareer.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardCareer];
         
-        
-        
-        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 14)];
-        _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
-        _cardSet.text = @"";
-        _cardSet.font = KA_COMMON_FONT_OF_SIZE(12);
-        [self addSubview:_cardSet];
-        
-        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(130, 80, 50, 14)];
+        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(180, 64, 100, 14)];
         _cardType.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardType.text = @"";
         _cardType.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardType];
         
-        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
+        // 第三行
+        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 14)];
         _collectible.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _collectible.text = @"";
         _collectible.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_collectible];
+        
+        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
+        _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+        _cardSet.text = @"";
+        _cardSet.font = KA_COMMON_FONT_OF_SIZE(12);
+        [self addSubview:_cardSet];
     }
     return self;
 }
@@ -95,13 +96,12 @@
     _cardPic.image = nil;
     _cardID.text = @"";
     _cardName.text = @"";
-    _cardCost.text = @"";
-    _cardRarity.text = @"";
-    _cardCareer.text = @"";
-    
-    _cardSet.text = @"";
-    _cardType.text = @"";
-    _collectible.text = @"";
+    _cardCost.text = @"费: ";
+    _cardRarity.text = @"稀: ";
+    _cardCareer.text = @"职: ";
+    _cardType.text = @"类: ";
+    _collectible.text = @"收集: ";
+    _cardSet.text = @"集合: ";
 }
 
 -(void)loadCellData:(CardItemInfo*)data
@@ -110,12 +110,18 @@
     _cardID.text = data.cardID;
     _cardName.text = data.cardName;
     _cardCost.text = [NSString stringWithFormat:@"费: %zd", data.cost];
-    _cardRarity.text = [NSString stringWithFormat:@"稀: %zd", data.rarity];
-    _cardCareer.text = [NSString stringWithFormat:@"职: %zd", data.career];
+    if ([data.rarity isKindOfClass:[NSString class]]){
+        _cardRarity.text = [NSString stringWithFormat:@"稀: %@", data.rarity];
+    }
+    if ([data.career isKindOfClass:[NSString class]]){
+        _cardCareer.text = [NSString stringWithFormat:@"职: %@", data.career];
+    }
+    if ([data.cardType isKindOfClass:[NSString class]]){
+        _cardType.text = [NSString stringWithFormat:@"类: %@", data.cardType];
+    }
+    _collectible.text = [NSString stringWithFormat:@"收集: %zd", data.collectible];
     
-    _cardSet.text = [NSString stringWithFormat:@"set: %zd", data.cardSet];
-    _cardType.text = [NSString stringWithFormat:@"type: %zd", data.cardType];
-    _collectible.text = [NSString stringWithFormat:@"coll: %zd", data.collectible];;
+    _cardSet.text = [NSString stringWithFormat:@"集合: %@", data.cardSet];
 }
 
 @end
