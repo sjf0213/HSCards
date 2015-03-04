@@ -24,8 +24,8 @@
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>Free</string>
-			<string>Common白卡</string>
+			<string>Free免费</string>
+			<string>Common白色普通</string>
 			<string>Rare蓝色稀有</string>
 			<string>Epic紫色史诗</string>
 			<string>Legendary橙色传奇</string>
@@ -37,16 +37,16 @@
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>德鲁伊</string>
-			<string>猎人</string>
-			<string>法师</string>
-			<string>圣骑士</string>
-			<string>牧师</string>
-			<string>潜行者</string>
-			<string>萨满</string>
-			<string>术士</string>
-			<string>战士</string>
-			<string>梦境</string>
+			<string>Druid德鲁伊</string>
+			<string>Hunter猎人</string>
+			<string>Mage法师</string>
+			<string>Paladin圣骑士</string>
+			<string>Priest牧师</string>
+			<string>Rogue潜行者</string>
+			<string>Shaman萨满</string>
+			<string>Warlock术士</string>
+			<string>Warrior战士</string>
+			<string>Dream梦境</string>
 		</array>
 	</dict>
 	<dict>
@@ -55,11 +55,11 @@
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>minion随从</string>
-			<string>spell法术</string>
-			<string>weapon武器</string>
-			<string>hero英雄</string>
-			<string>heropower英雄技能</string>
+			<string>Minion随从</string>
+			<string>Spell法术</string>
+			<string>Weapon武器</string>
+			<string>Hero英雄</string>
+			<string>HeroPower英雄技能</string>
 			<string>Enchantment附加效果</string>
 		</array>
 	</dict>
