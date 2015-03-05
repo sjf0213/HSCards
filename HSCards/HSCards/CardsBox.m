@@ -64,109 +64,123 @@ static CardsBox * m_Instance;
 -(void)fillFiltedList
 {
     [_filtedList removeAllObjects];
+    NSMutableArray* resultList = [NSMutableArray array];
+    NSArray* sourceArray = [NSArray new];
+    
+    sourceArray = _cardList;
+    
+    // 0, 过滤所有可收集的卡
+    for (CardItemInfo* item in sourceArray) {
+        if (YES == item.collectible) {
+            [resultList addObject:item];
+        }
+    }
     
     // 1, 过滤费用
-    NSMutableArray* costList = [NSMutableArray array];
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].cost)
     {
         case mana_cost_all:
-            [costList addObjectsFromArray:_cardList];
+            [resultList addObjectsFromArray:sourceArray];
             break;
         case mana_cost_0:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 0) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_1:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 1) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_2:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 2) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_3:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 3) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_4:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 4) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_5:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 5) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_6:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost == 6) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case mana_cost_7P:
-            for (CardItemInfo* item in _cardList){
+            for (CardItemInfo* item in sourceArray){
                 if (item.cost > 6) {
-                    [costList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
     }
+    
     //2,过滤稀有度
-    NSMutableArray* rarityList = [NSMutableArray array];
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].rarity) {
         case card_rarity_all:
-            [rarityList addObjectsFromArray:costList];
+            [resultList addObjectsFromArray:sourceArray];
             break;
         case card_rarity_free:
-            for (CardItemInfo* item in costList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Free"]) {
-                    [rarityList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_rarity_common:
-            for (CardItemInfo* item in costList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Common"]) {
-                    [rarityList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_rarity_rare:
-            for (CardItemInfo* item in costList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Rare"]) {
-                    [rarityList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_rarity_epic:
-            for (CardItemInfo* item in costList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Epic"]) {
-                    [rarityList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_rarity_legendary:
-            for (CardItemInfo* item in costList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Legendary"]) {
-                    [rarityList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
@@ -174,193 +188,194 @@ static CardsBox * m_Instance;
  
     
     //3，过滤职业
-    NSMutableArray* careerList = [NSMutableArray array];
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].career) {
-                
         case card_career_all:
-            [careerList addObjectsFromArray:rarityList];
+            [resultList addObjectsFromArray:sourceArray];
             break;
         case card_career_druid:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Druid"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_hunter:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Hunter"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_mage:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Mage"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_paladin:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Paladin"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_priest:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Priest"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
-        
         case card_career_rogue:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Rogue"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_shaman:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Shaman"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_warlock:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Warlock"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_warrior:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Warrior"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_career_dream:
-            for (CardItemInfo* item in rarityList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Dream"]) {
-                    [careerList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
     }
 
     //4，过滤卡类型
-    NSMutableArray* typeList = [NSMutableArray array];
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].type) {
         case card_type_all:
-            [typeList addObjectsFromArray:careerList];
+            [resultList addObjectsFromArray:sourceArray];
             break;
         case card_type_minion:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Minion"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_type_spell:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Spell"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_type_weapon:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Weapon"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_type_hero:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Hero"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_type_heropower:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Hero Power"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_type_enchantment:
-            for (CardItemInfo* item in careerList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.cardType isEqualToString:@"Enchantment"]) {
-                    [typeList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         
     }
     
-    //4，过滤卡类型
-    NSMutableArray* raceList = [NSMutableArray array];
+    //5，过滤种族
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].race) {
         case card_race_all:
-            [raceList addObjectsFromArray:typeList];
+            [resultList addObjectsFromArray:sourceArray];
             break;
         case card_race_beast:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Beast"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_demon:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Demon"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_dragon:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Dragon"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_mech:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Mech"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_murloc:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Murloc"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_pirate:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Pirate"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_race_totem:
-            for (CardItemInfo* item in typeList) {
+            for (CardItemInfo* item in sourceArray) {
                 if ([item.race isEqualToString:@"Totem"]) {
-                    [raceList addObject:item];
+                    [resultList addObject:item];
                 }
             }
             break;
     }
-    [_filtedList addObjectsFromArray:raceList];
+    [_filtedList addObjectsFromArray:resultList];
 }
 
 @end

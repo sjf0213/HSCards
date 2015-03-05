@@ -23,7 +23,7 @@
 @property(nonatomic, readonly)NSUInteger health;// 生命值（随从和武器牌才有，法术牌没有）
 @property(nonatomic, readonly)NSUInteger durability;// 耐久度（武器牌专属）
 
-@property(nonatomic, readonly)NSString*  cardSet;
+@property(nonatomic, readonly)NSString*  cardSet;// 卡牌来源集合（纳克萨玛斯等）
 
 -(id)initWithDic:(NSDictionary*)dic;
 

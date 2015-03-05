@@ -68,7 +68,7 @@
 //        }
 //    }
     // 打印某种属性的所有枚举
-    {
+    /*{
         NSMutableArray* arr = [NSMutableArray array];
         for (CardItemInfo* item in [CardsBox shareInstance].filtedList)
         {
@@ -93,7 +93,7 @@
             }
         }
         DLog(@"--------------------*---race.arr = %@", arr);
-    }
+    }*/
     [_mainTable reloadData];
 }
 
