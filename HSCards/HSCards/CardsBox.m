@@ -73,11 +73,12 @@ static CardsBox * m_Instance;
     sourceArray = _cardList;
     
     // 0, 过滤所有可收集的卡
-    for (CardItemInfo* item in sourceArray) {
-        if (YES == item.collectible) {
-            [resultList addObject:item];
-        }
-    }
+//    for (CardItemInfo* item in sourceArray) {
+//        if (YES == item.collectible) {
+//            [resultList addObject:item];
+//        }
+//    }
+    [resultList addObjectsFromArray:_cardList];
     DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
     // 1, 过滤费用
     sourceArray = resultList;

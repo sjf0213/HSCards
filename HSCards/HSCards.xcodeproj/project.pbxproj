@@ -10,6 +10,7 @@
 		F07229641AA04C1B0004ADDA /* RightSimpleSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */; };
 		F07229661AA056F10004ADDA /* filter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07229651AA056F10004ADDA /* filter.plist */; };
 		F072296D1AA54FAA0004ADDA /* AllSets.zhCN.json in Resources */ = {isa = PBXBuildFile; fileRef = F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */; };
+		F08F39BE1AA80B2D00BF4D39 /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */; };
 		F096E09A1A92DF6800F4A69F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E0991A92DF6800F4A69F /* main.m */; };
 		F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09C1A92DF6800F4A69F /* AppDelegate.m */; };
 		F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09F1A92DF6800F4A69F /* ViewController.m */; };
@@ -1131,6 +1132,8 @@
 		F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSimpleSelectController.m; sourceTree = "<group>"; };
 		F07229651AA056F10004ADDA /* filter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = filter.plist; sourceTree = "<group>"; };
 		F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllSets.zhCN.json; sourceTree = "<group>"; };
+		F08F39BC1AA80B2D00BF4D39 /* CardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
+		F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		F096E0941A92DF6800F4A69F /* HSCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F096E0981A92DF6800F4A69F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F096E0991A92DF6800F4A69F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -2302,27 +2305,29 @@
 		F096E0961A92DF6800F4A69F /* HSCards */ = {
 			isa = PBXGroup;
 			children = (
+				F096E0A41A92DF6800F4A69F /* Images.xcassets */,
+				F096E0A61A92DF6800F4A69F /* LaunchScreen.xib */,
+				F096E0971A92DF6800F4A69F /* Supporting Files */,
+				F0D9E7351A9F003500FDCBCB /* Entity */,
 				F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */,
 				F096E09B1A92DF6800F4A69F /* AppDelegate.h */,
 				F096E09C1A92DF6800F4A69F /* AppDelegate.m */,
 				F096E09E1A92DF6800F4A69F /* ViewController.h */,
 				F096E09F1A92DF6800F4A69F /* ViewController.m */,
-				F096E0A41A92DF6800F4A69F /* Images.xcassets */,
-				F096E0A61A92DF6800F4A69F /* LaunchScreen.xib */,
-				F096E0971A92DF6800F4A69F /* Supporting Files */,
 				F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */,
 				F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */,
 				F0D9DE7C1A9D744100FDCBCB /* MainTopViewController.h */,
 				F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */,
-				F0D9E72C1A9EFB3000FDCBCB /* MainRightViewController.h */,
-				F0D9E72D1A9EFB3000FDCBCB /* MainRightViewController.m */,
-				F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */,
-				F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */,
 				F0D9DE9C1A9EBF0800FDCBCB /* CardListCell.h */,
 				F0D9DE9D1A9EBF0800FDCBCB /* CardListCell.m */,
+				F0D9E72C1A9EFB3000FDCBCB /* MainRightViewController.h */,
+				F0D9E72D1A9EFB3000FDCBCB /* MainRightViewController.m */,
 				F0D9E7321A9F001A00FDCBCB /* FilterListCell.h */,
 				F0D9E7331A9F001A00FDCBCB /* FilterListCell.m */,
-				F0D9E7351A9F003500FDCBCB /* Entity */,
+				F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */,
+				F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */,
+				F08F39BC1AA80B2D00BF4D39 /* CardDetailViewController.h */,
+				F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -4678,6 +4683,7 @@
 				F0D9E72E1A9EFB3000FDCBCB /* MainRightViewController.m in Sources */,
 				F0AFD2C21A93218F00E9B2DD /* ECSlidingSegue.m in Sources */,
 				F096E09A1A92DF6800F4A69F /* main.m in Sources */,
+				F08F39BE1AA80B2D00BF4D39 /* CardDetailViewController.m in Sources */,
 				F0AFD2C31A93218F00E9B2DD /* ECSlidingViewController.m in Sources */,
 				F07229641AA04C1B0004ADDA /* RightSimpleSelectController.m in Sources */,
 				F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */,

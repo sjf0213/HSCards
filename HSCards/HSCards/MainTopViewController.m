@@ -13,7 +13,7 @@
 #import "CardsBox.h"
 #define CardListCellIdentifier @"CardListCell"
 
-@interface MainTopViewController ()
+@interface MainTopViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 @end
@@ -35,6 +35,7 @@
     _mainTable.rowHeight = MainList_Row_H;
     [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
+    _mainTable.delegate = self;
     [self.view addSubview:_mainTable];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDisplayData) name:Notification_UpdateMainList object:nil];
