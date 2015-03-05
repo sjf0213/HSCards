@@ -194,6 +194,13 @@ static CardsBox * m_Instance;
         case card_career_all:
             [resultList addObjectsFromArray:sourceArray];
             break;
+        case card_career_neutral:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.career isEqualToString:@"Neutral"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
         case card_career_druid:
             for (CardItemInfo* item in sourceArray) {
                 if ([item.career isEqualToString:@"Druid"]) {

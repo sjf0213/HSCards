@@ -34,25 +34,38 @@
     if(self)
     {
         NSNumber* num = nil;
+        NSString* str  = nil;
         _otherInfo = dic;
         
         // 卡牌代码
         _cardID = [dic objectForKey:@"id"];
+        
         // 卡牌名称
         _cardName = [dic objectForKey:@"name"];
+        
         // 费用，法力值消耗
         num = [dic objectForKey:@"cost"];
         if ([num isKindOfClass:[NSNumber class]]) {
             _cost = [num unsignedIntegerValue];
         }
+        
         // 稀有程度
         _rarity = [dic objectForKey:@"rarity"];
-        // 所属职业
-        _career = [dic objectForKey:@"playerClass"];
+        
+        // 职业
+        str = [dic objectForKey:@"playerClass"];
+        if ([str isKindOfClass:[NSString class]]) {
+            _career = str;
+        }else{
+            _career = @"Neutral"; // 默认值为中立
+        }
+        
         // 种族
         _race = [dic objectForKey:@"race"];
+        
         // 卡牌类型
         _cardType = [dic objectForKey:@"type"];
+        
         // 是否可收集
         num = [dic objectForKey:@"collectible"];
         if ([num isKindOfClass:[NSNumber class]]) {

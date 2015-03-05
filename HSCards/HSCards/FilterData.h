@@ -31,6 +31,7 @@ typedef enum : NSUInteger {
 
 typedef enum : NSUInteger {
     card_career_all = 0,
+    card_career_neutral,//中立
     card_career_druid,//德鲁伊
     card_career_hunter,//猎人
     card_career_mage,//法师
