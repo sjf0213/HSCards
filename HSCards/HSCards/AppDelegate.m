@@ -138,31 +138,19 @@
     NSData* dataContent = [NSData dataWithContentsOfFile:path];
     NSError* err = nil;
     id obj = [NSJSONSerialization JSONObjectWithData:dataContent options:0 error:&err];
-    if ([obj isKindOfClass:[NSArray class]])
-    {
-        NSArray* arr = obj;
-        DLog(@"arr.count = %zd", arr.count);
-        DLog(@"arr[0] = %@", arr[0]);
-//        for (int i = 0; i < arr.count; i++) {
-//            NSString* strName = [[arr[i] objectForKey:@"CardName"] objectForKey:@"zhCN"];
-//            DLog(@"arr[%d].name = %@", i, strName);
-//        }
-        [[CardsBox shareInstance] addCardsByArray:arr];
-    }
-    else if ([obj isKindOfClass:[NSDictionary class]])
+    if ([obj isKindOfClass:[NSDictionary class]])
     {
         NSDictionary* dic = obj;
-        NSArray* arr = [NSArray array];
-        NSArray* temparr = dic.allValues;
-        for (NSArray* subArr in temparr) {
-            arr = [arr arrayByAddingObjectsFromArray:subArr];
-        }
-        DLog(@"arr.count = %zd", arr.count);
-//        for (int  i = 300; i  < 400; i++) {
-//            DLog(@"--------------------------------arr[i] = %@", arr[i]);
-//        }
+        NSUInteger totalCount = 0;
+        NSArray* keyArr = dic.allKeys;
         
-        [[CardsBox shareInstance] addCardsByArray:arr];
+        for (NSString* keyItem in keyArr) {
+            NSArray* subArr = [dic objectForKey:keyItem];
+            [[CardsBox shareInstance] addCardsByArray:subArr withCardSet:keyItem];
+            totalCount = totalCount + subArr.count;
+            DLog(@"card set = %@, count = %zd", keyItem, subArr.count);
+        }
+        DLog(@"All the cards count = %zd", totalCount);
     }
 }
 

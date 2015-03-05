@@ -9,7 +9,7 @@
 #import "CardsBox.h"
 #import "CardItemInfo.h"
 #import "FilterData.h"
-
+#import "CommonDefine.h"
 @interface CardsBox()
 
 @end
@@ -44,7 +44,7 @@ static CardsBox * m_Instance;
     return self;
 }
 
--(void)addCardsByArray:(NSArray*)arr
+-(void)addCardsByArray:(NSArray*)arr withCardSet:(NSString*)key
 {
     if (NO == [arr isKindOfClass:[NSArray class]]) {
         return;
@@ -55,6 +55,9 @@ static CardsBox * m_Instance;
         NSDictionary* itemDic = [arr objectAtIndex:i];
         if ([itemDic isKindOfClass:[NSDictionary class]]) {
             CardItemInfo* cardItem = [[CardItemInfo alloc] initWithDic:itemDic];
+            if ([key isKindOfClass:[NSString class]]) {
+                [cardItem setCardSet:key];
+            }
             [resultArr addObject:cardItem];
         }
     }
@@ -75,7 +78,7 @@ static CardsBox * m_Instance;
             [resultList addObject:item];
         }
     }
-    
+    DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
     // 1, 过滤费用
     sourceArray = resultList;
     resultList = [NSMutableArray new];

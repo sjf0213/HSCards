@@ -88,6 +88,11 @@
     return self;
 }
 
+-(void)setCardSet:(NSString *)cardSet
+{
+    _cardSet = cardSet;
+}
+
 -(NSString*)description
 {
     return [NSString stringWithFormat:@"-----------!----------%@\n%@",_cardName, [_otherInfo description]];

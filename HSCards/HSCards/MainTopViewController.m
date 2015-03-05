@@ -43,8 +43,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
-    [_mainTable reloadData];
+//    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
+//    [_mainTable reloadData];
+    [self updateDisplayData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,15 +59,15 @@
     [self.arrayDataSource removeAllItems];
     [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
     // 打印前N个卡牌
-//    {
-//        int n = [CardsBox shareInstance].filtedList.count;
-//        n = n > 50 ? 50 : n;
-//        for (int i = 0; i < n; i++)
-//        {
-//            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
-//            DLog(@"obj = %@", obj);
-//        }
-//    }
+    /*{
+        int n = [CardsBox shareInstance].filtedList.count;
+        n = n > 50 ? 50 : n;
+        for (int i = 0; i < n; i++)
+        {
+            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
+            DLog(@"obj = %@", obj);
+        }
+    }*/
     // 打印某种属性的所有枚举
     /*{
         NSMutableArray* arr = [NSMutableArray array];

@@ -14,6 +14,6 @@
 @property(nonatomic, readonly)NSMutableArray* filtedList;
 
 +(CardsBox*)shareInstance;
--(void)addCardsByArray:(NSArray*)arr;
+-(void)addCardsByArray:(NSArray*)arr withCardSet:(NSString*)key;
 -(void)fillFiltedList;
 @end

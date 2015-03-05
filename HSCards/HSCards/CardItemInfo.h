@@ -26,5 +26,5 @@
 @property(nonatomic, readonly)NSString* cardSet;// 卡牌来源集合（纳克萨玛斯等）
 
 -(id)initWithDic:(NSDictionary*)dic;
-
+-(void)setCardSet:(NSString *)cardSet;
 @end
