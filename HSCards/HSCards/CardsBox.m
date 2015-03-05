@@ -10,6 +10,8 @@
 #import "CardItemInfo.h"
 #import "FilterData.h"
 #import "CommonDefine.h"
+#import "../OtherFiles/FileHelp.h"
+#import "../AFNetworking/AFNetworking.h"
 @interface CardsBox()
 
 @end
@@ -64,6 +66,78 @@ static CardsBox * m_Instance;
     _cardList = [_cardList arrayByAddingObjectsFromArray:resultArr];
 }
 
+-(void)downloadAllCollectibleCards
+{
+    // 过滤所有可收集的卡
+    NSMutableArray* resultList = [NSMutableArray array];
+    for (CardItemInfo* item in _cardList) {
+        if (YES == item.collectible) {
+            [resultList addObject:item];
+        }
+    }
+    DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
+    NSString* networkAddr = @"http://img3.cache.netease.com/game/hs/db/cards/20141209/medium/";
+    NSString * localAddr = [[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory];
+    for (NSInteger i = 0; i < resultList.count; i++) {
+        CardItemInfo* item = resultList[i];
+        NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", item.cardID];
+        NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
+        NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
+        typeof(self)__weak wself = self;
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [wself downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
+//            [NSThread sleepForTimeInterval:10];
+//        });
+        
+    }
+}
+
+-(void)downloadSingleCardByUrl:(NSString*)sourcePath saveToPath:(NSString*)targetPath
+{
+    static NSUInteger indexSuccess = 0;
+    static NSUInteger indexFailure = 0;
+    /*
+//    NSError* err = nil;
+//    DLog(@"#%zd# ", index);
+//    NSMutableURLRequest* rq = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:sourcePath parameters:nil error:&err];
+//    NSMutableURLRequest* rq = [[AFHTTPRequestSerializer serializer] requestWithMethod: URLString:sourcePath parameters:nil];
+    NSURL *URL = [NSURL URLWithString:sourcePath];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:targetPath append:NO];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        DLog(@"#%zd# SUCCCESSFULL IMG RETRIEVE to %@!", indexSuccess, targetPath);
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        // Deal with failure
+        DLog(@"#%zd# FAIL IMG RETRIEVE: %@", indexFailure, error);
+    }];
+    */
+    
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:sourcePath];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        //NSLog(@"#%zd# File downloaded to: %@", indexSuccess, filePath);
+        if (error) {
+            DLog(@"#%zd# FAILED err = %@", indexFailure++, error);
+        }else{
+            NSLog(@"#%zd# SUCCEEDED File downloaded to: %@", indexSuccess++, filePath);
+        }
+    }];
+    [downloadTask resume];
+}
+
 -(void)fillFiltedList
 {
     [_filtedList removeAllObjects];
@@ -73,12 +147,12 @@ static CardsBox * m_Instance;
     sourceArray = _cardList;
     
     // 0, 过滤所有可收集的卡
-//    for (CardItemInfo* item in sourceArray) {
-//        if (YES == item.collectible) {
-//            [resultList addObject:item];
-//        }
-//    }
-    [resultList addObjectsFromArray:_cardList];
+    for (CardItemInfo* item in sourceArray) {
+        if (YES == item.collectible) {
+            [resultList addObject:item];
+        }
+    }
+//    [resultList addObjectsFromArray:_cardList];
     DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
     // 1, 过滤费用
     sourceArray = resultList;

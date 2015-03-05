@@ -47,6 +47,8 @@
 //    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
 //    [_mainTable reloadData];
     [self updateDisplayData];
+    
+    [[CardsBox shareInstance] downloadAllCollectibleCards];
 }
 
 - (void)didReceiveMemoryWarning {

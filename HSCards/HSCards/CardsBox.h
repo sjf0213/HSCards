@@ -16,4 +16,5 @@
 +(CardsBox*)shareInstance;
 -(void)addCardsByArray:(NSArray*)arr withCardSet:(NSString*)key;
 -(void)fillFiltedList;
+-(void)downloadAllCollectibleCards;
 @end
