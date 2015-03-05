@@ -385,6 +385,85 @@ static CardsBox * m_Instance;
             }
             break;
     }
+    
+    //6，过滤集合
+    sourceArray = resultList;
+    resultList = [NSMutableArray new];
+    switch ([FilterData shareInstance].cardSet) {
+        case card_set_all:
+            [resultList addObjectsFromArray:sourceArray];
+            break;
+        case card_set_system:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"System"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_basic:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Basic"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_classic:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Classic"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_missions:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Missions"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_promotion:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Promotion"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_reward:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Reward"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_credits:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Credits"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_debug:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Debug"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_naxx:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Curse of Naxxramas"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+        case card_set_gvg:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Goblins vs Gnomes"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
+    }
     [_filtedList addObjectsFromArray:resultList];
 }
 

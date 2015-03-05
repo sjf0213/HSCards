@@ -79,5 +79,23 @@
 			<string>Mech机械</string>
 		</array>
 	</dict>
+	<dict>
+		<key>title</key>
+		<string>来源集合</string>
+		<key>condition</key>
+		<array>
+			<string>全部</string>
+			<string>System系统占位</string>
+			<string>Basic基本</string>
+			<string>Classic经典</string>
+			<string>Missions任务</string>
+			<string>Promotion促销</string>
+			<string>Reward奖励</string>
+			<string>Credits信用</string>
+			<string>Debug调整过</string>
+			<string>Curse of Naxxramas纳克萨玛斯</string>
+			<string>Goblins vs Gnomes地精大战侏儒</string>
+		</array>
+	</dict>
 </array>
 </plist>

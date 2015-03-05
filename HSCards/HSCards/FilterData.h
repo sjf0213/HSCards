@@ -67,6 +67,20 @@ typedef enum : NSUInteger {
     
 } card_race;
 
+typedef enum : NSUInteger {
+    card_set_all = 0,
+    card_set_system,//系统占位
+    card_set_basic,//基本
+    card_set_classic,//经典
+    card_set_missions,//任务
+    card_set_promotion,//促销
+    card_set_reward,//奖励
+    card_set_credits,//信用
+    card_set_debug,//调整过
+    card_set_naxx,//纳克萨玛斯
+    card_set_gvg,//地精大战侏儒
+} card_set;
+
 @interface FilterData : NSObject
 @property(atomic, readonly)NSArray* displayTextArray;
 @property(atomic, assign)mana_cost cost;
@@ -74,6 +88,7 @@ typedef enum : NSUInteger {
 @property(atomic, assign)card_career career;
 @property(atomic, assign)card_type type;
 @property(atomic, assign)card_race race;
+@property(atomic, assign)card_set cardSet;
 +(FilterData*)shareInstance;
 
 @end
