@@ -112,11 +112,13 @@
     DLog(@"--------------------*---didSelectRowAtIndexPath = %d", indexPath.row);
 //    CardDetailView* detailView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:detailView];
-    
+    CardItemInfo* info = [self.arrayDataSource itemAtIndexPath:indexPath];
     CardDetailViewController*  controller = [[CardDetailViewController alloc] init];
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
     
     self.navigationController.navigationBar.hidden = YES;
+    
+    [controller loadCardInfo:info];
 }
 @end

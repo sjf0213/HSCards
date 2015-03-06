@@ -7,6 +7,10 @@
 //
 
 #import "CardDetailView.h"
+#import "CardItemInfo.h"
+@interface CardDetailView()
+@property(nonatomic, strong)UIImageView* cardImage;
+@end
 
 @implementation CardDetailView
 
@@ -33,5 +37,15 @@
     if (self.didDismissHandler) {
         self.didDismissHandler();
     }
+}
+
+-(void)loadCardInfo:(CardItemInfo*)info
+{
+    if (nil == _cardImage) {
+        _cardImage = [[UIImageView alloc] initWithFrame:CGRectMake(0.5*(self.frame.size.width - 250), 64, 250, 355)];
+        [self addSubview:_cardImage];
+    }
+    _cardImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png", info.cardID]];
+    
 }
 @end

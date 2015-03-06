@@ -8,6 +8,8 @@
 
 #import "CardDetailViewController.h"
 #import "CardDetailView.h"
+#import "CardItemInfo.h"
+
 @interface CardDetailViewController ()
 @property(nonatomic, strong) CardDetailView* mainView;
 @end
@@ -17,7 +19,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.5];
     _mainView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
     typeof(self) __weak wself = self;
     _mainView.didDismissHandler = ^{
@@ -28,9 +30,15 @@
     [self.view addSubview:_mainView];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)loadCardInfo:(CardItemInfo*)info
+{
+    [_mainView loadCardInfo:info];
 }
 
 - (void)didReceiveMemoryWarning {

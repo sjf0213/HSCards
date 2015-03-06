@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class CardItemInfo;
 
 typedef void(^DidDismissHandler)(void);
 
 @interface CardDetailView : UIView
 
 @property (nonatomic, copy)  void(^didDismissHandler)(void);
+
+-(void)loadCardInfo:(CardItemInfo*)info;
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CardItemInfo;
 @interface CardDetailViewController : UIViewController
+
+-(void)loadCardInfo:(CardItemInfo*)info;
 
 @end
