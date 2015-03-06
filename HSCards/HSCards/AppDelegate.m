@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CommonDefine.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainTopViewController.h"
 #import "MainRightViewController.h"

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ArrayDataSource.h"
+
+@class ArrayDataSource;
 
 @interface RightSimpleSelectController : UIViewController
 

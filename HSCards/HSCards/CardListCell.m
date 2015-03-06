@@ -7,6 +7,7 @@
 //
 
 #import "CardListCell.h"
+#import "CardItemInfo.h"
 #import "CommonDefine.h"
 @interface CardListCell()
 @property(nonatomic, strong)UIImageView* cardPic;

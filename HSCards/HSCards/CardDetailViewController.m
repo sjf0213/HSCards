@@ -7,9 +7,9 @@
 //
 
 #import "CardDetailViewController.h"
-
+#import "CardDetailView.h"
 @interface CardDetailViewController ()
-
+@property(nonatomic, strong) CardDetailView* mainView;
 @end
 
 @implementation CardDetailViewController
@@ -17,8 +17,15 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithRed:1 green:0.8 blue:1 alpha:1.0];
-    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
+    _mainView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
+    typeof(self) __weak wself = self;
+    _mainView.didDismissHandler = ^{
+        [wself.view removeFromSuperview];
+        wself.navigationController.navigationBar.hidden = NO;
+        [wself removeFromParentViewController];
+    };
+    [self.view addSubview:_mainView];
 }
 
 - (void)viewDidLoad {
@@ -31,14 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

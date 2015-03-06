@@ -11,6 +11,9 @@
 #import "CardListCell.h"
 #import "CardItemInfo.h"
 #import "CardsBox.h"
+#import "CommonDefine.h"
+#import "CardDetailView.h"
+#import "CardDetailViewController.h"
 #define CardListCellIdentifier @"CardListCell"
 
 @interface MainTopViewController ()<UITableViewDelegate>
@@ -47,9 +50,9 @@
 //    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
 //    [_mainTable reloadData];
     [self updateDisplayData];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[CardsBox shareInstance] downloadAllCollectibleCards];
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        [[CardsBox shareInstance] downloadAllCollectibleCards];
+//    });
     
 }
 
@@ -103,5 +106,17 @@
     [_mainTable reloadData];
 }
 
-
+#pragma mark - UITableViewDelegate
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DLog(@"--------------------*---didSelectRowAtIndexPath = %d", indexPath.row);
+//    CardDetailView* detailView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
+//    [self.view addSubview:detailView];
+    
+    CardDetailViewController*  controller = [[CardDetailViewController alloc] init];
+    [self addChildViewController:controller];
+    [self.view addSubview:controller.view];
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
 @end

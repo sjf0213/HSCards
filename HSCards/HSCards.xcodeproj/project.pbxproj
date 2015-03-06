@@ -551,6 +551,9 @@
 		F066E0BF1AA94A9F00DB2505 /* PRO_001.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DE9F1AA94A9F00DB2505 /* PRO_001.png */; };
 		F066E0C01AA94A9F00DB2505 /* tt_004.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DEA01AA94A9F00DB2505 /* tt_004.png */; };
 		F066E0C11AA94A9F00DB2505 /* tt_010.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DEA11AA94A9F00DB2505 /* tt_010.png */; };
+		F066E0C41AA9586800DB2505 /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F066E0C31AA9586800DB2505 /* CardDetailView.m */; };
+		F066E0D81AA9909300DB2505 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F066E0D61AA9909300DB2505 /* back_btn@2x.png */; };
+		F066E0DA1AA991C200DB2505 /* back_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F066E0D91AA991C200DB2505 /* back_btn@3x.png */; };
 		F07229641AA04C1B0004ADDA /* RightSimpleSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */; };
 		F07229661AA056F10004ADDA /* filter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07229651AA056F10004ADDA /* filter.plist */; };
 		F072296D1AA54FAA0004ADDA /* AllSets.zhCN.json in Resources */ = {isa = PBXBuildFile; fileRef = F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */; };
@@ -577,7 +580,6 @@
 		F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */; };
 		F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */; };
 		F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */; };
-		F0D9DE8D1A9DA15800FDCBCB /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = F0D9DE8C1A9DA15800FDCBCB /* cards.json */; };
 		F0D9DE951A9DB3A600FDCBCB /* CardItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */; };
 		F0D9DE981A9DB3F800FDCBCB /* CardsBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE971A9DB3F800FDCBCB /* CardsBox.m */; };
 		F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */; };
@@ -1132,6 +1134,10 @@
 		F066DE9F1AA94A9F00DB2505 /* PRO_001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PRO_001.png; sourceTree = "<group>"; };
 		F066DEA01AA94A9F00DB2505 /* tt_004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tt_004.png; sourceTree = "<group>"; };
 		F066DEA11AA94A9F00DB2505 /* tt_010.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tt_010.png; sourceTree = "<group>"; };
+		F066E0C21AA9586800DB2505 /* CardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardDetailView.h; sourceTree = "<group>"; };
+		F066E0C31AA9586800DB2505 /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailView.m; sourceTree = "<group>"; };
+		F066E0D61AA9909300DB2505 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
+		F066E0D91AA991C200DB2505 /* back_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@3x.png"; sourceTree = "<group>"; };
 		F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSimpleSelectController.h; sourceTree = "<group>"; };
 		F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSimpleSelectController.m; sourceTree = "<group>"; };
 		F07229651AA056F10004ADDA /* filter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = filter.plist; sourceTree = "<group>"; };
@@ -1184,7 +1190,6 @@
 		F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		F0D9DE881A9DA12A00FDCBCB /* FileHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelp.h; sourceTree = "<group>"; };
 		F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelp.m; sourceTree = "<group>"; };
-		F0D9DE8C1A9DA15800FDCBCB /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		F0D9DE931A9DB3A600FDCBCB /* CardItemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardItemInfo.h; sourceTree = "<group>"; };
 		F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardItemInfo.m; sourceTree = "<group>"; };
 		F0D9DE961A9DB3F800FDCBCB /* CardsBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardsBox.h; sourceTree = "<group>"; };
@@ -1215,6 +1220,7 @@
 		F066DC801AA94A9C00DB2505 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F066E0D41AA9909300DB2505 /* UI */,
 				F066DC811AA94A9C00DB2505 /* AllSetsCards */,
 			);
 			path = Resources;
@@ -1771,6 +1777,15 @@
 			path = AllSetsCards;
 			sourceTree = "<group>";
 		};
+		F066E0D41AA9909300DB2505 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F066E0D61AA9909300DB2505 /* back_btn@2x.png */,
+				F066E0D91AA991C200DB2505 /* back_btn@3x.png */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		F08F39BF1AA825BA00BF4D39 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -1800,12 +1815,12 @@
 		F096E08B1A92DF6800F4A69F = {
 			isa = PBXGroup;
 			children = (
-				F066DC801AA94A9C00DB2505 /* Resources */,
 				F08F39BF1AA825BA00BF4D39 /* AFNetworking */,
-				F0D9DE8B1A9DA15800FDCBCB /* HSData */,
+				F0AFD2B11A93218F00E9B2DD /* ECSlidingViewController */,
 				F0D9DE871A9DA11600FDCBCB /* OtherFiles */,
 				F096E0961A92DF6800F4A69F /* HSCards */,
-				F0AFD2B11A93218F00E9B2DD /* ECSlidingViewController */,
+				F0D9DE8B1A9DA15800FDCBCB /* HSData */,
+				F066DC801AA94A9C00DB2505 /* Resources */,
 				F096E0951A92DF6800F4A69F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1844,6 +1859,8 @@
 				F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */,
 				F08F39BC1AA80B2D00BF4D39 /* CardDetailViewController.h */,
 				F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */,
+				F066E0C21AA9586800DB2505 /* CardDetailView.h */,
+				F066E0C31AA9586800DB2505 /* CardDetailView.m */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -1890,7 +1907,6 @@
 			isa = PBXGroup;
 			children = (
 				F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */,
-				F0D9DE8C1A9DA15800FDCBCB /* cards.json */,
 				F07229651AA056F10004ADDA /* filter.plist */,
 			);
 			path = HSData;
@@ -2153,7 +2169,6 @@
 				F066DF0D1AA94A9F00DB2505 /* CS2_233.png in Resources */,
 				F066DEF01AA94A9F00DB2505 /* CS2_150.png in Resources */,
 				F066DEB01AA94A9F00DB2505 /* CS2_013.png in Resources */,
-				F0D9DE8D1A9DA15800FDCBCB /* cards.json in Resources */,
 				F066DFF11AA94A9F00DB2505 /* EX1_610.png in Resources */,
 				F066E04F1AA94A9F00DB2505 /* GVG_050.png in Resources */,
 				F066E08E1AA94A9F00DB2505 /* GVG_113.png in Resources */,
@@ -2200,6 +2215,7 @@
 				F066DEB51AA94A9F00DB2505 /* CS2_026.png in Resources */,
 				F066DF641AA94A9F00DB2505 /* EX1_160.png in Resources */,
 				F066DFA31AA94A9F00DB2505 /* EX1_363.png in Resources */,
+				F066E0DA1AA991C200DB2505 /* back_btn@3x.png in Resources */,
 				F066DEDD1AA94A9F00DB2505 /* CS2_105.png in Resources */,
 				F066DEAB1AA94A9F00DB2505 /* CS2_007.png in Resources */,
 				F066DF311AA94A9F00DB2505 /* EX1_032.png in Resources */,
@@ -2510,6 +2526,7 @@
 				F066E0221AA94A9F00DB2505 /* GVG_005.png in Resources */,
 				F066DEBC1AA94A9F00DB2505 /* CS2_037.png in Resources */,
 				F066E05D1AA94A9F00DB2505 /* GVG_064.png in Resources */,
+				F066E0D81AA9909300DB2505 /* back_btn@2x.png in Resources */,
 				F066DFFD1AA94A9F00DB2505 /* EX1_624.png in Resources */,
 				F066E0771AA94A9F00DB2505 /* GVG_090.png in Resources */,
 				F066DECB1AA94A9F00DB2505 /* CS2_072.png in Resources */,
@@ -2536,6 +2553,7 @@
 				F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */,
 				F08F39D71AA825BA00BF4D39 /* AFSecurityPolicy.m in Sources */,
 				F08F39D31AA825BA00BF4D39 /* AFHTTPRequestOperation.m in Sources */,
+				F066E0C41AA9586800DB2505 /* CardDetailView.m in Sources */,
 				F0D9E72E1A9EFB3000FDCBCB /* MainRightViewController.m in Sources */,
 				F0AFD2C21A93218F00E9B2DD /* ECSlidingSegue.m in Sources */,
 				F096E09A1A92DF6800F4A69F /* main.m in Sources */,

@@ -10,6 +10,7 @@
 #import "CommonDefine.h"
 #import "FilterData.h"
 #import "MainRightViewController.h"
+#import "ArrayDataSource.h"
 #define SimpleSelectCellIdentifier @"SimpleSelectCell"
 
 @interface RightSimpleSelectController ()<UITableViewDelegate>

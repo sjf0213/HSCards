@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CardItemInfo.h"
+@class CardItemInfo;
 
 @interface CardListCell : UITableViewCell
 -(void)clearData;
