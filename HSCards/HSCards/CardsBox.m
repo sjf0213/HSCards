@@ -78,23 +78,23 @@ static CardsBox * m_Instance;
     DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
     NSString* networkAddr = @"http://img3.cache.netease.com/game/hs/db/cards/20141209/medium/";
     NSString * localAddr = [[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory];
-    for (NSInteger i = 0; i < resultList.count; i++) {
+//    NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", @"CS2_171"];
+//    NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
+//    NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
+//    [self downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
+    for (NSInteger i = 450; i < resultList.count; i++) {
         CardItemInfo* item = resultList[i];
         NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", item.cardID];
         NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
         NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
-        typeof(self)__weak wself = self;
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [wself downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
-//            [NSThread sleepForTimeInterval:10];
-//        });
-        
+        [self downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
+        [NSThread sleepForTimeInterval:3];
     }
 }
 
 -(void)downloadSingleCardByUrl:(NSString*)sourcePath saveToPath:(NSString*)targetPath
 {
-    static NSUInteger indexSuccess = 0;
+    static NSUInteger indexSuccess = 450;
     static NSUInteger indexFailure = 0;
     /*
 //    NSError* err = nil;
