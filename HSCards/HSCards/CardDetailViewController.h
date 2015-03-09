@@ -10,6 +10,8 @@
 @class CardItemInfo;
 @interface CardDetailViewController : UIViewController
 
+@property (nonatomic, copy)  void(^didDismissHandler)(void);
+
 -(void)loadCardInfo:(CardItemInfo*)info;
 
 @end

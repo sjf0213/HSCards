@@ -14,6 +14,8 @@
 #import "CommonDefine.h"
 #import "CardDetailView.h"
 #import "CardDetailViewController.h"
+#import "../ECSlidingViewController/ECSlidingViewController.h"
+
 #define CardListCellIdentifier @"CardListCell"
 
 @interface MainTopViewController ()<UITableViewDelegate>
@@ -47,8 +49,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].cardList];
-//    [_mainTable reloadData];
     [self updateDisplayData];
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [[CardsBox shareInstance] downloadAllCollectibleCards];
@@ -106,6 +106,14 @@
     [_mainTable reloadData];
 }
 
+-(void)addChildViewController:(UIViewController *)childController
+{
+    [super addChildViewController:childController];
+    //self.parentSliding.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureNone;
+    self.parentSliding.panGesture.enabled = NO;// 禁用左右两侧的Controller
+}
+
+
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -114,11 +122,11 @@
 //    [self.view addSubview:detailView];
     CardItemInfo* info = [self.arrayDataSource itemAtIndexPath:indexPath];
     CardDetailViewController*  controller = [[CardDetailViewController alloc] init];
+    typeof(self)__weak wself = self;
+    controller.didDismissHandler = ^{wself.parentSliding.panGesture.enabled = YES;};
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
-    
     self.navigationController.navigationBar.hidden = YES;
-    
     [controller loadCardInfo:info];
 }
 @end

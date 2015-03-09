@@ -13,6 +13,7 @@
 #import "MainRightViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
+#import "TopNaviViewController.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -27,11 +28,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    MainTopViewController *topViewController        = [[MainTopViewController alloc] init];
-    UIViewController *underLeftViewController  = [[UIViewController alloc] init];
+    MainTopViewController *topViewController          = [[MainTopViewController alloc] init];
     MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
-    UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:underRightViewController];
-    
+    UIViewController *underLeftViewController         = [[UIViewController alloc] init];
     
     // configure top view controller
     UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"ME" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
@@ -39,9 +38,10 @@
     topViewController.navigationItem.title = @"MAIN LIST";
     topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
-    //topViewController.view.backgroundColor = [UIColor whiteColor];
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
+    //Navi
+    TopNaviViewController *navigationController = [[TopNaviViewController alloc] initWithRootViewController:topViewController];
+    UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:underRightViewController];
     
     // configure under left view controller
     underLeftViewController.view.layer.borderWidth     = 20;
@@ -50,14 +50,12 @@
     underLeftViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeLeft; // don't go under the top view
     
     // configure under right view controller
-//    underRightViewController.view.layer.borderWidth     = 20;
-//    underRightViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
-//    underRightViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
-//    underRightViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight; // don't go under the top view
     rightNaviController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight;
-//
+    
+    
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
+    topViewController.parentSliding = self.slidingViewController;
     self.slidingViewController.underLeftViewController  = underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     

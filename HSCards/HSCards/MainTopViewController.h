@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class ECSlidingViewController;
 
 @interface MainTopViewController : UIViewController
 
+@property(nonatomic, weak)ECSlidingViewController* parentSliding;
 
 -(void)updateDisplayData;
 

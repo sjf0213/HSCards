@@ -26,6 +26,9 @@
         [wself.view removeFromSuperview];
         wself.navigationController.navigationBar.hidden = NO;
         [wself removeFromParentViewController];
+        if (wself.didDismissHandler) {
+            wself.didDismissHandler();
+        }
     };
     [self.view addSubview:_mainView];
 }
