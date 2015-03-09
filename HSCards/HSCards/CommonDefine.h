@@ -29,6 +29,7 @@
 
 
 #define KA_COMMON_FONT_OF_SIZE(__SIZE__)   [UIFont fontWithName:@"HelveticaNeue-Light" size:__SIZE__]
+#define KA_COMMON_BOLD_FONT_OF_SIZE(__SIZE__)   [UIFont fontWithName:@"HelveticaNeue" size:__SIZE__]
 
 #define SlidingAnchorRightPeekAmount 100.0
 #define SlidingAnchorLeftRevealAmount 250.0

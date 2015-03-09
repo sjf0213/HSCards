@@ -25,6 +25,9 @@
 @property(nonatomic, readonly)NSString* race;// 所属种族：鱼人，机械等
 @property(nonatomic, readonly)NSString* cardSet;// 卡牌来源集合（纳克萨玛斯等）
 
+@property(nonatomic, readonly)NSString* howToGet;// 获得条件
+@property(nonatomic, readonly)NSString* flavor;// 调料包
+
 -(id)initWithDic:(NSDictionary*)dic;
 -(void)setCardSet:(NSString *)cardSet;
 @end
