@@ -579,6 +579,7 @@
 		F0AFD2C31A93218F00E9B2DD /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BC1A93218F00E9B2DD /* ECSlidingViewController.m */; };
 		F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */; };
 		F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B842581AAD489400588C5A /* TopNaviViewController.m */; };
+		F0B8425C1AAD809C00588C5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0B8425E1AAD809C00588C5A /* Localizable.strings */; };
 		F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */; };
 		F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE891A9DA12A00FDCBCB /* FileHelp.m */; };
 		F0D9DE951A9DB3A600FDCBCB /* CardItemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE941A9DB3A600FDCBCB /* CardItemInfo.m */; };
@@ -1188,6 +1189,9 @@
 		F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		F0B842571AAD489400588C5A /* TopNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNaviViewController.h; sourceTree = "<group>"; };
 		F0B842581AAD489400588C5A /* TopNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNaviViewController.m; sourceTree = "<group>"; };
+		F0B8425D1AAD809C00588C5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F0B842611AAD832000588C5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F0B842621AAD832000588C5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F0D9DE7C1A9D744100FDCBCB /* MainTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTopViewController.h; sourceTree = "<group>"; };
 		F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTopViewController.m; sourceTree = "<group>"; };
 		F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
@@ -1866,6 +1870,7 @@
 				F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */,
 				F066E0C21AA9586800DB2505 /* CardDetailView.h */,
 				F066E0C31AA9586800DB2505 /* CardDetailView.m */,
+				F0B8425E1AAD809C00588C5A /* Localizable.strings */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -1971,6 +1976,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = F096E08B1A92DF6800F4A69F;
 			productRefGroup = F096E0951A92DF6800F4A69F /* Products */;
@@ -2212,6 +2218,7 @@
 				F066E04A1AA94A9F00DB2505 /* GVG_045.png in Resources */,
 				F066DF241AA94A9F00DB2505 /* EX1_011.png in Resources */,
 				F066DEF81AA94A9F00DB2505 /* CS2_172.png in Resources */,
+				F0B8425C1AAD809C00588C5A /* Localizable.strings in Resources */,
 				F066DFA51AA94A9F00DB2505 /* EX1_366.png in Resources */,
 				F066DFFF1AA94A9F00DB2505 /* EX1_626.png in Resources */,
 				F066DF7F1AA94A9F00DB2505 /* EX1_279.png in Resources */,
@@ -2588,8 +2595,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				F096E0A71A92DF6800F4A69F /* Base */,
+				F0B842611AAD832000588C5A /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		F0B8425E1AAD809C00588C5A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0B8425D1AAD809C00588C5A /* en */,
+				F0B842621AAD832000588C5A /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -33,8 +33,10 @@
     UIViewController *underLeftViewController         = [[UIViewController alloc] init];
     
     // configure top view controller
-    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:@"ME" style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
-    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
+    NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
+    NSString* leftTitle = NSLocalizedString(@"MINE", @"");
+    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
     topViewController.navigationItem.title = @"MAIN LIST";
     topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;

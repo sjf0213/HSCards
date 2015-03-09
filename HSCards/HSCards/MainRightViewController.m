@@ -28,10 +28,10 @@
     [super loadView];
     
     self.view.backgroundColor = [UIColor colorWithRed:0.5 green:1 blue:1 alpha:1.0];
-    self.navigationItem.title = @"筛选";
-    UIBarButtonItem *OKButton = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(onTapOK)];
+    self.navigationItem.title = NSLocalizedString(@"FILTER", @"");
+    UIBarButtonItem *OKButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"OK", @"") style:UIBarButtonItemStylePlain target:self action:@selector(onTapOK)];
     self.navigationItem.rightBarButtonItem  = OKButton;
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(onTapCancel)];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"CANCEL", @"")  style:UIBarButtonItemStylePlain target:self action:@selector(onTapCancel)];
     self.navigationItem.leftBarButtonItem  = cancelButton;
     
     TableViewCellConfigureBlock configureCell = ^(FilterListCell* cell, NSDictionary* data) {

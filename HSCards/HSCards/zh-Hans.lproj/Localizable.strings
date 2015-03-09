@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  HSCards
+
+  Created by song jufeng on 15/3/9.
+  Copyright (c) 2015年 song jufeng. All rights reserved.
+*/
+
+"MINE" = "我的";
+"FILTER" = "过滤";
+"CANCEL" = "取消";
+"OK" = "确定";
