@@ -71,11 +71,11 @@
         [self addSubview:_cardType];
         
         // 第三行
-        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 14)];
-        _collectible.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
-        _collectible.text = @"";
-        _collectible.font = KA_COMMON_FONT_OF_SIZE(12);
-        [self addSubview:_collectible];
+//        _collectible = [[UILabel alloc] initWithFrame:CGRectMake(80, 80, 50, 14)];
+//        _collectible.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
+//        _collectible.text = @"";
+//        _collectible.font = KA_COMMON_FONT_OF_SIZE(12);
+//        [self addSubview:_collectible];
         
 //        _cardSet = [[UILabel alloc] initWithFrame:CGRectMake(180, 80, 50, 14)];
 //        _cardSet.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
@@ -97,12 +97,11 @@
     _cardPic.image = nil;
     _cardID.text = @"";
     _cardName.text = @"";
-    _cardCost.text = @"费: ";
-    _cardRarity.text = @"稀: ";
-    _cardCareer.text = @"职: ";
-    _cardType.text = @"类: ";
-    _collectible.text = @"收集: ";
-    //_cardSet.text = @"集合: ";
+    _cardCost.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"COST", @"")];
+    _cardRarity.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"RARITY", @"")];
+    _cardCareer.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"CAREER", @"")];
+    _cardType.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"CARDTYPE", @"")];
+    _cardSet.text = [NSString stringWithFormat:@"%@:",    NSLocalizedString(@"CARDSET", @"")];
 }
 
 -(void)loadCellData:(CardItemInfo*)data
@@ -110,19 +109,17 @@
     _cardPic.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",data.cardID]];
     _cardID.text = data.cardID;
     _cardName.text = data.cardName;
-    _cardCost.text = [NSString stringWithFormat:@"费: %zd", data.cost];
+    _cardCost.text = [NSString stringWithFormat:@"%@: %zd",NSLocalizedString(@"COST", @""), data.cost];
     if ([data.rarity isKindOfClass:[NSString class]]){
-        _cardRarity.text = [NSString stringWithFormat:@"稀: %@", data.rarity];
+        _cardRarity.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"RARITY", @""), NSLocalizedString(data.rarity, @"")];
     }
     if ([data.career isKindOfClass:[NSString class]]){
-        _cardCareer.text = [NSString stringWithFormat:@"职: %@", data.career];
+        _cardCareer.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"CAREER", @""), NSLocalizedString(data.career, @"")];
     }
     if ([data.cardType isKindOfClass:[NSString class]]){
-        _cardType.text = [NSString stringWithFormat:@"类: %@", data.cardType];
+        _cardType.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CARDTYPE", @""), NSLocalizedString(data.cardType, @"")];
     }
-    _collectible.text = [NSString stringWithFormat:@"收集: %zd", data.collectible];
-    
-    //_cardSet.text = [NSString stringWithFormat:@"集合: %@", data.cardSet];
+    _cardSet.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CARDSET", @""), data.cardSet];
 }
 
 @end

@@ -51,7 +51,7 @@ typedef enum : NSUInteger {
     card_type_weapon,//武器
     card_type_hero,//英雄
     card_type_heropower,//英雄技能
-    card_type_enchantment,//不清楚
+    card_type_enchantment,//效果
     
 } card_type;
 

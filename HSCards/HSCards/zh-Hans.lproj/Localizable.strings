@@ -10,3 +10,46 @@
 "FILTER" = "过滤";
 "CANCEL" = "取消";
 "OK" = "确定";
+
+"COST" = "费用";
+"RARITY" = "稀有度";
+"CAREER" = "职业";
+"CARDTYPE" = "类型";
+"CARDSET" = "集合";
+"FLAVOR" = "加料";
+
+// 稀有度
+"Free" = "免费";
+"Common" = "白色普通";
+"Rare" = "蓝色稀有";
+"Epic" = "紫色史诗";
+"Legendary" = "橙色传奇";
+
+// 职业
+"Neutral" = "中立";
+"Druid" = "德鲁伊";
+"Hunter" = "猎人";
+"Mage" = "法师";
+"Paladin" = "圣骑士";
+"Priest" = "牧师";
+"Rogue" = "潜行者";
+"Shaman" = "萨满";
+"Warlock" = "术士";
+"Warrior" = "战士";
+
+// 类型
+"Minion" = "随从";
+"Spell" = "法术";
+"Weapon" = "武器";
+"Hero" = "英雄";
+"Heropower" = "英雄技能";
+"Enchantment" = "效果";
+
+// 种族
+"Murloc" = "鱼人";
+"Demon" = "恶魔";
+"Beast" = "野兽";
+"Totem" = "图腾";
+"Pirate" = "海盗";
+"Dragon" = "龙";
+"Mech" = "机械";

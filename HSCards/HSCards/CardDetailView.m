@@ -61,7 +61,7 @@
         _careerLabel.font = KA_COMMON_BOLD_FONT_OF_SIZE(14);
         [_mainScroll addSubview:_careerLabel];
     }
-    _careerLabel.text = [NSString stringWithFormat:@"职业: %@", info.career];
+    _careerLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"CAREER",@""), NSLocalizedString(info.career,@"")];
     
     CGRect flavorRect;
     if ([info.flavor isKindOfClass:[NSString class]]) {
@@ -73,7 +73,7 @@
             [_mainScroll addSubview:_flavorLabel];
             
         }
-        _flavorLabel.text = [NSString stringWithFormat:@"加料: %@", info.flavor];
+        _flavorLabel.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"FLAVOR",@""), info.flavor];
         NSDictionary *attribute = @{NSFontAttributeName: _flavorLabel.font};
         flavorRect = [_flavorLabel.text boundingRectWithSize:CGSizeMake(200, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                    attributes:attribute
