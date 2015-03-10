@@ -13,6 +13,7 @@
 @property(nonatomic, readonly)NSString* cardID;// 代码
 @property(nonatomic, readonly)NSString* cardName;// 名称
 @property(nonatomic, readonly)BOOL collectible;// 是否衍生卡牌
+@property(nonatomic, readonly)BOOL elite;
 
 @property(nonatomic, readonly)NSUInteger cost;// 费用，法力值消耗
 @property(nonatomic, readonly)NSUInteger attack;// 攻击力（随从和武器牌才有，法术牌没有）

@@ -13,6 +13,7 @@
 @property(nonatomic, strong)NSString* cardName;
 @property(nonatomic, strong)NSString* cardID;
 @property(nonatomic, assign)BOOL collectible;// 是否衍生卡牌
+@property(nonatomic, assign)BOOL elite;//???
 
 @property(nonatomic, assign)NSUInteger cost;// 费用，法力值消耗
 @property(nonatomic, assign)NSUInteger attack;// 攻击力（随从和武器牌才有，法术牌没有）
@@ -48,6 +49,12 @@
         num = [dic objectForKey:@"collectible"];
         if ([num isKindOfClass:[NSNumber class]]) {
             _collectible = [num boolValue];
+        }
+        
+        // ???
+        num = [dic objectForKey:@"elite"];
+        if ([num isKindOfClass:[NSNumber class]]) {
+            _elite = [num boolValue];
         }
         
         // 费用，法力值消耗

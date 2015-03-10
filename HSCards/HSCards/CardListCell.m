@@ -97,6 +97,7 @@
     _cardPic.image = nil;
     _cardID.text = @"";
     _cardName.text = @"";
+    //_collectible.text = @"elite:";
     _cardCost.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"COST", @"")];
     _cardRarity.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"RARITY", @"")];
     _cardCareer.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"CAREER", @"")];
@@ -109,6 +110,7 @@
     _cardPic.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",data.cardID]];
     _cardID.text = data.cardID;
     _cardName.text = data.cardName;
+    //_collectible.text = [NSString stringWithFormat:@"elite: %zd", data.elite];;
     _cardCost.text = [NSString stringWithFormat:@"%@: %zd",NSLocalizedString(@"COST", @""), data.cost];
     if ([data.rarity isKindOfClass:[NSString class]]){
         _cardRarity.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"RARITY", @""), NSLocalizedString(data.rarity, @"")];
