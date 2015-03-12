@@ -26,3 +26,5 @@ DerivedData
 # Pods/
 
 *.xcuserstate
+
+HSCards/HSCards.xcodeproj/project.xcworkspace/xcuserdata/songjufeng.xcuserdatad/UserInterfaceState.xcuserstate
