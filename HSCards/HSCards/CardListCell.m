@@ -98,11 +98,11 @@
     _cardID.text = @"";
     _cardName.text = @"";
     //_collectible.text = @"elite:";
-    _cardCost.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"COST", @"")];
-    _cardRarity.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"RARITY", @"")];
-    _cardCareer.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"CAREER", @"")];
-    _cardType.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"CARDTYPE", @"")];
-    _cardSet.text = [NSString stringWithFormat:@"%@:",    NSLocalizedString(@"CARDSET", @"")];
+    _cardCost.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"Cost", @"")];
+    _cardRarity.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Rarity", @"")];
+    _cardCareer.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"Career", @"")];
+    _cardType.text = [NSString stringWithFormat:@"%@:",   NSLocalizedString(@"CardType", @"")];
+    _cardSet.text = [NSString stringWithFormat:@"%@:",    NSLocalizedString(@"CardSet", @"")];
 }
 
 -(void)loadCellData:(CardItemInfo*)data
@@ -111,17 +111,17 @@
     _cardID.text = data.cardID;
     _cardName.text = data.cardName;
     //_collectible.text = [NSString stringWithFormat:@"elite: %zd", data.elite];;
-    _cardCost.text = [NSString stringWithFormat:@"%@: %zd",NSLocalizedString(@"COST", @""), data.cost];
+    _cardCost.text = [NSString stringWithFormat:@"%@: %zd",NSLocalizedString(@"Cost", @""), data.cost];
     if ([data.rarity isKindOfClass:[NSString class]]){
-        _cardRarity.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"RARITY", @""), NSLocalizedString(data.rarity, @"")];
+        _cardRarity.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"Rarity", @""), NSLocalizedString(data.rarity, @"")];
     }
     if ([data.career isKindOfClass:[NSString class]]){
-        _cardCareer.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"CAREER", @""), NSLocalizedString(data.career, @"")];
+        _cardCareer.text = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Career", @""), NSLocalizedString(data.career, @"")];
     }
     if ([data.cardType isKindOfClass:[NSString class]]){
-        _cardType.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CARDTYPE", @""), NSLocalizedString(data.cardType, @"")];
+        _cardType.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CardType", @""), NSLocalizedString(data.cardType, @"")];
     }
-    _cardSet.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CARDSET", @""), data.cardSet];
+    _cardSet.text = [NSString stringWithFormat:@"%@: %@",NSLocalizedString(@"CardSet", @""), data.cardSet];
 }
 
 @end

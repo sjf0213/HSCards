@@ -27,7 +27,7 @@
         TableViewCellConfigureBlock configureCell = ^(UITableViewCell* cell, NSString* data) {
             cell.textLabel.text = @"";
             if ([data isKindOfClass:[NSString class]]) {
-                cell.textLabel.text = data;
+                cell.textLabel.text = NSLocalizedString(data,@"");
             }
         };
         self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:SimpleSelectCellIdentifier configureCellBlock:configureCell];

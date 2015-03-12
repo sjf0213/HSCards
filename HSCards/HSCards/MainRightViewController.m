@@ -136,7 +136,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].cost = i;
                         DLog(@"真正改变 FilterData 过滤条件值 cost = %d", i);
                         break;
@@ -151,7 +151,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].rarity = i;
                         DLog(@"真正改变 FilterData 过滤条件值 rarity = %d", i);
                         break;
@@ -167,7 +167,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].career = i;
                         DLog(@"真正改变 FilterData 过滤条件值 career = %d", i);
                         break;
@@ -183,7 +183,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].type = i;
                         DLog(@"真正改变 FilterData 过滤条件值 type = %d", i);
                         break;
@@ -198,7 +198,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].race = i;
                         DLog(@"真正改变 FilterData 过滤条件值 race = %d", i);
                         break;
@@ -213,7 +213,7 @@
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
-                    if ([cellResultStr isEqualToString:[arrCondition objectAtIndex:i]]) {
+                    if ([cellResultStr isEqualToString:NSLocalizedString([arrCondition objectAtIndex:i],@"")]) {
                         [FilterData shareInstance].cardSet = i;
                         DLog(@"真正改变 FilterData 过滤条件值 set = %d", i);
                         break;

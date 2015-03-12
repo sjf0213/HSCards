@@ -6,17 +6,20 @@
   Copyright (c) 2015年 song jufeng. All rights reserved.
 */
 
+
 "MINE" = "我的";
 "FILTER" = "过滤";
 "CANCEL" = "取消";
 "OK" = "确定";
 
-"COST" = "费用";
-"RARITY" = "稀有度";
-"CAREER" = "职业";
-"CARDTYPE" = "类型";
-"CARDSET" = "集合";
-"FLAVOR" = "加料";
+"All" = "全部";
+"Cost" = "费用";
+"Rarity" = "稀有度";
+"Career" = "职业";
+"CardType" = "类型";
+"CardSet" = "集合";
+"Flavor" = "加料";
+"Race" = "种族";
 
 // 稀有度
 "Free" = "免费";
@@ -53,3 +56,7 @@
 "Pirate" = "海盗";
 "Dragon" = "龙";
 "Mech" = "机械";
+
+// 集合
+"Curse of Naxxramas" = "纳克萨玛斯";
+"Goblins vs Gnomes" = "地精大战侏儒";

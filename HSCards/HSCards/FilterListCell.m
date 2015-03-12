@@ -51,9 +51,8 @@
 
 -(void)loadCellData:(NSDictionary*)data
 {
-    _title.text = [data objectForKey:@"title"];
-    _optResult.text = [data objectForKey:@"result"];
+    _title.text = NSLocalizedString([data objectForKey:@"title"], @"");
+    _optResult.text = NSLocalizedString([data objectForKey:@"result"], @"");
 }
-
 
 @end

@@ -4,10 +4,10 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>费用</string>
+		<string>Cost</string>
 		<key>condition</key>
 		<array>
-			<string>全部</string>
+			<string>All</string>
 			<string>0</string>
 			<string>1</string>
 			<string>2</string>
@@ -20,81 +20,70 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>稀有度</string>
+		<string>Rarity</string>
 		<key>condition</key>
 		<array>
 			<string>全部</string>
-			<string>Free免费</string>
-			<string>Common白色普通</string>
-			<string>Rare蓝色稀有</string>
-			<string>Epic紫色史诗</string>
-			<string>Legendary橙色传奇</string>
+			<string>Free</string>
+			<string>Common</string>
+			<string>Rare</string>
+			<string>Epic</string>
+			<string>Legendary</string>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>职业</string>
+		<string>Career</string>
 		<key>condition</key>
 		<array>
-			<string>全部</string>
-			<string>Neutral中立</string>
-			<string>Druid德鲁伊</string>
-			<string>Hunter猎人</string>
-			<string>Mage法师</string>
-			<string>Paladin圣骑士</string>
-			<string>Priest牧师</string>
-			<string>Rogue潜行者</string>
-			<string>Shaman萨满</string>
-			<string>Warlock术士</string>
-			<string>Warrior战士</string>
-			<string>Dream梦境</string>
+			<string>All</string>
+			<string>Neutral</string>
+			<string>Druid</string>
+			<string>Hunter</string>
+			<string>Mage</string>
+			<string>Paladin</string>
+			<string>Priest</string>
+			<string>Rogue</string>
+			<string>Shaman</string>
+			<string>Warlock</string>
+			<string>Warrior</string>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>卡牌类型</string>
+		<string>CardType</string>
 		<key>condition</key>
 		<array>
-			<string>全部</string>
-			<string>Minion随从</string>
-			<string>Spell法术</string>
-			<string>Weapon武器</string>
-			<string>Hero英雄</string>
-			<string>HeroPower英雄技能</string>
-			<string>Enchantment附加效果</string>
+			<string>All</string>
+			<string>Minion</string>
+			<string>Spell</string>
+			<string>Weapon</string>
+			<string>Hero</string>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>种族</string>
+		<string>Race</string>
 		<key>condition</key>
 		<array>
-			<string> 全部</string>
-			<string>Murloc鱼人</string>
-			<string>Demon恶魔</string>
-			<string>Beast野兽</string>
-			<string>Totem图腾</string>
-			<string>Pirate海盗</string>
-			<string>Dragon龙</string>
-			<string>Mech机械</string>
+			<string>All</string>
+			<string>Murloc</string>
+			<string>Demon</string>
+			<string>Beast</string>
+			<string>Totem</string>
+			<string>Pirate</string>
+			<string>Dragon</string>
+			<string>Mech</string>
 		</array>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>来源集合</string>
+		<string>CardSet</string>
 		<key>condition</key>
 		<array>
-			<string>全部</string>
-			<string>System系统占位</string>
-			<string>Basic基本</string>
-			<string>Classic经典</string>
-			<string>Missions任务</string>
-			<string>Promotion促销</string>
-			<string>Reward奖励</string>
-			<string>Credits信用</string>
-			<string>Debug调整过</string>
-			<string>Curse of Naxxramas纳克萨玛斯</string>
-			<string>Goblins vs Gnomes地精大战侏儒</string>
+			<string>All</string>
+			<string>Curse of Naxxramas</string>
+			<string>Goblins vs Gnomes</string>
 		</array>
 	</dict>
 </array>
