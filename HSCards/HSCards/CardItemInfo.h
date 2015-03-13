@@ -12,7 +12,7 @@
 
 @property(nonatomic, readonly)NSString* cardID;// 代码
 @property(nonatomic, readonly)NSString* cardName;// 名称
-@property(nonatomic, readonly)BOOL collectible;// 是否衍生卡牌
+@property(nonatomic, readonly)BOOL collectible;// 是否可收集
 @property(nonatomic, readonly)BOOL elite;
 
 @property(nonatomic, readonly)NSUInteger cost;// 费用，法力值消耗
@@ -24,9 +24,9 @@
 @property(nonatomic, readonly)NSString* cardType;// 卡牌类型（随从，法术，武器，英雄，英雄技能，XXX）
 @property(nonatomic, readonly)NSString* career;// 所属职业
 @property(nonatomic, readonly)NSString* race;// 所属种族：鱼人，机械等
-@property(nonatomic, readonly)NSString* cardSet;// 卡牌来源集合（纳克萨玛斯等）
+@property(nonatomic, readonly)NSString* cardSet;// 卡牌来源集合（纳克萨玛斯，地精大战侏儒）
 
-@property(nonatomic, readonly)NSString* howToGet;// 获得条件
+@property(nonatomic, readonly)NSString* howToGetGold;// 金卡获得条件
 @property(nonatomic, readonly)NSString* flavor;// 调料包
 
 -(id)initWithDic:(NSDictionary*)dic;

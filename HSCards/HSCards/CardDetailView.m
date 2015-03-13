@@ -81,7 +81,7 @@
         _flavorLabel.frame = CGRectMake(_flavorLabel.frame.origin.x, _flavorLabel.frame.origin.y, _flavorLabel.frame.size.width, flavorRect.size.height);
         _mainScroll.contentSize = CGSizeMake(_mainScroll.frame.size.width, _flavorLabel.frame.origin.y + _flavorLabel.frame.size.height + 4);
     }
-    if ([info.howToGet isKindOfClass:[NSString class]]) {
+    if ([info.howToGetGold isKindOfClass:[NSString class]]) {
         if (nil == _howtogetLabel) {
             _howtogetLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.5*(self.frame.size.width - 200), _flavorLabel.frame.origin.y + flavorRect.size.height + 4, 200, 60)];
             _howtogetLabel.textColor = [UIColor whiteColor];
@@ -89,7 +89,7 @@
             _howtogetLabel.numberOfLines = 0;
             [_mainScroll addSubview:_howtogetLabel];
         }
-        _howtogetLabel.text = [NSString stringWithFormat:@"获得金卡条件: %@", info.howToGet];
+        _howtogetLabel.text = [NSString stringWithFormat:@"获得金卡条件: %@", info.howToGetGold];
         NSDictionary *attribute = @{NSFontAttributeName: _howtogetLabel.font};
         CGRect goldRect = [_howtogetLabel.text boundingRectWithSize:CGSizeMake(200, 1000) options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
                                                    attributes:attribute

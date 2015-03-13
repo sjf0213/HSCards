@@ -12,7 +12,7 @@
 
 @property(nonatomic, strong)NSString* cardName;
 @property(nonatomic, strong)NSString* cardID;
-@property(nonatomic, assign)BOOL collectible;// 是否衍生卡牌
+@property(nonatomic, assign)BOOL collectible;// 是否可收集
 @property(nonatomic, assign)BOOL elite;//???
 
 @property(nonatomic, assign)NSUInteger cost;// 费用，法力值消耗
@@ -26,7 +26,7 @@
 @property(nonatomic, assign)NSString* race;// 所属种族
 @property(nonatomic, assign)NSString* cardSet;//卡牌所属集合
 
-@property(nonatomic, assign)NSString* howToGet;// 获得条件
+@property(nonatomic, assign)NSString* howToGetGold;// 获得条件
 @property(nonatomic, assign)NSString* flavor;// 调料包
 @end
 @implementation CardItemInfo
@@ -88,7 +88,7 @@
         _cardType = [dic objectForKey:@"type"];
         
         // 获得条件
-        _howToGet = [dic objectForKey:@"howToGetGold"];
+        _howToGetGold = [dic objectForKey:@"howToGetGold"];
         
         // 调料包
         _flavor = [dic objectForKey:@"flavor"];
