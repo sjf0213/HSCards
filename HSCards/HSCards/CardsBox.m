@@ -41,6 +41,7 @@ static CardsBox * m_Instance;
     if(self)
     {
         _cardList = [[NSArray alloc] init];
+        _collectibleCardList = [[NSArray alloc] init];
         _filtedList = [[NSMutableArray alloc] init];
     }
     return self;
@@ -51,6 +52,7 @@ static CardsBox * m_Instance;
     if (NO == [arr isKindOfClass:[NSArray class]]) {
         return;
     }
+    // 所有json中的卡，一共1066张
     NSMutableArray* resultArr = [NSMutableArray new];
     for (int i = 0; i < arr.count; i++)
     {
@@ -64,31 +66,34 @@ static CardsBox * m_Instance;
         }
     }
     _cardList = [_cardList arrayByAddingObjectsFromArray:resultArr];
+    DLog(@"All the cards count = %zd", _cardList.count);
+}
+
+-(void)pickCollectible
+{
+    // 过滤所有可收集的卡,除去九个英雄，一共535张
+    NSMutableArray* colList = [NSMutableArray new];
+    for (CardItemInfo* item in _cardList) {
+        if (YES == item.collectible && NO == [item.cardType isEqualToString:@"Hero"]) {
+            [colList addObject:item];
+        }
+    }
+    _collectibleCardList = [_collectibleCardList arrayByAddingObjectsFromArray:colList];
+    DLog(@"All the COLLECTIBLE cards count = %zd", _collectibleCardList.count);
 }
 
 -(void)downloadAllCollectibleCards
 {
-    // 过滤所有可收集的卡
-    NSMutableArray* resultList = [NSMutableArray array];
-    for (CardItemInfo* item in _cardList) {
-        if (YES == item.collectible) {
-            [resultList addObject:item];
-        }
-    }
-    DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
+    DLog(@"All the Download cards count = %zd", _collectibleCardList.count);
     NSString* networkAddr = @"http://img3.cache.netease.com/game/hs/db/cards/20141209/medium/";
     NSString * localAddr = [[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory];
-//    NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", @"CS2_171"];
-//    NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
-//    NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
-//    [self downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
-    for (NSInteger i = 0; i < resultList.count; i++) {
-        CardItemInfo* item = resultList[i];
+    for (NSInteger i = 0; i < _collectibleCardList.count; i++) {
+        CardItemInfo* item = _collectibleCardList[i];
         NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", item.cardID];
         NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
         NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
         [self downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
-        [NSThread sleepForTimeInterval:3];
+        [NSThread sleepForTimeInterval:3];// 每张卡下载间隔3秒，视网速而定
     }
 }
 
@@ -96,27 +101,6 @@ static CardsBox * m_Instance;
 {
     static NSUInteger indexSuccess = 0;
     static NSUInteger indexFailure = 0;
-    /*
-//    NSError* err = nil;
-//    DLog(@"#%zd# ", index);
-//    NSMutableURLRequest* rq = [[AFHTTPRequestSerializer serializer] requestWithMethod:@"GET" URLString:sourcePath parameters:nil error:&err];
-//    NSMutableURLRequest* rq = [[AFHTTPRequestSerializer serializer] requestWithMethod: URLString:sourcePath parameters:nil];
-    NSURL *URL = [NSURL URLWithString:sourcePath];
-    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
-
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:targetPath append:NO];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        DLog(@"#%zd# SUCCCESSFULL IMG RETRIEVE to %@!", indexSuccess, targetPath);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        // Deal with failure
-        DLog(@"#%zd# FAIL IMG RETRIEVE: %@", indexFailure, error);
-    }];
-    */
-    
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -132,7 +116,7 @@ static CardsBox * m_Instance;
         if (error) {
             DLog(@"#%zd# FAILED err = %@", indexFailure++, error);
         }else{
-            NSLog(@"#%zd# SUCCEEDED File downloaded to: %@", indexSuccess++, filePath);
+            DLog(@"#%zd# SUCCEEDED File downloaded to: %@", indexSuccess++, filePath);
         }
     }];
     [downloadTask resume];
@@ -142,20 +126,8 @@ static CardsBox * m_Instance;
 {
     [_filtedList removeAllObjects];
     NSMutableArray* resultList = [NSMutableArray array];
-    NSArray* sourceArray = [NSArray new];
-    
-    sourceArray = _cardList;
-    
-    // 0, 过滤所有可收集的卡
-    for (CardItemInfo* item in sourceArray) {
-        if (YES == item.collectible) {
-            [resultList addObject:item];
-        }
-    }
-//    [resultList addObjectsFromArray:_cardList];
-    DLog(@"All the COLLECTIBLE cards count = %zd", resultList.count);
+    NSArray* sourceArray = _collectibleCardList;
     // 1, 过滤费用
-    sourceArray = resultList;
     resultList = [NSMutableArray new];
     switch ([FilterData shareInstance].cost)
     {

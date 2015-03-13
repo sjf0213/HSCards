@@ -148,17 +148,17 @@
     if ([obj isKindOfClass:[NSDictionary class]])
     {
         NSDictionary* dic = obj;
-        NSUInteger totalCount = 0;
+        //NSUInteger totalCount = 0;
         NSArray* keyArr = dic.allKeys;
-        
         for (NSString* keyItem in keyArr) {
             NSArray* subArr = [dic objectForKey:keyItem];
+            DLog(@"CARD SET: %@, count = %zd", keyItem, subArr.count);
             [[CardsBox shareInstance] addCardsByArray:subArr withCardSet:keyItem];
-            totalCount = totalCount + subArr.count;
-            DLog(@"card set = %@, count = %zd", keyItem, subArr.count);
+            //totalCount = totalCount + subArr.count;
         }
-        DLog(@"All the cards count = %zd", totalCount);
+        //DLog(@"TOTAL CARDS count = %zd", totalCount);
     }
+    [[CardsBox shareInstance] pickCollectible];
 }
 
 

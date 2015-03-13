@@ -11,10 +11,12 @@
 @interface CardsBox : NSObject
 
 @property(nonatomic, readonly)NSArray* cardList;
+@property(nonatomic, readonly)NSArray* collectibleCardList;
 @property(nonatomic, readonly)NSMutableArray* filtedList;
 
 +(CardsBox*)shareInstance;
 -(void)addCardsByArray:(NSArray*)arr withCardSet:(NSString*)key;
+-(void)pickCollectible;
 -(void)fillFiltedList;
 -(void)downloadAllCollectibleCards;
 @end
