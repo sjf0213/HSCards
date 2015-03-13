@@ -109,6 +109,11 @@
     _cardSet = cardSet;
 }
 
+-(void)setCardRarity:(NSString *)rarity
+{
+    _rarity = rarity;
+}
+
 -(NSString*)description
 {
     return [NSString stringWithFormat:@"-----------!----------%@\n%@",_cardName, [_otherInfo description]];

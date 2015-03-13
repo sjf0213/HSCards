@@ -61,6 +61,10 @@ static CardsBox * m_Instance;
             CardItemInfo* cardItem = [[CardItemInfo alloc] initWithDic:itemDic];
             if ([key isKindOfClass:[NSString class]]) {
                 [cardItem setCardSet:key];
+                // 纠正稀有度的错误
+                if ([key isEqualToString:@"Basic"] && [cardItem.rarity isEqualToString:@"Common"]) {
+                    [cardItem setCardRarity:@"Free"];
+                }
             }
             [resultArr addObject:cardItem];
         }
@@ -201,21 +205,15 @@ static CardsBox * m_Instance;
             break;
         case card_rarity_free:
             for (CardItemInfo* item in sourceArray) {
-                if ([item.rarity isEqualToString:@"Free"] || [item.rarity isEqualToString:@"Common"]) {
-                    if ([item.howToGet isKindOfClass:[NSString class]])
-                    {
-                        [resultList addObject:item];
-                    }
+                if ([item.rarity isEqualToString:@"Free"]){
+                    [resultList addObject:item];
                 }
             }
             break;
         case card_rarity_common:
             for (CardItemInfo* item in sourceArray) {
-                if ([item.rarity isEqualToString:@"Common"]) {
-                    if (NO == [item.howToGet isKindOfClass:[NSString class]])
-                    {
-                        [resultList addObject:item];
-                    }
+                if ([item.rarity isEqualToString:@"Common"]){
+                    [resultList addObject:item];
                 }
             }
             break;

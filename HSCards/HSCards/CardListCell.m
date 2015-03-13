@@ -108,7 +108,7 @@
 -(void)loadCellData:(CardItemInfo*)data
 {
     _cardPic.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",data.cardID]];
-    _cardID.text = data.cardID;
+    _cardID.text = [NSString stringWithFormat:@"代码: %@",data.cardID];
     _cardName.text = data.cardName;
     //_collectible.text = [NSString stringWithFormat:@"elite: %zd", data.elite];;
     _cardCost.text = [NSString stringWithFormat:@"%@: %zd",NSLocalizedString(@"Cost", @""), data.cost];
