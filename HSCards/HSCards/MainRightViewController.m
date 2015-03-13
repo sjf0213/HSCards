@@ -61,13 +61,13 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    DLog(@"---------------Main Right viewWillAppear------------------");
+    //DLog(@"---------------Main Right viewWillAppear------------------");
     //[self updateDisplayData];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary* dicAll = [[FilterData shareInstance].displayTextArray objectAtIndex:indexPath.row];
+    NSDictionary* dicAll = [[FilterData shareInstance].conditionEnumArray objectAtIndex:indexPath.row];
     NSArray* condition = [dicAll objectForKey:@"condition"];
     
     RightSimpleSelectController* secondController = [[RightSimpleSelectController alloc] initWithDataArray:condition];
@@ -75,14 +75,50 @@
     [self.navigationController pushViewController:secondController animated:YES];
 }
 
+// 如果没有点击确定进行筛选，则恢复显示上次的删选条件
 -(void)updateDisplayData
 {
     NSMutableArray* levelOneArray = [NSMutableArray array];
-    for (NSDictionary* item in [FilterData shareInstance].displayTextArray) {
-        NSString* title = [item objectForKey:@"title"];
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[0];
         NSArray* textArray = [item objectForKey:@"condition"];
         NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].cost];
-        [levelOneArray addObject:@{@"title":title,
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
+                                   @"result":resultText}];
+    }
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[1];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].rarity];
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
+                                   @"result":resultText}];
+    }
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[2];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].career];
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
+                                   @"result":resultText}];
+    }
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[3];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].type];
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
+                                   @"result":resultText}];
+    }
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[4];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].race];
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
+                                   @"result":resultText}];
+    }
+    {
+        NSDictionary* item  = [FilterData shareInstance].conditionEnumArray[5];
+        NSArray* textArray = [item objectForKey:@"condition"];
+        NSString* resultText = [textArray objectAtIndex:[FilterData shareInstance].cardSet];
+        [levelOneArray addObject:@{@"title":[item objectForKey:@"title"],
                                    @"result":resultText}];
     }
     [self.arrayDataSource removeAllItems];
@@ -94,16 +130,6 @@
 -(void)updateSingleCellAtIndex:(NSUInteger)index withText:(NSString*)str
 {
     NSMutableArray* levelOneArray = [NSMutableArray array];
-//    for (NSDictionary* item in [FilterData shareInstance].displayTextArray)
-//    {
-//        
-//        NSString* title = [item objectForKey:@"title"];
-//        [levelOneArray addObject:@{@"title":title,
-//                                   @"result":str}];
-//    }
-//    [self.arrayDataSource removeAllItems];
-//    [self.arrayDataSource appendWithItems:levelOneArray];
-    
     for (int i = 0; i < self.arrayDataSource.items.count; i++)
     {
         NSDictionary* dic = [self.arrayDataSource.items objectAtIndex:i];
@@ -132,7 +158,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:0];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:0];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:0];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
@@ -147,7 +173,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:1];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:1];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:1];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
@@ -163,7 +189,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:2];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:2];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:2];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
@@ -179,7 +205,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:3];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:3];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:3];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
@@ -194,7 +220,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:4];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:4];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:4];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {
@@ -209,7 +235,7 @@
             {
                 NSDictionary* cellDataDic = [self.arrayDataSource.items objectAtIndex:5];
                 NSString* cellResultStr = [cellDataDic objectForKey:@"result"];
-                NSDictionary* filterDataDic = [[FilterData shareInstance].displayTextArray objectAtIndex:5];
+                NSDictionary* filterDataDic = [[FilterData shareInstance].conditionEnumArray objectAtIndex:5];
                 NSArray* arrCondition = [filterDataDic objectForKey:@"condition"];
                 for (int i = 0; i < arrCondition.count; i++)
                 {

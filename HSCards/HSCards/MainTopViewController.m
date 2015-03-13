@@ -50,6 +50,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self updateDisplayData];
+    // 下载所有卡牌图片
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [[CardsBox shareInstance] downloadAllCollectibleCards];
 //    });

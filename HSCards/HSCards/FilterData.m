@@ -37,7 +37,7 @@ static FilterData * m_Instance;
     if(self)
     {
         NSString * dataPath = [[NSBundle mainBundle] pathForResource:@"filter" ofType:@"plist"];
-        _displayTextArray = [NSArray arrayWithContentsOfFile:dataPath];
+        _conditionEnumArray = [NSArray arrayWithContentsOfFile:dataPath];
     }
     return self;
 }

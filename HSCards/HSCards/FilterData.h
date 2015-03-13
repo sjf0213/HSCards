@@ -82,7 +82,7 @@ typedef enum : NSUInteger {
 } card_set;
 
 @interface FilterData : NSObject
-@property(atomic, readonly)NSArray* displayTextArray;
+@property(atomic, readonly)NSArray* conditionEnumArray;
 @property(atomic, assign)mana_cost cost;
 @property(atomic, assign)card_rarity rarity;
 @property(atomic, assign)card_career career;
