@@ -569,7 +569,6 @@
 		F08F39DB1AA825BA00BF4D39 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F08F39D21AA825BA00BF4D39 /* AFURLSessionManager.m */; };
 		F096E09A1A92DF6800F4A69F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E0991A92DF6800F4A69F /* main.m */; };
 		F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09C1A92DF6800F4A69F /* AppDelegate.m */; };
-		F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09F1A92DF6800F4A69F /* ViewController.m */; };
 		F096E0A51A92DF6800F4A69F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A41A92DF6800F4A69F /* Images.xcassets */; };
 		F096E0A81A92DF6800F4A69F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A61A92DF6800F4A69F /* LaunchScreen.xib */; };
 		F0A878E61AB27D3B008E8F17 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */; };
@@ -1172,8 +1171,6 @@
 		F096E0991A92DF6800F4A69F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F096E09B1A92DF6800F4A69F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F096E09C1A92DF6800F4A69F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F096E09E1A92DF6800F4A69F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F096E09F1A92DF6800F4A69F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F096E0A41A92DF6800F4A69F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F096E0A71A92DF6800F4A69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
@@ -1859,8 +1856,6 @@
 				F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */,
 				F096E09B1A92DF6800F4A69F /* AppDelegate.h */,
 				F096E09C1A92DF6800F4A69F /* AppDelegate.m */,
-				F096E09E1A92DF6800F4A69F /* ViewController.h */,
-				F096E09F1A92DF6800F4A69F /* ViewController.m */,
 				F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */,
 				F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */,
 				F0B842571AAD489400588C5A /* TopNaviViewController.h */,
@@ -2575,7 +2570,6 @@
 				F08F39D91AA825BA00BF4D39 /* AFURLRequestSerialization.m in Sources */,
 				F08F39D81AA825BA00BF4D39 /* AFURLConnectionOperation.m in Sources */,
 				F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */,
-				F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
 				F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */,
 				F08F39DB1AA825BA00BF4D39 /* AFURLSessionManager.m in Sources */,

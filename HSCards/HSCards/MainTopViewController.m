@@ -104,6 +104,8 @@
         DLog(@"--------------------*---race.arr = %@", arr);
     }*/
     [_mainTable reloadData];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"共有%zd张卡牌", self.arrayDataSource.items.count];
 }
 
 -(void)addChildViewController:(UIViewController *)childController
