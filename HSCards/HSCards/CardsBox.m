@@ -229,15 +229,21 @@ static CardsBox * m_Instance;
             break;
         case card_rarity_free:
             for (CardItemInfo* item in sourceArray) {
-                if ([item.rarity isEqualToString:@"Free"]) {
-                    [resultList addObject:item];
+                if ([item.rarity isEqualToString:@"Free"] || [item.rarity isEqualToString:@"Common"]) {
+                    if ([item.howToGet isKindOfClass:[NSString class]])
+                    {
+                        [resultList addObject:item];
+                    }
                 }
             }
             break;
         case card_rarity_common:
             for (CardItemInfo* item in sourceArray) {
                 if ([item.rarity isEqualToString:@"Common"]) {
-                    [resultList addObject:item];
+                    if (NO == [item.howToGet isKindOfClass:[NSString class]])
+                    {
+                        [resultList addObject:item];
+                    }
                 }
             }
             break;
@@ -539,6 +545,7 @@ static CardsBox * m_Instance;
             }
             break;
     }
+    DLog(@"----------CARD resultList.count = %d", resultList.count);
     [_filtedList addObjectsFromArray:resultList];
 }
 
