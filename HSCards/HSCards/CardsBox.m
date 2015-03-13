@@ -82,7 +82,7 @@ static CardsBox * m_Instance;
 //    NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
 //    NSString* targetPath = [localAddr stringByAppendingPathComponent:fileNameSimple];
 //    [self downloadSingleCardByUrl:sourcePath saveToPath:targetPath];
-    for (NSInteger i = 450; i < resultList.count; i++) {
+    for (NSInteger i = 0; i < resultList.count; i++) {
         CardItemInfo* item = resultList[i];
         NSString* fileNameSimple = [NSString stringWithFormat:@"%@.png", item.cardID];
         NSString* sourcePath = [networkAddr stringByAppendingPathComponent:fileNameSimple];
@@ -94,7 +94,7 @@ static CardsBox * m_Instance;
 
 -(void)downloadSingleCardByUrl:(NSString*)sourcePath saveToPath:(NSString*)targetPath
 {
-    static NSUInteger indexSuccess = 450;
+    static NSUInteger indexSuccess = 0;
     static NSUInteger indexFailure = 0;
     /*
 //    NSError* err = nil;

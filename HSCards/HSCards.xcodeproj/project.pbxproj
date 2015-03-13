@@ -572,6 +572,8 @@
 		F096E0A01A92DF6800F4A69F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F096E09F1A92DF6800F4A69F /* ViewController.m */; };
 		F096E0A51A92DF6800F4A69F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A41A92DF6800F4A69F /* Images.xcassets */; };
 		F096E0A81A92DF6800F4A69F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A61A92DF6800F4A69F /* LaunchScreen.xib */; };
+		F0A878E61AB27D3B008E8F17 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */; };
+		F0A878E81AB27D95008E8F17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E71AB27D95008E8F17 /* libz.dylib */; };
 		F0AFD2BF1A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */; };
 		F0AFD2C01A93218F00E9B2DD /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B51A93218F00E9B2DD /* ECSlidingAnimationController.m */; };
 		F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B81A93218F00E9B2DD /* ECSlidingInteractiveTransition.m */; };
@@ -1174,6 +1176,9 @@
 		F096E09F1A92DF6800F4A69F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F096E0A41A92DF6800F4A69F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F096E0A71A92DF6800F4A69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		F0A878E51AB27D3B008E8F17 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		F0A878E71AB27D95008E8F17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F0AFD2B21A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
 		F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		F0AFD2B41A93218F00E9B2DD /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
@@ -1218,6 +1223,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A878E81AB27D95008E8F17 /* libz.dylib in Frameworks */,
+				F0A878E61AB27D3B008E8F17 /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1822,6 +1829,8 @@
 		F096E08B1A92DF6800F4A69F = {
 			isa = PBXGroup;
 			children = (
+				F0A878E71AB27D95008E8F17 /* libz.dylib */,
+				F0A878E31AB27D3A008E8F17 /* Umeng */,
 				F08F39BF1AA825BA00BF4D39 /* AFNetworking */,
 				F0AFD2B11A93218F00E9B2DD /* ECSlidingViewController */,
 				F0D9DE871A9DA11600FDCBCB /* OtherFiles */,
@@ -1882,6 +1891,15 @@
 				F096E0991A92DF6800F4A69F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0A878E31AB27D3A008E8F17 /* Umeng */ = {
+			isa = PBXGroup;
+			children = (
+				F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */,
+				F0A878E51AB27D3B008E8F17 /* MobClick.h */,
+			);
+			path = Umeng;
 			sourceTree = "<group>";
 		};
 		F0AFD2B11A93218F00E9B2DD /* ECSlidingViewController */ = {
@@ -2694,6 +2712,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Umeng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2704,6 +2726,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Umeng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

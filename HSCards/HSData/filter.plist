@@ -23,7 +23,7 @@
 		<string>Rarity</string>
 		<key>condition</key>
 		<array>
-			<string>全部</string>
+			<string>All</string>
 			<string>Free</string>
 			<string>Common</string>
 			<string>Rare</string>

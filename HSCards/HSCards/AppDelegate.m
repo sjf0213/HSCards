@@ -14,6 +14,7 @@
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
 #import "TopNaviViewController.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -24,6 +25,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // 友盟统计
+    [MobClick startWithAppkey:@"55024415fd98c5c424000e7a" reportPolicy:BATCH channelId:@""];
+    
+    // 导入卡牌
     [self initCards];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
