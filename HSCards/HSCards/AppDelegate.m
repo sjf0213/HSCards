@@ -11,6 +11,7 @@
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainTopViewController.h"
 #import "MainRightViewController.h"
+#import "MainLeftViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
 #import "TopNaviViewController.h"
@@ -36,27 +37,21 @@
     
     MainTopViewController *topViewController          = [[MainTopViewController alloc] init];
     MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
-//    UIViewController *underLeftViewController         = [[UIViewController alloc] init];
+    MainLeftViewController *underLeftViewController   = [[MainLeftViewController alloc] init];
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
-//    NSString* leftTitle = NSLocalizedString(@"MINE", @"");
-//    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
+    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
     UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
-//    topViewController.navigationItem.title = @"MAIN LIST";
-//    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+    topViewController.navigationItem.title = @"MAIN LIST";
+    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
     
     //Navi
     TopNaviViewController *navigationController = [[TopNaviViewController alloc] initWithRootViewController:topViewController];
     UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:underRightViewController];
     
-    // configure under left view controller
-//    underLeftViewController.view.layer.borderWidth     = 20;
-//    underLeftViewController.view.layer.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0].CGColor;
-//    underLeftViewController.view.layer.borderColor     = [UIColor colorWithWhite:0.8 alpha:1.0].CGColor;
-//    underLeftViewController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeLeft; // don't go under the top view
-//    
     // configure under right view controller
     rightNaviController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight;
     
@@ -64,15 +59,16 @@
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
     topViewController.parentSliding = self.slidingViewController;
-    //self.slidingViewController.underLeftViewController  = underLeftViewController;
+    self.slidingViewController.underLeftViewController  = underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view
     [navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     // configure anchored layout
-    self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
+    //self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
     self.slidingViewController.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
+    self.slidingViewController.anchorRightRevealAmount = 64;
     
     self.window.rootViewController = self.slidingViewController;
     

@@ -27,8 +27,8 @@
 {
     [super loadView];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.5 green:1 blue:1 alpha:1.0];
-    self.navigationItem.title = NSLocalizedString(@"FILTER", @"");
+    self.view.backgroundColor = [UIColor colorWithRed:0.42 green:0.70 blue:0.88 alpha:1];
+    self.navigationItem.title = NSLocalizedString(@"Rules", @"");
     UIBarButtonItem *OKButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"OK", @"") style:UIBarButtonItemStylePlain target:self action:@selector(onTapOK)];
     self.navigationItem.rightBarButtonItem  = OKButton;
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"CANCEL", @"")  style:UIBarButtonItemStylePlain target:self action:@selector(onTapCancel)];

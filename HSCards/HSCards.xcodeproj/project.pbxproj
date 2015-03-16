@@ -573,6 +573,7 @@
 		F096E0A81A92DF6800F4A69F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A61A92DF6800F4A69F /* LaunchScreen.xib */; };
 		F0A878E61AB27D3B008E8F17 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */; };
 		F0A878E81AB27D95008E8F17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E71AB27D95008E8F17 /* libz.dylib */; };
+		F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */; };
 		F0AFD2BF1A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */; };
 		F0AFD2C01A93218F00E9B2DD /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B51A93218F00E9B2DD /* ECSlidingAnimationController.m */; };
 		F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B81A93218F00E9B2DD /* ECSlidingInteractiveTransition.m */; };
@@ -1176,6 +1177,8 @@
 		F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		F0A878E51AB27D3B008E8F17 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		F0A878E71AB27D95008E8F17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLeftViewController.h; sourceTree = "<group>"; };
+		F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLeftViewController.m; sourceTree = "<group>"; };
 		F0AFD2B21A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
 		F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		F0AFD2B41A93218F00E9B2DD /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
@@ -1868,6 +1871,8 @@
 				F0D9E72D1A9EFB3000FDCBCB /* MainRightViewController.m */,
 				F0D9E7321A9F001A00FDCBCB /* FilterListCell.h */,
 				F0D9E7331A9F001A00FDCBCB /* FilterListCell.m */,
+				F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */,
+				F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */,
 				F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */,
 				F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */,
 				F08F39BC1AA80B2D00BF4D39 /* CardDetailViewController.h */,
@@ -2572,6 +2577,7 @@
 				F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
 				F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */,
+				F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */,
 				F08F39DB1AA825BA00BF4D39 /* AFURLSessionManager.m in Sources */,
 				F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */,
 				F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */,

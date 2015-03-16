@@ -30,6 +30,11 @@
     [super loadView];
     self.view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0.8 alpha:1.0];
     
+    NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
+    
+    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    
+    
     TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
         [cell clearData];
         [cell loadCellData:data];
