@@ -72,11 +72,32 @@
             if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered && isMovingRight) {
                 [self.slidingViewController anchorTopViewToRightAnimated:YES];
             } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered && !isMovingRight) {
-                [self.slidingViewController anchorTopViewToLeftAnimated:YES];
+                [self.slidingViewController anchorTopViewToLeftAnimated:YES onComplete:^{
+                    if(self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredLeft)
+                    {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:NO]];
+                    }
+                    else
+                    {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:YES]];
+                    }
+                }];
             } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredLeft) {
-                [self.slidingViewController resetTopViewAnimated:YES];
+                [self.slidingViewController resetTopViewAnimated:YES onComplete:^{
+                    NSLog(@"--------------------------reset Top View Animated from Left");
+                    if(self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionCentered)
+                    {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:YES]];
+                    }
+                    else
+                    {
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:NO]];
+                    }
+                }];
             } else if (self.slidingViewController.currentTopViewPosition == ECSlidingViewControllerTopViewPositionAnchoredRight) {
-                [self.slidingViewController resetTopViewAnimated:YES];
+                [self.slidingViewController resetTopViewAnimated:YES onComplete:^{
+                    NSLog(@"--------------------------reset Top View Animated from right");
+                }];
             }
             
             break;

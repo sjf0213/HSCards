@@ -73,9 +73,22 @@
 {
     NSNumber* v = flag.object;
     BOOL enable = [v boolValue];
-    DLog(@"----------enableTopScroll:%d", enable);
+    //DLog(@"----------enableTopScroll:%d", enable);
     self.view.userInteractionEnabled = enable;
-    _mask.hidden = enable;
+    if (enable) {
+        //_mask.alpha = 1.0;
+        [UIView animateWithDuration:0.2 animations:^{
+            _mask.alpha = 0.0;
+        } completion:^(BOOL finished){
+            _mask.hidden = YES;
+        }];
+    }else{
+//        _mask.alpha = 0.0;
+        _mask.hidden = NO;
+        [UIView animateWithDuration:0.2 animations:^{
+            _mask.alpha = 1.0;
+        }];
+    }
 }
 
 -(void)updateDisplayData

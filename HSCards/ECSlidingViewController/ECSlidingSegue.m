@@ -50,14 +50,20 @@
         if ([slidingViewController.underLeftViewController isMemberOfClass:[destinationViewController class]]) {
             [slidingViewController anchorTopViewToRightAnimated:YES];
         } else if ([slidingViewController.underRightViewController isMemberOfClass:[destinationViewController class]]) {
-            [slidingViewController anchorTopViewToLeftAnimated:YES];
+            [slidingViewController anchorTopViewToLeftAnimated:YES onComplete:^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:NO]];
+                
+            }];
         }
     } else {
         if (!self.skipSettingTopViewController) {
             slidingViewController.topViewController = destinationViewController;
         }
         
-        [slidingViewController resetTopViewAnimated:YES];
+        [slidingViewController resetTopViewAnimated:YES  onComplete:^{
+            NSLog(@"--------------------------reset Top PERFORM");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:YES]];
+        }];
     }
 }
 

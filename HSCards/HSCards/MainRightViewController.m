@@ -61,15 +61,15 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    DLog(@"---------------Main Right view Will Appear------------------");
-    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:NO]];
+//    DLog(@"---------------Main Right view Will Appear------------------");
+//    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:NO]];
     
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-    DLog(@"---------------Main Right view Did Disappear------------------");
-    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:YES]];
+//    DLog(@"---------------Main Right view Did Disappear------------------");
+//    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:YES]];
     
 }
 
@@ -160,7 +160,9 @@
         UINavigationController* navi = self.navigationController;
         if ([navi.parentViewController isKindOfClass:[ECSlidingViewController class]]) {
             ECSlidingViewController* ec = (ECSlidingViewController*)navi.parentViewController;
-            [ec resetTopViewAnimated:YES];
+            [ec resetTopViewAnimated:YES  onComplete:^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:YES]];
+            }];
             
             // 存储过滤条件 cost
             {
@@ -269,6 +271,8 @@
             [ec resetTopViewAnimated:YES onComplete:^{
                 // 恢复之前已经确定的过滤选项
                 [self updateDisplayData];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"Notification_EnableTopScroll" object:[NSNumber numberWithBool:YES]];
+            
             }];
         }
     }

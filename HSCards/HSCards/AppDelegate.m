@@ -77,11 +77,14 @@
 }
 
 - (void)anchorRight {
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+    [self.slidingViewController anchorTopViewToRightAnimated:YES ];
 }
 
 - (void)anchorLeft {
-    [self.slidingViewController anchorTopViewToLeftAnimated:YES];
+    [self.slidingViewController anchorTopViewToLeftAnimated:YES onComplete:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:NO]];
+        
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
