@@ -37,4 +37,5 @@
 #define MainList_Row_H   100
 
 #define Notification_UpdateMainList   @"Notification_UpdateMainList"
+#define Notification_EnableTopScroll  @"Notification_EnableTopScroll"
 #endif

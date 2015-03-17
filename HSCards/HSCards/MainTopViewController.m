@@ -21,6 +21,7 @@
 @interface MainTopViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
+@property(nonatomic, strong)UIView* mask;
 @end
 
 @implementation MainTopViewController
@@ -29,11 +30,6 @@
 {
     [super loadView];
     self.view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0.8 alpha:1.0];
-    
-    NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
-    
-    UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    
     
     TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
         [cell clearData];
@@ -48,7 +44,13 @@
     _mainTable.delegate = self;
     [self.view addSubview:_mainTable];
     
+    _mask = [[UIView alloc] initWithFrame:self.view.bounds];
+    _mask.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    _mask.hidden = YES;
+    [self.view addSubview:_mask];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDisplayData) name:Notification_UpdateMainList object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableTopScroll:) name:Notification_EnableTopScroll object:nil];
 }
 
 - (void)viewDidLoad {
@@ -65,6 +67,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)enableTopScroll:(NSNotification*)flag
+{
+    NSNumber* v = flag.object;
+    BOOL enable = [v boolValue];
+    DLog(@"----------enableTopScroll:%d", enable);
+    self.view.userInteractionEnabled = enable;
+    _mask.hidden = enable;
 }
 
 -(void)updateDisplayData
@@ -109,8 +120,8 @@
         }
         DLog(@"--------------------*---race.arr = %@", arr);
     }*/
+    _mainTable.contentOffset = CGPointMake(0.0, -_mainTable.contentInset.top);
     [_mainTable reloadData];
-    
     self.navigationItem.title = [NSString stringWithFormat:@"共有%zd张卡牌", self.arrayDataSource.items.count];
 }
 
@@ -119,6 +130,7 @@
     [super addChildViewController:childController];
     //self.parentSliding.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureNone;
     self.parentSliding.panGesture.enabled = NO;// 禁用左右两侧的Controller
+
 }
 
 

@@ -61,8 +61,16 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //DLog(@"---------------Main Right viewWillAppear------------------");
-    //[self updateDisplayData];
+    DLog(@"---------------Main Right view Will Appear------------------");
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:NO]];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    DLog(@"---------------Main Right view Did Disappear------------------");
+    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_EnableTopScroll object:[NSNumber numberWithBool:YES]];
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
