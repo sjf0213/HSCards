@@ -41,11 +41,11 @@
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
-    NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
-    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    //NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
+    //UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
     UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
     topViewController.navigationItem.title = @"MAIN LIST";
-    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+    //topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
     
     //Navi
@@ -59,7 +59,7 @@
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
     topViewController.parentSliding = self.slidingViewController;
-    self.slidingViewController.underLeftViewController  = underLeftViewController;
+    //self.slidingViewController.underLeftViewController  = underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view
@@ -68,7 +68,7 @@
     // configure anchored layout
     //self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
     self.slidingViewController.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
-    self.slidingViewController.anchorRightRevealAmount = 64;
+    //self.slidingViewController.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
     
     self.window.rootViewController = self.slidingViewController;
     
