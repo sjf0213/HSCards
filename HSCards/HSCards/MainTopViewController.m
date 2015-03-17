@@ -29,7 +29,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0.8 alpha:1.0];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
         [cell clearData];
@@ -135,7 +135,7 @@
     }*/
     _mainTable.contentOffset = CGPointMake(0.0, -_mainTable.contentInset.top);
     [_mainTable reloadData];
-    self.navigationItem.title = [NSString stringWithFormat:@"共有%zd张卡牌", self.arrayDataSource.items.count];
+    self.navigationItem.title = [NSString stringWithFormat:@"共有 %zd 张卡牌", self.arrayDataSource.items.count];
 }
 
 -(void)addChildViewController:(UIViewController *)childController
@@ -150,7 +150,7 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    DLog(@"--------------------*---didSelectRowAtIndexPath = %d", indexPath.row);
+//    DLog(@"--------------------*---didSelectRowAtIndexPath = %d", indexPath.row);
 //    CardDetailView* detailView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
 //    [self.view addSubview:detailView];
     CardItemInfo* info = [self.arrayDataSource itemAtIndexPath:indexPath];

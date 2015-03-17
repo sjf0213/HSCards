@@ -27,7 +27,7 @@
 {
     [super loadView];
     
-    self.view.backgroundColor = [UIColor colorWithRed:0.42 green:0.70 blue:0.88 alpha:1];
+    self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = NSLocalizedString(@"Rules", @"");
     UIBarButtonItem *OKButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"OK", @"") style:UIBarButtonItemStylePlain target:self action:@selector(onTapOK)];
     self.navigationItem.rightBarButtonItem  = OKButton;
@@ -40,7 +40,7 @@
     };
     self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:FilterTableCellIdentifier configureCellBlock:configureCell];
     _mainTable =  _mainTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SlidingAnchorLeftRevealAmount, self.view.bounds.size.height)];
-    _mainTable.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
+    _mainTable.backgroundColor = ColorLevel1;
     _mainTable.rowHeight = 60;
     [_mainTable registerClass:[FilterListCell class] forCellReuseIdentifier:FilterTableCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
@@ -75,6 +75,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell* cell  = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO animated:YES];
     NSDictionary* dicAll = [[FilterData shareInstance].conditionEnumArray objectAtIndex:indexPath.row];
     NSArray* condition = [dicAll objectForKey:@"condition"];
     

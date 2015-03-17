@@ -36,6 +36,9 @@
 #define SlidingAnchorLeftRevealAmount 250.0
 #define MainList_Row_H   100
 
+#define ColorLevel1 [UIColor colorWithRed:0.8 green:0.9 blue:0.95 alpha:1.0]
+#define ColorLevel2 [UIColor colorWithRed:0.8 green:0.95 blue:0.9 alpha:1.0]
+
 #define Notification_UpdateMainList   @"Notification_UpdateMainList"
 #define Notification_EnableTopScroll  @"Notification_EnableTopScroll"
 #endif

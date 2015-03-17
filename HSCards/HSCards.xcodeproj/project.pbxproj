@@ -1871,14 +1871,14 @@
 				F0D9E72D1A9EFB3000FDCBCB /* MainRightViewController.m */,
 				F0D9E7321A9F001A00FDCBCB /* FilterListCell.h */,
 				F0D9E7331A9F001A00FDCBCB /* FilterListCell.m */,
-				F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */,
-				F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */,
 				F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */,
 				F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */,
 				F08F39BC1AA80B2D00BF4D39 /* CardDetailViewController.h */,
 				F08F39BD1AA80B2D00BF4D39 /* CardDetailViewController.m */,
 				F066E0C21AA9586800DB2505 /* CardDetailView.h */,
 				F066E0C31AA9586800DB2505 /* CardDetailView.m */,
+				F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */,
+				F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */,
 				F0B8425E1AAD809C00588C5A /* Localizable.strings */,
 			);
 			path = HSCards;

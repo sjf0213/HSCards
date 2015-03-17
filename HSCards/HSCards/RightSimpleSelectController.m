@@ -23,16 +23,18 @@
 {
     self = [super init];
     if (self) {
-        self.view.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:0.8 alpha:1.0];
+        self.view.backgroundColor = [UIColor whiteColor];
         TableViewCellConfigureBlock configureCell = ^(UITableViewCell* cell, NSString* data) {
+            cell.backgroundColor= [UIColor clearColor];
             cell.textLabel.text = @"";
+            cell.textLabel.textColor = [UIColor colorWithRed:76/255.0 green:80/255.0 blue:98/255.0 alpha:1.0];
             if ([data isKindOfClass:[NSString class]]) {
                 cell.textLabel.text = NSLocalizedString(data,@"");
             }
         };
         self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:SimpleSelectCellIdentifier configureCellBlock:configureCell];
         _mainTable = [[UITableView alloc] initWithFrame:self.view.bounds];
-        _mainTable.backgroundColor = [UIColor colorWithRed:1 green:1 blue:0.7 alpha:1.0];
+        _mainTable.backgroundColor = ColorLevel2;
         _mainTable.rowHeight = 44;
         [_mainTable registerClass:[UITableViewCell class] forCellReuseIdentifier:SimpleSelectCellIdentifier];
         _mainTable.dataSource = self.arrayDataSource;
