@@ -28,7 +28,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         CGFloat x1 = 80.0;
-        CGFloat x2 = (self.frame.size.width - x1)*0.5 + x1;
+        CGFloat x2 = ([UIScreen mainScreen].bounds.size.width - x1)*0.5 + x1;
         
         _cardPic = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 80)];
         _cardPic.image = nil;
