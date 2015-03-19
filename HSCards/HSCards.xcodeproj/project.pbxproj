@@ -572,10 +572,6 @@
 		F096E0A51A92DF6800F4A69F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F096E0A41A92DF6800F4A69F /* Images.xcassets */; };
 		F0A878E61AB27D3B008E8F17 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */; };
 		F0A878E81AB27D95008E8F17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E71AB27D95008E8F17 /* libz.dylib */; };
-		F0AD150F1ABA72E80090834C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD150B1ABA72E80090834C /* Default-568h@2x.png */; };
-		F0AD15101ABA72E80090834C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD150C1ABA72E80090834C /* Default@2x.png */; };
-		F0AD15111ABA72E80090834C /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD150D1ABA72E80090834C /* LaunchImage-800-667h@2x.png */; };
-		F0AD15121ABA72E80090834C /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0AD150E1ABA72E80090834C /* LaunchImage-800-Portrait-736h@3x.png */; };
 		F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */; };
 		F0AFD2BF1A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */; };
 		F0AFD2C01A93218F00E9B2DD /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B51A93218F00E9B2DD /* ECSlidingAnimationController.m */; };
@@ -1179,10 +1175,6 @@
 		F0A878E41AB27D3B008E8F17 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		F0A878E51AB27D3B008E8F17 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		F0A878E71AB27D95008E8F17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		F0AD150B1ABA72E80090834C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		F0AD150C1ABA72E80090834C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		F0AD150D1ABA72E80090834C /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
-		F0AD150E1ABA72E80090834C /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
 		F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLeftViewController.h; sourceTree = "<group>"; };
 		F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLeftViewController.m; sourceTree = "<group>"; };
 		F0AFD2B21A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -1239,7 +1231,6 @@
 		F066DC801AA94A9C00DB2505 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F0AD150A1ABA72E80090834C /* system */,
 				F066E0D41AA9909300DB2505 /* UI */,
 				F066DC811AA94A9C00DB2505 /* AllSetsCards */,
 			);
@@ -1903,17 +1894,6 @@
 			path = Umeng;
 			sourceTree = "<group>";
 		};
-		F0AD150A1ABA72E80090834C /* system */ = {
-			isa = PBXGroup;
-			children = (
-				F0AD150B1ABA72E80090834C /* Default-568h@2x.png */,
-				F0AD150C1ABA72E80090834C /* Default@2x.png */,
-				F0AD150D1ABA72E80090834C /* LaunchImage-800-667h@2x.png */,
-				F0AD150E1ABA72E80090834C /* LaunchImage-800-Portrait-736h@3x.png */,
-			);
-			path = system;
-			sourceTree = "<group>";
-		};
 		F0AD15131ABA72FF0090834C /* Framework */ = {
 			isa = PBXGroup;
 			children = (
@@ -2104,11 +2084,9 @@
 				F066DF9D1AA94A9F00DB2505 /* EX1_349.png in Resources */,
 				F066DFFC1AA94A9F00DB2505 /* EX1_623.png in Resources */,
 				F066E02A1AA94A9F00DB2505 /* GVG_013.png in Resources */,
-				F0AD15111ABA72E80090834C /* LaunchImage-800-667h@2x.png in Resources */,
 				F066DECA1AA94A9F00DB2505 /* CS2_065.png in Resources */,
 				F066DFA01AA94A9F00DB2505 /* EX1_355.png in Resources */,
 				F066DEB61AA94A9F00DB2505 /* CS2_027.png in Resources */,
-				F0AD15121ABA72E80090834C /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				F066E0B41AA94A9F00DB2505 /* NEW1_025.png in Resources */,
 				F066DF121AA94A9F00DB2505 /* DS1_055.png in Resources */,
 				F066DFDD1AA94A9F00DB2505 /* EX1_578.png in Resources */,
@@ -2293,7 +2271,6 @@
 				F066DED81AA94A9F00DB2505 /* CS2_093.png in Resources */,
 				F066DFA21AA94A9F00DB2505 /* EX1_362.png in Resources */,
 				F066DFCC1AA94A9F00DB2505 /* EX1_556.png in Resources */,
-				F0AD15101ABA72E80090834C /* Default@2x.png in Resources */,
 				F066DF3C1AA94A9F00DB2505 /* EX1_058.png in Resources */,
 				F066DFE81AA94A9F00DB2505 /* EX1_595.png in Resources */,
 				F066DFED1AA94A9F00DB2505 /* EX1_606.png in Resources */,
@@ -2330,7 +2307,6 @@
 				F066DF9B1AA94A9F00DB2505 /* EX1_341.png in Resources */,
 				F066DF471AA94A9F00DB2505 /* EX1_089.png in Resources */,
 				F066DF9A1AA94A9F00DB2505 /* EX1_339.png in Resources */,
-				F0AD150F1ABA72E80090834C /* Default-568h@2x.png in Resources */,
 				F066DF6E1AA94A9F00DB2505 /* EX1_238.png in Resources */,
 				F066DF971AA94A9F00DB2505 /* EX1_332.png in Resources */,
 				F066DEB31AA94A9F00DB2505 /* CS2_024.png in Resources */,
@@ -2728,6 +2704,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -2742,6 +2719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
