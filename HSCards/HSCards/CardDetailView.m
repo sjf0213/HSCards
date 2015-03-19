@@ -23,20 +23,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        //self.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.3];
+        _mainScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)];
+        _mainScroll.contentInset = UIEdgeInsetsMake(70, 0, 0, 0);
+        [self addSubview:_mainScroll];
+        
         UIButton* backBtn = [[UIButton alloc] initWithFrame:CGRectMake(20, 20, 44, 44)];
         [backBtn setImage:[UIImage imageNamed:@"back_btn"] forState:UIControlStateNormal];
         backBtn.layer.cornerRadius = 3.0f;
         backBtn.layer.borderColor = [UIColor whiteColor].CGColor;
         backBtn.layer.borderWidth = 0.5f;
-        
-        //backBtn.backgroundColor = [UIColor cyanColor];
         [backBtn addTarget:self action:@selector(onBack) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:backBtn];
-        
-        _mainScroll = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.bounds.size.width, self.bounds.size.height - 64)];
-        //_mainScroll.contentSize = CGSizeMake(self.bounds.size.width, 1000);
-        [self addSubview:_mainScroll];
     }
     return self;
 }

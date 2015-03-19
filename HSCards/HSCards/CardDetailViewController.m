@@ -19,7 +19,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.5];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.1 alpha:0.75];
     _mainView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
     typeof(self) __weak wself = self;
     _mainView.didDismissHandler = ^{
