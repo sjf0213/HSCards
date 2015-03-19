@@ -27,44 +27,46 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        CGFloat x1 = 80.0;
+        CGFloat x2 = (self.frame.size.width - x1)*0.5 + x1;
         
         _cardPic = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 60, 80)];
         _cardPic.image = nil;
         [self addSubview:_cardPic];
         
-        _cardName = [[UILabel alloc] initWithFrame:CGRectMake(80, 12, 190, 20)];
+        _cardName = [[UILabel alloc] initWithFrame:CGRectMake(x1, 12, 190, 20)];
         _cardName.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardName.text = @"";
         _cardName.font = KA_COMMON_FONT_OF_SIZE(18);
         [self addSubview:_cardName];
         
-        _cardID = [[UILabel alloc] initWithFrame:CGRectMake(80, 34, 90, 14)];
+        _cardID = [[UILabel alloc] initWithFrame:CGRectMake(x1, 38, 90, 14)];
         _cardID.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardID.text = @"";
         _cardID.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardID];
         
         // 第一行
-        _cardCost = [[UILabel alloc] initWithFrame:CGRectMake(80, 50, 100, 14)];
+        _cardCost = [[UILabel alloc] initWithFrame:CGRectMake(x1, 58, 100, 14)];
         _cardCost.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardCost.text = @"";
         _cardCost.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardCost];
         
-        _cardRarity = [[UILabel alloc] initWithFrame:CGRectMake(180, 50, 100, 14)];
+        _cardRarity = [[UILabel alloc] initWithFrame:CGRectMake(x2, 58, 100, 14)];
         _cardRarity.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardRarity.text = @"";
         _cardRarity.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardRarity];
         
         // 第二行
-        _cardCareer = [[UILabel alloc] initWithFrame:CGRectMake(80, 64, 100, 14)];
+        _cardCareer = [[UILabel alloc] initWithFrame:CGRectMake(x1, 76, 100, 14)];
         _cardCareer.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardCareer.text = @"";
         _cardCareer.font = KA_COMMON_FONT_OF_SIZE(12);
         [self addSubview:_cardCareer];
         
-        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(180, 64, 100, 14)];
+        _cardType = [[UILabel alloc] initWithFrame:CGRectMake(x2, 76, 100, 14)];
         _cardType.textColor = [UIColor colorWithWhite:110/255.0 alpha:1.0];
         _cardType.text = @"";
         _cardType.font = KA_COMMON_FONT_OF_SIZE(12);
