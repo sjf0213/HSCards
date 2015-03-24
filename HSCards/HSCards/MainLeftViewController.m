@@ -10,10 +10,13 @@
 #import "CommonDefine.h"
 #import "ArrayDataSource.h"
 #import "LeftMenuCell.h"
+#import "MobClick.h"
+
 #define LeftMenuCellIdentifier @"LeftMenuCell"
 
 @interface MainLeftViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
+//@property(nonatomic, strong)UIWebView* adWebView;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 @end
 
@@ -41,8 +44,11 @@
     [self.view addSubview:self.mainTable];
     
     [self.arrayDataSource appendWithItems:@[@{@"title":@"Home",@"icon":@"menu_home"},
-                                            @{@"title":@"Search",@"icon":@"menu_search"}]];
+                                            @{@"title":@"Search",@"icon":@"menu_search"},
+                                            @{@"title":@"AD",@"icon":@"menu_ad"}]];
     [self.mainTable reloadData];
+    
+//    self.adWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
 }
 
 - (void)viewDidLoad {
@@ -55,6 +61,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    NSString* adUrl = [MobClick getAdURL];
+    DLog(@"-------------*---------------show AD: %@", adUrl);
     
 }
 
