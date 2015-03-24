@@ -18,6 +18,7 @@
 @property(nonatomic, strong)UITableView* mainTable;
 //@property(nonatomic, strong)UIWebView* adWebView;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
+@property(nonatomic, strong)NSString* adURLString;
 @end
 
 @implementation MainLeftViewController
@@ -43,9 +44,9 @@
     self.mainTable.dataSource = self.arrayDataSource;
     [self.view addSubview:self.mainTable];
     
-    [self.arrayDataSource appendWithItems:@[@{@"title":@"Home",@"icon":@"menu_home"},
-                                            @{@"title":@"Search",@"icon":@"menu_search"},
-                                            @{@"title":@"AD",@"icon":@"menu_ad"}]];
+    [self.arrayDataSource appendWithItems:@[@{@"tag":@"home",@"title":@"Home",@"icon":@"menu_home"},
+                                            @{@"tag":@"search",@"title":@"Search",@"icon":@"menu_search"},
+                                            @{@"tag":@"ad",@"title":@"AD",@"icon":@"menu_ad"}]];
     [self.mainTable reloadData];
     
 //    self.adWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
@@ -55,21 +56,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
-    
+    __weak typeof(self)wself = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        wself.adURLString = [MobClick getAdURL];
+        DLog(@"-------------*---------------getAdURL: %@", self.adURLString);
+    });
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSString* adUrl = [MobClick getAdURL];
-    DLog(@"-------------*---------------show AD: %@", adUrl);
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell* cell  = [tableView cellForRowAtIndexPath:indexPath];
+    LeftMenuCell* cell  = (LeftMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO animated:YES];
+    if ([cell.tagStr isEqualToString:@"ad"] && [self.adURLString isKindOfClass:[NSString class]])
+    {
+        DLog(@"-------------*-------------SHOW AD");
+    }
 }
 
 @end

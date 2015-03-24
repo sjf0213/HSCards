@@ -7,9 +7,13 @@
 //
 
 #import "LeftMenuCell.h"
-
+@interface LeftMenuCell()
+@property(nonatomic, strong)NSString* tagStr;
+@end
 @implementation LeftMenuCell
-
+//{
+//    NSString* tagStr;
+//}
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -24,12 +28,14 @@
 -(void)clearData
 {
     self.textLabel.text = @"";
+    self.tagStr = nil;
 }
 
 -(void)loadCellData:(NSDictionary*)data
 {
     if ([data isKindOfClass:[NSDictionary class]]) {
         self.textLabel.text = NSLocalizedString([data objectForKey:@"title"],@"");
+        self.tagStr = [data objectForKey:@"tag"];
     }
 }
 

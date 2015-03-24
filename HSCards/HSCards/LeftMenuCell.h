@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LeftMenuCell : UITableViewCell
+
+@property(nonatomic, readonly)NSString* tagStr;
+
 -(void)clearData;
 -(void)loadCellData:(NSDictionary*)data;
+
 @end
