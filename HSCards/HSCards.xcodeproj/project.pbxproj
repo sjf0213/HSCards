@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00947AE1AC13E6C0068B243 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F00947AD1AC13E6C0068B243 /* LeftMenuCell.m */; };
 		F066DEA21AA94A9F00DB2505 /* CS1_042.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DC821AA94A9C00DB2505 /* CS1_042.png */; };
 		F066DEA31AA94A9F00DB2505 /* CS1_069.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DC831AA94A9C00DB2505 /* CS1_069.png */; };
 		F066DEA41AA94A9F00DB2505 /* CS1_112.png in Resources */ = {isa = PBXBuildFile; fileRef = F066DC841AA94A9C00DB2505 /* CS1_112.png */; };
@@ -593,6 +594,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F00947AC1AC13E6C0068B243 /* LeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
+		F00947AD1AC13E6C0068B243 /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
 		F066DC821AA94A9C00DB2505 /* CS1_042.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_042.png; sourceTree = "<group>"; };
 		F066DC831AA94A9C00DB2505 /* CS1_069.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_069.png; sourceTree = "<group>"; };
 		F066DC841AA94A9C00DB2505 /* CS1_112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_112.png; sourceTree = "<group>"; };
@@ -1846,6 +1849,7 @@
 			isa = PBXGroup;
 			children = (
 				F096E0A41A92DF6800F4A69F /* Images.xcassets */,
+				F0B8425E1AAD809C00588C5A /* Localizable.strings */,
 				F096E0971A92DF6800F4A69F /* Supporting Files */,
 				F0D9E7351A9F003500FDCBCB /* Entity */,
 				F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */,
@@ -1871,7 +1875,8 @@
 				F066E0C31AA9586800DB2505 /* CardDetailView.m */,
 				F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */,
 				F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */,
-				F0B8425E1AAD809C00588C5A /* Localizable.strings */,
+				F00947AC1AC13E6C0068B243 /* LeftMenuCell.h */,
+				F00947AD1AC13E6C0068B243 /* LeftMenuCell.m */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -2585,6 +2590,7 @@
 				F08F39DB1AA825BA00BF4D39 /* AFURLSessionManager.m in Sources */,
 				F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */,
 				F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */,
+				F00947AE1AC13E6C0068B243 /* LeftMenuCell.m in Sources */,
 				F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */,
 				F08F39D71AA825BA00BF4D39 /* AFSecurityPolicy.m in Sources */,
 				F08F39D31AA825BA00BF4D39 /* AFHTTPRequestOperation.m in Sources */,
@@ -2662,6 +2668,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "238704d4-9304-4f78-8981-7c05f124db7a";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2683,7 +2690,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jufeng song (6Q594BP2YT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jufeng song";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2696,6 +2703,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "238704d4-9304-4f78-8981-7c05f124db7a";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2715,7 +2723,7 @@
 					"$(PROJECT_DIR)/Umeng",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "238704d4-9304-4f78-8981-7c05f124db7a";
 			};
 			name = Debug;
 		};
@@ -2724,8 +2732,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jufeng song (6Q594BP2YT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jufeng song (6Q594BP2YT)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: jufeng song";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jufeng song";
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -2733,7 +2741,7 @@
 					"$(PROJECT_DIR)/Umeng",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "238704d4-9304-4f78-8981-7c05f124db7a";
 			};
 			name = Release;
 		};

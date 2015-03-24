@@ -30,6 +30,20 @@
     // 友盟统计
     [MobClick startWithAppkey:@"55024415fd98c5c424000e7a" reportPolicy:BATCH channelId:@""];
     
+    
+/*    Class cls = NSClassFromString(@"UMANUtil");
+    SEL deviceIDSelector = @selector(openUDIDString);
+    NSString *deviceID = nil;
+    if(cls && [cls respondsToSelector:deviceIDSelector]){
+        deviceID = [cls performSelector:deviceIDSelector];
+    }
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:@{@"oid" : deviceID}
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:nil];
+    
+    NSLog(@"%@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]);
+*/
+    
     // 导入卡牌
     [self initCards];
     
@@ -41,11 +55,11 @@
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
-    //NSString* leftTitle = NSLocalizedString(@"CheckUpdate", @"");
-    //UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    NSString* leftTitle = NSLocalizedString(@"Menu", @"");
+    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
     UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
     topViewController.navigationItem.title = @"MAIN LIST";
-    //topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
     topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
     
     //Navi
@@ -59,7 +73,7 @@
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
     topViewController.parentSliding = self.slidingViewController;
-    //self.slidingViewController.underLeftViewController  = underLeftViewController;
+    self.slidingViewController.underLeftViewController  = underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view
@@ -68,13 +82,17 @@
     // configure anchored layout
     //self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
     self.slidingViewController.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
-    //self.slidingViewController.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
+    self.slidingViewController.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
     
     self.window.rootViewController = self.slidingViewController;
     
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+
+
+
 
 - (void)anchorRight {
     [self.slidingViewController anchorTopViewToRightAnimated:YES ];
