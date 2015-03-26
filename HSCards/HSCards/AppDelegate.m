@@ -16,8 +16,9 @@
 #import "CardsBox.h"
 #import "TopNaviViewController.h"
 #import "MobClick.h"
+#import "MenuNaviDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<MenuNaviDelegate>
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
 @end
 
@@ -52,6 +53,7 @@
     MainTopViewController *topViewController          = [[MainTopViewController alloc] init];
     MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
     MainLeftViewController *underLeftViewController   = [[MainLeftViewController alloc] init];
+    underLeftViewController.delegate = self;
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
@@ -90,6 +92,17 @@
     return YES;
 }
 
+
+-(void)navigateToPage:(NSString*)str
+{
+    if ([str isKindOfClass:[NSString class]])
+    {
+        if ([str isEqualToString:@"ad"])
+        {
+            DLog(@"->---->- ad");
+        }
+    }
+}
 
 
 

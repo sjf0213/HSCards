@@ -596,6 +596,7 @@
 /* Begin PBXFileReference section */
 		F00947AC1AC13E6C0068B243 /* LeftMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuCell.h; sourceTree = "<group>"; };
 		F00947AD1AC13E6C0068B243 /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
+		F05A334D1AC4021D00C0E879 /* MenuNaviDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MenuNaviDelegate.h; sourceTree = "<group>"; };
 		F066DC821AA94A9C00DB2505 /* CS1_042.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_042.png; sourceTree = "<group>"; };
 		F066DC831AA94A9C00DB2505 /* CS1_069.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_069.png; sourceTree = "<group>"; };
 		F066DC841AA94A9C00DB2505 /* CS1_112.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CS1_112.png; sourceTree = "<group>"; };
@@ -1853,6 +1854,7 @@
 				F096E0971A92DF6800F4A69F /* Supporting Files */,
 				F0D9E7351A9F003500FDCBCB /* Entity */,
 				F0D9DE7F1A9D9CC800FDCBCB /* CommonDefine.h */,
+				F05A334D1AC4021D00C0E879 /* MenuNaviDelegate.h */,
 				F096E09B1A92DF6800F4A69F /* AppDelegate.h */,
 				F096E09C1A92DF6800F4A69F /* AppDelegate.m */,
 				F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */,

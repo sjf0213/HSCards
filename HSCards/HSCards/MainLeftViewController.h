@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol MenuNaviDelegate;
 
 @interface MainLeftViewController : UIViewController
-
+@property(nonatomic, weak)id<MenuNaviDelegate>delegate;
 @end

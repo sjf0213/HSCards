@@ -11,6 +11,7 @@
 #import "ArrayDataSource.h"
 #import "LeftMenuCell.h"
 #import "MobClick.h"
+#import "MenuNaviDelegate.h"
 
 #define LeftMenuCellIdentifier @"LeftMenuCell"
 
@@ -73,9 +74,14 @@
 {
     LeftMenuCell* cell  = (LeftMenuCell*)[tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO animated:YES];
+    if ([cell.tagStr isEqualToString:@"home"])
+    {
+        DLog(@"-------------*-------------Home");
+    }
     if ([cell.tagStr isEqualToString:@"ad"] && [self.adURLString isKindOfClass:[NSString class]])
     {
         DLog(@"-------------*-------------SHOW AD");
+        [self.delegate navigateToPage:@"ad"];
     }
 }
 
