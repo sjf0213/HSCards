@@ -19,6 +19,7 @@
 #define CardListCellIdentifier @"CardListCell"
 
 @interface MainTopViewController ()<UITableViewDelegate>
+@property(nonatomic, strong)UISearchBar* searchBar;
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 @property(nonatomic, strong)UIView* mask;
@@ -31,6 +32,7 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
     TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
         [cell clearData];
         [cell loadCellData:data];
@@ -42,7 +44,12 @@
     [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
     _mainTable.dataSource = self.arrayDataSource;
     _mainTable.delegate = self;
+    _mainTable.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     [self.view addSubview:_mainTable];
+    
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, -44, _mainTable.frame.size.width, 44)];
+    [_mainTable addSubview:_searchBar];
+    
     
     _mask = [[UIView alloc] initWithFrame:self.view.bounds];
     _mask.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
@@ -133,7 +140,7 @@
         }
         DLog(@"--------------------*---race.arr = %@", arr);
     }*/
-    _mainTable.contentOffset = CGPointMake(0.0, -_mainTable.contentInset.top);
+//    _mainTable.contentOffset = CGPointMake(0.0, -_mainTable.contentInset.top);
     [_mainTable reloadData];
     self.navigationItem.title = [NSString stringWithFormat:@"共有 %zd 张卡牌", self.arrayDataSource.items.count];
 }
