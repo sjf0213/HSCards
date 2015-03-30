@@ -77,6 +77,12 @@
     if ([cell.tagStr isEqualToString:@"home"])
     {
         DLog(@"-------------*-------------Home");
+        [self.delegate navigateToPage:@"home"];
+    }
+    if ([cell.tagStr isEqualToString:@"search"])
+    {
+        DLog(@"-------------*-------------SEARCH");
+        [self.delegate navigateToPage:@"search"];
     }
     if ([cell.tagStr isEqualToString:@"ad"] && [self.adURLString isKindOfClass:[NSString class]])
     {

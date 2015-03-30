@@ -20,6 +20,10 @@
 
 @interface AppDelegate ()<MenuNaviDelegate>
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
+@property (nonatomic, strong) TopNaviViewController *topNavigationController;
+@property (nonatomic, strong) MainTopViewController *topViewController;
+@property (nonatomic, strong) MainLeftViewController *underLeftViewController;
+@property (nonatomic, strong) MainRightViewController *underRightViewController;
 @end
 
 @implementation AppDelegate
@@ -50,36 +54,37 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    MainTopViewController *topViewController          = [[MainTopViewController alloc] init];
-    MainRightViewController *underRightViewController = [[MainRightViewController alloc] init];
-    MainLeftViewController *underLeftViewController   = [[MainLeftViewController alloc] init];
-    underLeftViewController.delegate = self;
+    _topViewController        = [[MainTopViewController alloc] init];
+    _underLeftViewController  = [[MainLeftViewController alloc] init];
+    _underRightViewController = [[MainRightViewController alloc] init];
+    
+    _underLeftViewController.delegate = self;
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
     NSString* leftTitle = NSLocalizedString(@"Menu", @"");
     UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
     UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
-    topViewController.navigationItem.title = @"MAIN LIST";
-    topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
-    topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
+    _topViewController.navigationItem.title = @"MAIN LIST";
+    _topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+    _topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
     
     //Navi
-    TopNaviViewController *navigationController = [[TopNaviViewController alloc] initWithRootViewController:topViewController];
-    UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:underRightViewController];
+    _topNavigationController = [[TopNaviViewController alloc] initWithRootViewController:_topViewController];
+    UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:_underRightViewController];
     
     // configure under right view controller
     rightNaviController.edgesForExtendedLayout     = UIRectEdgeTop | UIRectEdgeBottom | UIRectEdgeRight;
     
     
     // configure sliding view controller
-    self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
-    topViewController.parentSliding = self.slidingViewController;
-    self.slidingViewController.underLeftViewController  = underLeftViewController;
+    self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:_topNavigationController];
+    _topViewController.parentSliding = self.slidingViewController;
+    self.slidingViewController.underLeftViewController  = _underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view
-    [navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    [_topNavigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     // configure anchored layout
     //self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
@@ -97,7 +102,21 @@
 {
     if ([str isKindOfClass:[NSString class]])
     {
-        if ([str isEqualToString:@"ad"])
+        if ([str isEqualToString:@"home"])
+        {
+            DLog(@"->---->- home");
+            [self.slidingViewController resetTopViewAnimated:YES];
+        }
+        else if ([str isEqualToString:@"search"])
+        {
+            DLog(@"->---->- search");
+            [self.slidingViewController resetTopViewAnimated:YES onComplete:^{
+                UISearchController* searchController = [[UISearchController alloc] init];
+                searchController.view.backgroundColor = [UIColor orangeColor];
+                [_topNavigationController pushViewController:searchController animated:YES];
+            }];
+        }
+        else if ([str isEqualToString:@"ad"])
         {
             DLog(@"->---->- ad");
         }
