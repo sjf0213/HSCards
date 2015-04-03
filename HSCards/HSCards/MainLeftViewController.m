@@ -60,7 +60,7 @@
     __weak typeof(self)wself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         wself.adURLString = [MobClick getAdURL];
-        DLog(@"-------------*---------------getAdURL: %@", self.adURLString);
+//        DLog(@"-------------*---------------getAdURL: %@", self.adURLString);
     });
 }
 

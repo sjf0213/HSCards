@@ -18,7 +18,7 @@
 
 #define CardListCellIdentifier @"CardListCell"
 
-@interface MainTopViewController ()<UITableViewDelegate>
+@interface MainTopViewController ()<UITableViewDelegate, UISearchBarDelegate>
 @property(nonatomic, strong)UISearchBar* searchBar;
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
@@ -48,6 +48,8 @@
     [self.view addSubview:_mainTable];
     
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, -44, _mainTable.frame.size.width, 44)];
+    _searchBar.delegate = self;
+//    _searchBar.showsCancelButton = YES;
     [_mainTable addSubview:_searchBar];
     
     
@@ -69,6 +71,12 @@
 //        [[CardsBox shareInstance] downloadAllCollectibleCards];
 //    });
     
+}
+
+-(void)viewWillLayoutSubviews
+{
+    DLog(@"----------view Will Layout Subviews -+-+-+-+-");
+    self.mainTable.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -168,5 +176,14 @@
     [self.view addSubview:controller.view];
     self.navigationController.navigationBar.hidden = YES;
     [controller loadCardInfo:info];
+}
+
+#pragma mark - UISearchBarDelegate
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    DLog(@"----------search Bar Text Did Begin Editing ------01");
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+//    [self.view setNeedsDisplay];
 }
 @end
