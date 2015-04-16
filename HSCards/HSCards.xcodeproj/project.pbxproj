@@ -555,6 +555,7 @@
 		F066E0C41AA9586800DB2505 /* CardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = F066E0C31AA9586800DB2505 /* CardDetailView.m */; };
 		F066E0D81AA9909300DB2505 /* back_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F066E0D61AA9909300DB2505 /* back_btn@2x.png */; };
 		F066E0DA1AA991C200DB2505 /* back_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F066E0D91AA991C200DB2505 /* back_btn@3x.png */; };
+		F069C4841ACE655300C3BE2C /* Blackrock Mountain.zhCN.json in Resources */ = {isa = PBXBuildFile; fileRef = F069C4831ACE655300C3BE2C /* Blackrock Mountain.zhCN.json */; };
 		F07229641AA04C1B0004ADDA /* RightSimpleSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */; };
 		F07229661AA056F10004ADDA /* filter.plist in Resources */ = {isa = PBXBuildFile; fileRef = F07229651AA056F10004ADDA /* filter.plist */; };
 		F072296D1AA54FAA0004ADDA /* AllSets.zhCN.json in Resources */ = {isa = PBXBuildFile; fileRef = F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */; };
@@ -1145,6 +1146,7 @@
 		F066E0C31AA9586800DB2505 /* CardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardDetailView.m; sourceTree = "<group>"; };
 		F066E0D61AA9909300DB2505 /* back_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@2x.png"; sourceTree = "<group>"; };
 		F066E0D91AA991C200DB2505 /* back_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn@3x.png"; sourceTree = "<group>"; };
+		F069C4831ACE655300C3BE2C /* Blackrock Mountain.zhCN.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Blackrock Mountain.zhCN.json"; sourceTree = "<group>"; };
 		F07229621AA04C1B0004ADDA /* RightSimpleSelectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightSimpleSelectController.h; sourceTree = "<group>"; };
 		F07229631AA04C1B0004ADDA /* RightSimpleSelectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightSimpleSelectController.m; sourceTree = "<group>"; };
 		F07229651AA056F10004ADDA /* filter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = filter.plist; sourceTree = "<group>"; };
@@ -1945,6 +1947,7 @@
 		F0D9DE8B1A9DA15800FDCBCB /* HSData */ = {
 			isa = PBXGroup;
 			children = (
+				F069C4831ACE655300C3BE2C /* Blackrock Mountain.zhCN.json */,
 				F072296C1AA54FAA0004ADDA /* AllSets.zhCN.json */,
 				F07229651AA056F10004ADDA /* filter.plist */,
 			);
@@ -2169,6 +2172,7 @@
 				F066DEE21AA94A9F00DB2505 /* CS2_117.png in Resources */,
 				F066E09A1AA94A9F00DB2505 /* HERO_02.png in Resources */,
 				F066DEA41AA94A9F00DB2505 /* CS1_112.png in Resources */,
+				F069C4841ACE655300C3BE2C /* Blackrock Mountain.zhCN.json in Resources */,
 				F066E00C1AA94A9F00DB2505 /* FP1_014.png in Resources */,
 				F066DEFD1AA94A9F00DB2505 /* CS2_186.png in Resources */,
 				F066E0131AA94A9F00DB2505 /* FP1_021.png in Resources */,
