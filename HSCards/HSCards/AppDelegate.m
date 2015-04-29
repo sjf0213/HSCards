@@ -168,9 +168,9 @@
 //                            stringByAppendingPathComponent:@"cards.json"];
     
     // new data json
-    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"Blackrock Mountain.zhCN" ofType:@"json"];
+    NSString * dbPath = [[NSBundle mainBundle] pathForResource:@"AllSets.zhCN" ofType:@"json"];
     NSString * dbNewPath = [[[FileHelp shareInstance]getAppDirectory:NSDocumentDirectory]
-                            stringByAppendingPathComponent:@"Blackrock Mountain.zhCN.json"];
+                            stringByAppendingPathComponent:@"AllSets.zhCN.json"];
     
     //BOOL isOpen = NO;
     if (![[FileHelp shareInstance] isFileExist:dbNewPath])
@@ -206,12 +206,13 @@
             //totalCount = totalCount + subArr.count;
         }
         //DLog(@"TOTAL CARDS count = %zd", totalCount);
-    }else if([obj isKindOfClass:[NSArray class]])
-    {
-        NSArray* listArr = (NSArray*)obj;
-        DLog(@"CARD SET count = %zd", listArr);
-        [[CardsBox shareInstance] addCardsByArray:obj withCardSet:@"Blackrock Montain"];
     }
+//    else if([obj isKindOfClass:[NSArray class]])
+//    {
+//        NSArray* listArr = (NSArray*)obj;
+//        DLog(@"CARD SET count = %zd", listArr);
+//        [[CardsBox shareInstance] addCardsByArray:obj withCardSet:@"Blackrock Montain"];
+//    }
     [[CardsBox shareInstance] pickCollectible];
 }
 

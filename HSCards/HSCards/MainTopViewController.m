@@ -15,6 +15,7 @@
 #import "CardDetailView.h"
 #import "CardDetailViewController.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
+#import "MainSearchController.h"
 
 #define CardListCellIdentifier @"CardListCell"
 
@@ -68,7 +69,7 @@
     [self updateDisplayData];
     // 下载所有卡牌图片
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //[[CardsBox shareInstance] downloadAllCollectibleCards];
+//        [[CardsBox shareInstance] downloadAllCollectibleCards];
     });
     
 }
@@ -184,6 +185,9 @@
 {
     DLog(@"----------search Bar Text Did Begin Editing ------01");
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    MainSearchController* controller = [[MainSearchController alloc] init];
+    [self presentViewController:controller animated:YES completion:^{
+    }];
 //    [self.view setNeedsDisplay];
 }
 @end

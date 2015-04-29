@@ -71,6 +71,7 @@ typedef enum : NSUInteger {
     card_set_all = 0,
     card_set_naxx,//纳克萨玛斯
     card_set_gvg,//地精大战侏儒
+    card_set_brm,//黑石山
     card_set_system,//系统占位
     card_set_basic,//基本
     card_set_classic,//经典

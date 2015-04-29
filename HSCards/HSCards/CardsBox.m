@@ -514,6 +514,13 @@ static CardsBox * m_Instance;
                 }
             }
             break;
+        case card_set_brm:
+            for (CardItemInfo* item in sourceArray) {
+                if ([item.cardSet isEqualToString:@"Blackrock Mountain"]) {
+                    [resultList addObject:item];
+                }
+            }
+            break;
     }
     DLog(@"----------CARD resultList.count = %d", resultList.count);
     [_filtedList addObjectsFromArray:resultList];
