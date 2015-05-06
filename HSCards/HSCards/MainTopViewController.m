@@ -184,10 +184,17 @@
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
     DLog(@"----------search Bar Text Did Begin Editing ------01");
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    MainSearchController* controller = [[MainSearchController alloc] init];
-    [self presentViewController:controller animated:YES completion:^{
+    
+    __weak typeof(self) wself = self;
+    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+        [wself.searchBar becomeFirstResponder];
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+    } completion:^(BOOL finished) {
+        MainSearchController* controller = [[MainSearchController alloc] init];
+        [wself presentViewController:controller animated:NO completion:nil];
     }];
+    
 //    [self.view setNeedsDisplay];
 }
 @end

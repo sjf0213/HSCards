@@ -8,8 +8,8 @@
 
 #import "MainSearchController.h"
 
-@interface MainSearchController ()
-
+@interface MainSearchController ()<UISearchBarDelegate>
+@property(nonatomic, strong)UISearchBar* searchBar;
 @end
 
 @implementation MainSearchController
@@ -22,7 +22,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
+    _searchBar.delegate = self;
+    _searchBar.showsCancelButton = YES;
+    [self.view addSubview:_searchBar];
+    [_searchBar becomeFirstResponder];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+//    [super viewDidAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,14 +41,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
+{
+    [_searchBar resignFirstResponder];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
 @end
