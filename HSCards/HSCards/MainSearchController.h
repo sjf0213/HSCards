@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MainSearchController : UIViewController
-
+@property(nonatomic, weak)UIViewController* parentController;
 @end

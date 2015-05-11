@@ -17,7 +17,7 @@
 - (void)loadView
 {
     [super loadView];
-    self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)viewDidLoad {
@@ -26,14 +26,14 @@
     _searchBar.delegate = self;
     _searchBar.showsCancelButton = YES;
     [self.view addSubview:_searchBar];
-    [_searchBar becomeFirstResponder];
+    
     // Do any additional setup after loading the view.
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
 //    [super viewDidAppear:animated];
-    
+    [_searchBar becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,8 +43,15 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar;
 {
+    typeof(self)__weak wself = self;
     [_searchBar resignFirstResponder];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([wself.parentController isKindOfClass:[UIViewController class]]) {
+        [wself.parentController.navigationController setNavigationBarHidden:NO animated:NO];
+//        [wself.parentController.view setNeedsLayout];
+    }
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 @end

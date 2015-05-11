@@ -187,11 +187,12 @@
     
     __weak typeof(self) wself = self;
     [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-        [wself.searchBar becomeFirstResponder];
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        [wself.searchBar becomeFirstResponder];
+        [wself.navigationController setNavigationBarHidden:YES animated:YES];
 
     } completion:^(BOOL finished) {
         MainSearchController* controller = [[MainSearchController alloc] init];
+        controller.parentController = self;
         [wself presentViewController:controller animated:NO completion:nil];
     }];
     
