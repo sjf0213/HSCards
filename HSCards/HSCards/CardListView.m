@@ -24,6 +24,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+//        self.backgroundColor = [UIColor cyanColor];
         TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
             [cell clearData];
             [cell loadCellData:data];
@@ -31,12 +32,13 @@
         _arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:CardListCellIdentifier configureCellBlock:configureCell];
     
         _mainTable = [[UITableView alloc] initWithFrame:self.bounds];
+//        _mainTable.backgroundColor = [UIColor orangeColor];
         _mainTable.rowHeight = MainList_Row_H;
         _mainTable.dataSource = _arrayDataSource;
         _mainTable.delegate = self;
         [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
-        _mainTable.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
-        _mainTable.scrollIndicatorInsets = _mainTable.contentInset;
+//        _mainTable.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
+//        _mainTable.scrollIndicatorInsets = _mainTable.contentInset;
         [self addSubview:_mainTable];
     }
     return self;

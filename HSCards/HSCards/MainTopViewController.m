@@ -32,7 +32,7 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _mainView = [[CardListView alloc] initWithFrame:self.view.bounds];
+    _mainView = [[CardListView alloc] initWithFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height - 44)];
     _mainView.delegate = self;
     [self.view addSubview:_mainView];
     
@@ -44,7 +44,7 @@
     _mask.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     _mask.hidden = YES;
     [self.view addSubview:_mask];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDisplayData) name:Notification_UpdateMainList object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableTopScroll:) name:Notification_EnableTopScroll object:nil];
 }

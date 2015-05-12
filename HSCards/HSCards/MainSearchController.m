@@ -8,9 +8,11 @@
 
 #import "MainSearchController.h"
 #import "CommonDefine.h"
+#import "CardListView.h"
 
-@interface MainSearchController ()<UISearchBarDelegate>
+@interface MainSearchController ()<UISearchBarDelegate, CardListViewDelegate>
 @property(nonatomic, strong)UISearchBar* searchBar;
+@property(nonatomic, strong)CardListView* mainView;
 @end
 
 @implementation MainSearchController
@@ -23,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    _mainView = [[CardListView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.bounds.size.height - 64)];
+    _mainView.delegate = self;
+    [self.view addSubview:_mainView];
+    
     _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 20, self.view.frame.size.width, 44)];
     _searchBar.delegate = self;
     _searchBar.showsCancelButton = YES;
@@ -32,6 +39,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [_searchBar becomeFirstResponder];
+//    [self.mainView updateDisplayData];
 }
 
 - (void)didReceiveMemoryWarning {
