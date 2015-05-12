@@ -8,6 +8,7 @@
 
 #import "MainTopViewController.h"
 #import "ArrayDataSource.h"
+#import "CardListView.h"
 #import "CardListCell.h"
 #import "CardItemInfo.h"
 #import "CardsBox.h"
@@ -17,12 +18,9 @@
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainSearchController.h"
 
-#define CardListCellIdentifier @"CardListCell"
-
-@interface MainTopViewController ()<UITableViewDelegate, UISearchBarDelegate>
+@interface MainTopViewController ()<UITableViewDelegate, UISearchBarDelegate, CardListViewDelegate>
 @property(nonatomic, strong)UISearchBar* searchBar;
-@property(nonatomic, strong)UITableView* mainTable;
-@property(atomic, strong) ArrayDataSource *arrayDataSource;
+@property(nonatomic, strong)CardListView* mainView;
 @property(nonatomic, strong)UIView* mask;
 @property(nonatomic, strong)MainSearchController* searchController;
 @end
@@ -34,21 +32,11 @@
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
-        [cell clearData];
-        [cell loadCellData:data];
-    };
-    self.arrayDataSource = [[ArrayDataSource alloc] initWithcellIdentifier:CardListCellIdentifier configureCellBlock:configureCell];
+    _mainView = [[CardListView alloc] initWithFrame:self.view.bounds];
+    _mainView.delegate = self;
+    [self.view addSubview:_mainView];
     
-    _mainTable = [[UITableView alloc] initWithFrame:self.view.bounds];
-    _mainTable.rowHeight = MainList_Row_H;
-    [_mainTable registerClass:[CardListCell class] forCellReuseIdentifier:CardListCellIdentifier];
-    _mainTable.dataSource = self.arrayDataSource;
-    _mainTable.delegate = self;
-    _mainTable.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
-    [self.view addSubview:_mainTable];
-    
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, _mainTable.frame.size.width, 44)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, _mainView.frame.size.width, 44)];
     _searchBar.delegate = self;
     [self.view addSubview:_searchBar];
     
@@ -56,10 +44,11 @@
     _mask.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     _mask.hidden = YES;
     [self.view addSubview:_mask];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateDisplayData) name:Notification_UpdateMainList object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enableTopScroll:) name:Notification_EnableTopScroll object:nil];
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -106,49 +95,8 @@
 
 -(void)updateDisplayData
 {
-    [[CardsBox shareInstance] fillFiltedList];
-    [self.arrayDataSource removeAllItems];
-    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
-    // 打印前N个卡牌
-    /*{
-        int n = [CardsBox shareInstance].filtedList.count;
-        n = n > 50 ? 50 : n;
-        for (int i = 0; i < n; i++)
-        {
-            CardItemInfo* obj = [CardsBox shareInstance].filtedList[i];
-            DLog(@"obj = %@", obj);
-        }
-    }*/
-    // 打印某种属性的所有枚举
-    /*{
-        NSMutableArray* arr = [NSMutableArray array];
-        for (CardItemInfo* item in [CardsBox shareInstance].filtedList)
-        {
-            NSString* str = item.race;
-            if ([str isKindOfClass:[NSString class]])
-            {
-                if (0 == arr.count) {
-                    [arr addObject:str];
-                }else{
-                    if ([str isKindOfClass:[NSString class]]){
-                        for (int i = 0; i < arr.count; i++){
-                            NSString* alreadyHave = arr[i];
-                            if ([str isEqualToString:alreadyHave]){
-                                break;
-                            }
-                            if (i == arr.count - 1){
-                                [arr addObject:str];
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        DLog(@"--------------------*---race.arr = %@", arr);
-    }*/
-//    _mainTable.contentOffset = CGPointMake(0.0, -_mainTable.contentInset.top);
-    [_mainTable reloadData];
-    self.navigationItem.title = [NSString stringWithFormat:@"共有 %zd 张卡牌", self.arrayDataSource.items.count];
+    [self.mainView updateDisplayData];
+    self.navigationItem.title = [NSString stringWithFormat:@"共有 %zd 张卡牌", self.mainView.arrayDataSource.items.count];
 }
 
 -(void)addChildViewController:(UIViewController *)childController
@@ -156,35 +104,20 @@
     [super addChildViewController:childController];
     //self.parentSliding.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureNone;
     self.parentSliding.panGesture.enabled = NO;// 禁用左右两侧的Controller
-
 }
 
+#pragma mark - CardListViewDelegate
 
-#pragma mark - UITableViewDelegate
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)onShowCardDetail:(CardItemInfo*)cardInfo
 {
-//    DLog(@"--------------------*---didSelectRowAtIndexPath = %d", indexPath.row);
-//    CardDetailView* detailView = [[CardDetailView alloc] initWithFrame:self.view.bounds];
-//    [self.view addSubview:detailView];
-    CardItemInfo* info = [self.arrayDataSource itemAtIndexPath:indexPath];
     CardDetailViewController*  controller = [[CardDetailViewController alloc] init];
     typeof(self)__weak wself = self;
     controller.didDismissHandler = ^{wself.parentSliding.panGesture.enabled = YES;};
     [self addChildViewController:controller];
     [self.view addSubview:controller.view];
     self.navigationController.navigationBar.hidden = YES;
-    [controller loadCardInfo:info];
+    [controller loadCardInfo:cardInfo];
 }
-
-//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    DLog(@"---y---%.1f", scrollView.contentOffset.y);
-//    if (scrollView == self.mainTable) {
-//        if (self.mainTable.contentOffset.y < 64+_mainTable.contentInset.top) {
-//            _searchBar.
-//        }
-//    }
-//}
 
 #pragma mark - UISearchBarDelegate
 
@@ -193,7 +126,8 @@
     [self pushSearchController];
 }
 
-#pragma mark - LLLLLL
+#pragma mark - searchController
+
 -(void)pushSearchController
 {
     DLog(@"----------push SearchController ------01");

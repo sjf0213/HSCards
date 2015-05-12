@@ -27,15 +27,6 @@
     _searchBar.delegate = self;
     _searchBar.showsCancelButton = YES;
     [self.view addSubview:_searchBar];
-//    [_searchBar becomeFirstResponder];
-    // Do any additional setup after loading the view.
-}
-
--(void)viewWillLayoutSubviews
-{
-    DLog(@"----------view Will Layout Subviews -+-+-+-+-");
-    //self.mainTable.frame = self.view.bounds;
-//    [self.parentController.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -55,6 +46,12 @@
     if ([wself.parentController respondsToSelector:@selector(popSearchController)]) {
         [wself.parentController performSelector:@selector(popSearchController) withObject:nil];
     }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
+{
+    DLog(@"--------------SearchButtonClicked:%@", searchBar.text);
+    
 }
 
 @end
