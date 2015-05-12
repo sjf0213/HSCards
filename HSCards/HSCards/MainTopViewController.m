@@ -24,6 +24,7 @@
 @property(nonatomic, strong)UITableView* mainTable;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
 @property(nonatomic, strong)UIView* mask;
+@property(nonatomic, strong)MainSearchController* searchController;
 @end
 
 @implementation MainTopViewController
@@ -32,7 +33,6 @@
 {
     [super loadView];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     
     TableViewCellConfigureBlock configureCell = ^(CardListCell *cell, CardItemInfo *data) {
         [cell clearData];
@@ -48,11 +48,9 @@
     _mainTable.contentInset = UIEdgeInsetsMake(44, 0, 0, 0);
     [self.view addSubview:_mainTable];
     
-    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, -44, _mainTable.frame.size.width, 44)];
+    _searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, _mainTable.frame.size.width, 44)];
     _searchBar.delegate = self;
-//    _searchBar.showsCancelButton = YES;
-    [_mainTable addSubview:_searchBar];
-    
+    [self.view addSubview:_searchBar];
     
     _mask = [[UIView alloc] initWithFrame:self.view.bounds];
     _mask.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
@@ -71,13 +69,12 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [[CardsBox shareInstance] downloadAllCollectibleCards];
     });
-    
 }
 
 -(void)viewWillLayoutSubviews
 {
     DLog(@"----------view Will Layout Subviews -+-+-+-+-");
-    self.mainTable.frame = self.view.bounds;
+    //self.mainTable.frame = self.view.bounds;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,23 +176,49 @@
     [controller loadCardInfo:info];
 }
 
+//-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+//{
+//    DLog(@"---y---%.1f", scrollView.contentOffset.y);
+//    if (scrollView == self.mainTable) {
+//        if (self.mainTable.contentOffset.y < 64+_mainTable.contentInset.top) {
+//            _searchBar.
+//        }
+//    }
+//}
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
-    DLog(@"----------search Bar Text Did Begin Editing ------01");
-    
-    __weak typeof(self) wself = self;
-    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
-//        [wself.searchBar becomeFirstResponder];
-        [wself.navigationController setNavigationBarHidden:YES animated:YES];
+    [self pushSearchController];
+}
 
+#pragma mark - LLLLLL
+-(void)pushSearchController
+{
+    DLog(@"----------push SearchController ------01");
+    __weak typeof(self) wself = self;
+//    [wself.navigationController setNavigationBarHidden:YES animated:YES];
+    [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+        
+        
     } completion:^(BOOL finished) {
-        MainSearchController* controller = [[MainSearchController alloc] init];
-        controller.parentController = self;
-        [wself presentViewController:controller animated:NO completion:nil];
-    }];
     
-//    [self.view setNeedsDisplay];
+        wself.searchController = [[MainSearchController alloc] init];
+        wself.searchController.parentController = self;
+        [wself presentViewController:wself.searchController animated:NO completion:nil];
+    }];
+}
+
+-(void)popSearchController
+{
+    DLog(@"----------pop SearchController ------02");
+    __weak typeof(self) wself = self;
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self dismissViewControllerAnimated:YES completion:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wself setNeedsStatusBarAppearanceUpdate];
+        });
+    }];
 }
 @end
