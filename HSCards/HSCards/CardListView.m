@@ -48,7 +48,7 @@
 {
     [self.mainTable reloadData];
     /*
-    // 打印前N个卡牌
+//     打印前N个卡牌
     {
         int n = [CardsBox shareInstance].filtedList.count;
         n = n > 50 ? 50 : n;
@@ -58,6 +58,7 @@
             DLog(@"obj = %@", obj);
         }
     }
+    
     // 打印某种属性的所有枚举
     {
         NSMutableArray* arr = [NSMutableArray array];

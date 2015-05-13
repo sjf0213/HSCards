@@ -26,6 +26,7 @@
 @property(nonatomic, readonly)NSString* race;// 所属种族：鱼人，机械等
 @property(nonatomic, readonly)NSString* cardSet;// 卡牌来源集合（纳克萨玛斯，地精大战侏儒）
 
+@property(nonatomic, readonly)NSString* descText;// 卡牌描述
 @property(nonatomic, readonly)NSString* howToGetGold;// 金卡获得条件
 @property(nonatomic, readonly)NSString* flavor;// 调料包
 

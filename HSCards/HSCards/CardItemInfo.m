@@ -87,6 +87,9 @@
         // 卡牌类型
         _cardType = [dic objectForKey:@"type"];
         
+        // 卡牌描述
+        _descText = [dic objectForKey:@"text"];
+        
         // 获得条件
         _howToGetGold = [dic objectForKey:@"howToGetGold"];
         
@@ -123,6 +126,9 @@
 -(BOOL)canMatchSearchText:(NSString*)text
 {
     if ([_cardName containsString:text]) {
+        return YES;
+    }else if([_descText isKindOfClass:[NSString class]] &&
+             [_descText containsString:text]){
         return YES;
     }
     return NO;

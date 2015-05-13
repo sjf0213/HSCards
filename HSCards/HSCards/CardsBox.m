@@ -57,6 +57,11 @@ static CardsBox * m_Instance;
     for (int i = 0; i < arr.count; i++)
     {
         NSDictionary* itemDic = [arr objectAtIndex:i];
+        if(i<50)
+        {
+            DLog(@"--------------card.No.%d,\n %@ \n", i, itemDic);
+        }
+        
         if ([itemDic isKindOfClass:[NSDictionary class]]) {
             CardItemInfo* cardItem = [[CardItemInfo alloc] initWithDic:itemDic];
             if ([key isKindOfClass:[NSString class]]) {
