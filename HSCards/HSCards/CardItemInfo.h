@@ -32,4 +32,5 @@
 -(id)initWithDic:(NSDictionary*)dic;
 -(void)setCardSet:(NSString *)cardSet;
 -(void)setCardRarity:(NSString *)rarity;
+-(BOOL)canMatchSearchText:(NSString*)text;
 @end

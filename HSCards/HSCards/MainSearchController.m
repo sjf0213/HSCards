@@ -9,6 +9,9 @@
 #import "MainSearchController.h"
 #import "CommonDefine.h"
 #import "CardListView.h"
+#import "CardsBox.h"
+#import "CardItemInfo.h"
+#import "ArrayDataSource.h"
 
 @interface MainSearchController ()<UISearchBarDelegate, CardListViewDelegate>
 @property(nonatomic, strong)UISearchBar* searchBar;
@@ -59,7 +62,17 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar;
 {
     DLog(@"--------------SearchButtonClicked:%@", searchBar.text);
-    
+    [_searchBar resignFirstResponder];
+    NSMutableArray* resultArr = [[NSMutableArray alloc] init];
+    for (CardItemInfo* item in [CardsBox shareInstance].collectibleCardList) {
+        if([item canMatchSearchText:searchBar.text])
+        {
+            [resultArr addObject:item];
+        }
+    }
+    [self.mainView.arrayDataSource removeAllItems];
+    [self.mainView.arrayDataSource appendWithItems:resultArr];
+    [self.mainView reloadDisplayData];
 }
 
 @end

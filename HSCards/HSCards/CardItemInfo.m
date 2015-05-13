@@ -120,4 +120,12 @@
     //return [NSString stringWithFormat:@"id:%@, name:%@, cost:%d, rarity:%d", _cardID, _cardName, _cost, _rarity];
 }
 
+-(BOOL)canMatchSearchText:(NSString*)text
+{
+    if ([_cardName containsString:text]) {
+        return YES;
+    }
+    return NO;
+}
+
 @end

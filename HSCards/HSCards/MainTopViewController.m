@@ -95,7 +95,10 @@
 
 -(void)updateDisplayData
 {
-    [self.mainView updateDisplayData];
+    [[CardsBox shareInstance] fillFiltedList];
+    [self.mainView.arrayDataSource removeAllItems];
+    [self.mainView.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
+    [self.mainView reloadDisplayData];
     self.navigationItem.title = [NSString stringWithFormat:@"共有 %zd 张卡牌", self.mainView.arrayDataSource.items.count];
 }
 

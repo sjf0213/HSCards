@@ -44,11 +44,8 @@
     return self;
 }
 
--(void)updateDisplayData
+-(void)reloadDisplayData
 {
-    [[CardsBox shareInstance] fillFiltedList];
-    [self.arrayDataSource removeAllItems];
-    [self.arrayDataSource appendWithItems:[CardsBox shareInstance].filtedList];
     [self.mainTable reloadData];
     /*
     // 打印前N个卡牌

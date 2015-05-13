@@ -23,6 +23,6 @@
 @property(nonatomic, weak)UIViewController<CardListViewDelegate>* delegate;
 @property(atomic, readonly) ArrayDataSource *arrayDataSource;
 
--(void)updateDisplayData;
+-(void)reloadDisplayData;
 
 @end
