@@ -22,7 +22,7 @@
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
 @property (nonatomic, strong) TopNaviViewController *topNavigationController;
 @property (nonatomic, strong) MainTopViewController *topViewController;
-@property (nonatomic, strong) MainLeftViewController *underLeftViewController;
+//@property (nonatomic, strong) MainLeftViewController *underLeftViewController;
 @property (nonatomic, strong) MainRightViewController *underRightViewController;
 @end
 
@@ -55,10 +55,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     _topViewController        = [[MainTopViewController alloc] init];
-    _underLeftViewController  = [[MainLeftViewController alloc] init];
+//    _underLeftViewController  = [[MainLeftViewController alloc] init];
     _underRightViewController = [[MainRightViewController alloc] init];
     
-    _underLeftViewController.delegate = self;
+//    _underLeftViewController.delegate = self;
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
@@ -80,7 +80,7 @@
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:_topNavigationController];
     _topViewController.parentSliding = self.slidingViewController;
-    self.slidingViewController.underLeftViewController  = _underLeftViewController;
+//    self.slidingViewController.underLeftViewController  = _underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view

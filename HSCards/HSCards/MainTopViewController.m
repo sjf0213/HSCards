@@ -17,12 +17,14 @@
 #import "CardDetailViewController.h"
 #import "../ECSlidingViewController/ECSlidingViewController.h"
 #import "MainSearchController.h"
+#import "MobClick.h"
 
 @interface MainTopViewController ()<UITableViewDelegate, UISearchBarDelegate, CardListViewDelegate>
 @property(nonatomic, strong)UISearchBar* searchBar;
 @property(nonatomic, strong)CardListView* mainView;
 @property(nonatomic, strong)UIView* mask;
 @property(nonatomic, strong)MainSearchController* searchController;
+@property(nonatomic, strong)NSString* adURLString;
 @end
 
 @implementation MainTopViewController
@@ -57,6 +59,11 @@
     // 下载所有卡牌图片
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [[CardsBox shareInstance] downloadAllCollectibleCards];
+    });
+    typeof(self)__weak wself = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        wself.adURLString = [MobClick getAdURL];
+        DLog(@"-------------*---------------getAdURL: %@", self.adURLString);
     });
 }
 
