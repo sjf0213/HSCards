@@ -17,6 +17,7 @@
 #import "TopNaviViewController.h"
 #import "MobClick.h"
 #import "MenuNaviDelegate.h"
+#import "AdViewController.h"
 
 @interface AppDelegate ()<MenuNaviDelegate>
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
@@ -24,6 +25,7 @@
 @property (nonatomic, strong) MainTopViewController *topViewController;
 //@property (nonatomic, strong) MainLeftViewController *underLeftViewController;
 @property (nonatomic, strong) MainRightViewController *underRightViewController;
+@property(nonatomic, strong)NSString* adURLString;
 @end
 
 @implementation AppDelegate
@@ -62,12 +64,25 @@
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
-    NSString* leftTitle = NSLocalizedString(@"Menu", @"");
-    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
-    UIBarButtonItem *anchorLeftButton  = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
-    _topViewController.navigationItem.title = @"MAIN LIST";
-    _topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+//    NSString* leftTitle = NSLocalizedString(@"Menu", @"");
+    
+//    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
+    UIBarButtonItem *anchorLeftButton   = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
+    _topViewController.navigationItem.title = @"卡牌列表";
     _topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
+    
+    typeof(self)__weak wself = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        wself.adURLString = [MobClick getAdURL];
+        DLog(@"-------------*---------------getAdURL: %@", wself.adURLString);
+        if ([wself.adURLString isKindOfClass:[NSString class]] &&
+            [wself.adURLString hasPrefix:@"http"]) {
+            UIBarButtonItem *anchorRightButton  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"phone_comic_show_list"] style:UIBarButtonItemStylePlain target:wself action:@selector(openTaobao)];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
+            });
+        }
+    });
     
     //Navi
     _topNavigationController = [[TopNaviViewController alloc] initWithRootViewController:_topViewController];
@@ -94,6 +109,8 @@
     self.window.rootViewController = self.slidingViewController;
     
     [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
@@ -216,7 +233,31 @@
     [[CardsBox shareInstance] pickCollectible];
 }
 
+-(void)openTaobao
+{
+//    typeof(self)__weak wself = self;
+    AdViewController* controller = [[AdViewController alloc] init];
+    [_topViewController presentViewController:controller animated:YES completion:^{
+            }];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://ai.m.taobao.com"];
+    [controller loadAdURL:url];
 
+}
+
+-(NSString*)urlEncodedString:(NSString*)sourceText
+{
+    @autoreleasepool
+    {
+        NSString *newString =
+        CFBridgingRelease(
+                          CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                                                  (__bridge CFStringRef)sourceText,
+                                                                  NULL,
+                                                                  CFSTR("/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`"),
+                                                                  kCFStringEncodingUTF8));
+        return newString;
+    }
+}
 
 
 @end

@@ -17,9 +17,7 @@
 
 @interface MainLeftViewController ()<UITableViewDelegate>
 @property(nonatomic, strong)UITableView* mainTable;
-//@property(nonatomic, strong)UIWebView* adWebView;
 @property(atomic, strong) ArrayDataSource *arrayDataSource;
-@property(nonatomic, strong)NSString* adURLString;
 @end
 
 @implementation MainLeftViewController
@@ -57,11 +55,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.8 green:1 blue:1 alpha:1.0];
-    __weak typeof(self)wself = self;
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        wself.adURLString = [MobClick getAdURL];
-//        DLog(@"-------------*---------------getAdURL: %@", self.adURLString);
-    });
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -84,10 +77,10 @@
         DLog(@"-------------*-------------SEARCH");
         [self.delegate navigateToPage:@"search"];
     }
-    if ([cell.tagStr isEqualToString:@"ad"] && [self.adURLString isKindOfClass:[NSString class]])
+    if ([cell.tagStr isEqualToString:@"ad"])
     {
         DLog(@"-------------*-------------SHOW AD");
-        [self.delegate navigateToPage:@"ad"];
+//        [self.delegate navigateToPage:@"ad"];
     }
 }
 

@@ -606,6 +606,9 @@
 		F0A878E81AB27D95008E8F17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A878E71AB27D95008E8F17 /* libz.dylib */; };
 		F0ACD1931B035190008DE48F /* back_btn_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0ACD1911B035190008DE48F /* back_btn_gray@2x.png */; };
 		F0ACD1941B035190008DE48F /* back_btn_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0ACD1921B035190008DE48F /* back_btn_gray@3x.png */; };
+		F0ACD1961B035CAA008DE48F /* phone_comic_show_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F0ACD1951B035CAA008DE48F /* phone_comic_show_list@2x.png */; };
+		F0ACD1991B044261008DE48F /* AdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ACD1981B044261008DE48F /* AdViewController.m */; };
+		F0ACD19F1B0447BC008DE48F /* AdWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F0ACD19E1B0447BC008DE48F /* AdWebView.m */; };
 		F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */; };
 		F0AFD2BF1A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B31A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.m */; };
 		F0AFD2C01A93218F00E9B2DD /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2B51A93218F00E9B2DD /* ECSlidingAnimationController.m */; };
@@ -1247,6 +1250,11 @@
 		F0A878E71AB27D95008E8F17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F0ACD1911B035190008DE48F /* back_btn_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn_gray@2x.png"; sourceTree = "<group>"; };
 		F0ACD1921B035190008DE48F /* back_btn_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_btn_gray@3x.png"; sourceTree = "<group>"; };
+		F0ACD1951B035CAA008DE48F /* phone_comic_show_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "phone_comic_show_list@2x.png"; sourceTree = "<group>"; };
+		F0ACD1971B044261008DE48F /* AdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdViewController.h; sourceTree = "<group>"; };
+		F0ACD1981B044261008DE48F /* AdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdViewController.m; sourceTree = "<group>"; };
+		F0ACD19D1B0447BC008DE48F /* AdWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdWebView.h; sourceTree = "<group>"; };
+		F0ACD19E1B0447BC008DE48F /* AdWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdWebView.m; sourceTree = "<group>"; };
 		F0AEE3681AB6E3790023E425 /* MainLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLeftViewController.h; sourceTree = "<group>"; };
 		F0AEE3691AB6E3790023E425 /* MainLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLeftViewController.m; sourceTree = "<group>"; };
 		F0AFD2B21A93218F00E9B2DD /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
@@ -1898,6 +1906,7 @@
 		F066E0D41AA9909300DB2505 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F0ACD1951B035CAA008DE48F /* phone_comic_show_list@2x.png */,
 				F0ACD1911B035190008DE48F /* back_btn_gray@2x.png */,
 				F0ACD1921B035190008DE48F /* back_btn_gray@3x.png */,
 				F066E0D61AA9909300DB2505 /* back_btn@2x.png */,
@@ -1988,6 +1997,10 @@
 				F0D9DE9D1A9EBF0800FDCBCB /* CardListCell.m */,
 				F066E0C21AA9586800DB2505 /* CardDetailView.h */,
 				F066E0C31AA9586800DB2505 /* CardDetailView.m */,
+				F0ACD1971B044261008DE48F /* AdViewController.h */,
+				F0ACD1981B044261008DE48F /* AdViewController.m */,
+				F0ACD19D1B0447BC008DE48F /* AdWebView.h */,
+				F0ACD19E1B0447BC008DE48F /* AdWebView.m */,
 			);
 			path = HSCards;
 			sourceTree = "<group>";
@@ -2244,6 +2257,7 @@
 				F066E0181AA94A9F00DB2505 /* FP1_026.png in Resources */,
 				F066DF201AA94A9F00DB2505 /* EX1_007.png in Resources */,
 				F066DEDA1AA94A9F00DB2505 /* CS2_097.png in Resources */,
+				F0ACD1961B035CAA008DE48F /* phone_comic_show_list@2x.png in Resources */,
 				F066DF301AA94A9F00DB2505 /* EX1_029.png in Resources */,
 				F066DF711AA94A9F00DB2505 /* EX1_244.png in Resources */,
 				F066DFAD1AA94A9F00DB2505 /* EX1_392.png in Resources */,
@@ -2726,6 +2740,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08F39D91AA825BA00BF4D39 /* AFURLRequestSerialization.m in Sources */,
+				F0ACD19F1B0447BC008DE48F /* AdWebView.m in Sources */,
 				F08F39D81AA825BA00BF4D39 /* AFURLConnectionOperation.m in Sources */,
 				F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
@@ -2733,6 +2748,7 @@
 				F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */,
 				F08F39DB1AA825BA00BF4D39 /* AFURLSessionManager.m in Sources */,
 				F096E09D1A92DF6800F4A69F /* AppDelegate.m in Sources */,
+				F0ACD1991B044261008DE48F /* AdViewController.m in Sources */,
 				F0D9DE8A1A9DA12A00FDCBCB /* FileHelp.m in Sources */,
 				F00947AE1AC13E6C0068B243 /* LeftMenuCell.m in Sources */,
 				F0AFD2C11A93218F00E9B2DD /* ECSlidingInteractiveTransition.m in Sources */,
