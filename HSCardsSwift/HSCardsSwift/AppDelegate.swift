@@ -8,14 +8,37 @@
 
 import UIKit
 
+let SlidingAnchorRightRevealAmount:CGFloat = 200.0
+let SlidingAnchorLeftRevealAmount:CGFloat  = 250.0
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var slidingViewController:ECSlidingViewController?
+    var topController:MainTopViewController?
+    var mainNavi:MainNaviViewController?
+    var rightController:MainRightViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var rightTitle:String = "FILTER"
+        var anchorLeftButton:UIBarButtonItem = UIBarButtonItem(title: rightTitle, style: UIBarButtonItemStyle.Plain, target: self, action: "anchorLeft")
+        self.topController = MainTopViewController()
+        self.topController?.navigationItem.title = "卡牌列表"
+        self.topController?.navigationItem.rightBarButtonItem = anchorLeftButton
+        self.mainNavi = MainNaviViewController(rootViewController: self.topController!)
+        
+        self.rightController = MainRightViewController()
+        
+        self.slidingViewController = ECSlidingViewController(topViewController: self.mainNavi);
+        self.slidingViewController!.underRightViewController = self.rightController
+        self.slidingViewController!.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
+        self.slidingViewController!.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
+
+        self.window!.rootViewController = self.slidingViewController
+        self.window!.makeKeyAndVisible()
         return true
     }
 
@@ -41,6 +64,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func anchorRight() {
+    }
+    
+    func anchorLeft() {
+        self.slidingViewController?.anchorTopViewToLeftAnimated(true);
+    }
 
 }
+
+
+
 

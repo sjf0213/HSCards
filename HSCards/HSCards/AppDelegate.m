@@ -64,9 +64,6 @@
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
-//    NSString* leftTitle = NSLocalizedString(@"Menu", @"");
-    
-//    UIBarButtonItem *anchorRightButton = [[UIBarButtonItem alloc] initWithTitle:leftTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorRight)];
     UIBarButtonItem *anchorLeftButton   = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
     _topViewController.navigationItem.title = @"卡牌列表";
     _topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
@@ -95,7 +92,6 @@
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:_topNavigationController];
     _topViewController.parentSliding = self.slidingViewController;
-//    self.slidingViewController.underLeftViewController  = _underLeftViewController;
     self.slidingViewController.underRightViewController = rightNaviController;
     
     // enable swiping on the top view

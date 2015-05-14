@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F081E8251B049EC800B7EFD8 /* MainNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */; };
+		F081E8271B049FC500B7EFD8 /* MainTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */; };
+		F081E8291B049FDA00B7EFD8 /* MainLeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */; };
+		F081E82B1B049FEB00B7EFD8 /* MainRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */; };
 		F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D11B048BC900848CE2 /* AppDelegate.swift */; };
 		F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D31B048BC900848CE2 /* ViewController.swift */; };
 		F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D51B048BC900848CE2 /* Main.storyboard */; };
@@ -32,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNaviViewController.swift; sourceTree = "<group>"; };
+		F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTopViewController.swift; sourceTree = "<group>"; };
+		F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLeftViewController.swift; sourceTree = "<group>"; };
+		F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRightViewController.swift; sourceTree = "<group>"; };
+		F081E82C1B04A0F000B7EFD8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCardsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F099D5D01B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F099D5D11B048BC900848CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,12 +106,17 @@
 		F099D5CE1B048BC900848CE2 /* HSCardsSwift */ = {
 			isa = PBXGroup;
 			children = (
+				F081E82C1B04A0F000B7EFD8 /* Bridging-Header.h */,
 				F099D5D11B048BC900848CE2 /* AppDelegate.swift */,
 				F099D5D31B048BC900848CE2 /* ViewController.swift */,
 				F099D5D51B048BC900848CE2 /* Main.storyboard */,
 				F099D5D81B048BC900848CE2 /* Images.xcassets */,
 				F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */,
 				F099D5CF1B048BC900848CE2 /* Supporting Files */,
+				F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */,
+				F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */,
+				F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */,
+				F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */,
 			);
 			path = HSCardsSwift;
 			sourceTree = "<group>";
@@ -230,8 +244,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F099D5CB1B048BC900848CE2 /* HSCardsSwift */,
 				F099D5E01B048BC900848CE2 /* HSCardsSwiftTests */,
+				F099D5CB1B048BC900848CE2 /* HSCardsSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -262,12 +276,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F099D6021B048CB300848CE2 /* ECSlidingInteractiveTransition.m in Sources */,
+				F081E8251B049EC800B7EFD8 /* MainNaviViewController.swift in Sources */,
 				F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */,
+				F081E8271B049FC500B7EFD8 /* MainTopViewController.swift in Sources */,
+				F081E8291B049FDA00B7EFD8 /* MainLeftViewController.swift in Sources */,
 				F099D6041B048CB300848CE2 /* ECSlidingViewController.m in Sources */,
 				F099D6031B048CB300848CE2 /* ECSlidingSegue.m in Sources */,
 				F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */,
 				F099D6001B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				F099D6051B048CB300848CE2 /* UIViewController+ECSlidingViewController.m in Sources */,
+				F081E82B1B049FEB00B7EFD8 /* MainRightViewController.swift in Sources */,
 				F099D6011B048CB300848CE2 /* ECSlidingAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +368,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -387,6 +406,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -464,6 +484,7 @@
 				F099D5ED1B048BCA00848CE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F099D5EE1B048BCA00848CE2 /* Build configuration list for PBXNativeTarget "HSCardsSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +493,7 @@
 				F099D5F01B048BCA00848CE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
