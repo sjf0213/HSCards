@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D11B048BC900848CE2 /* AppDelegate.swift */; };
+		F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D31B048BC900848CE2 /* ViewController.swift */; };
+		F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D51B048BC900848CE2 /* Main.storyboard */; };
+		F099D5D91B048BC900848CE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D81B048BC900848CE2 /* Images.xcassets */; };
+		F099D5DC1B048BC900848CE2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */; };
+		F099D5E81B048BCA00848CE2 /* HSCardsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */; };
+		F099D6001B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5F41B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m */; };
+		F099D6011B048CB300848CE2 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5F61B048CB300848CE2 /* ECSlidingAnimationController.m */; };
+		F099D6021B048CB300848CE2 /* ECSlidingInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5F91B048CB300848CE2 /* ECSlidingInteractiveTransition.m */; };
+		F099D6031B048CB300848CE2 /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5FB1B048CB300848CE2 /* ECSlidingSegue.m */; };
+		F099D6041B048CB300848CE2 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5FD1B048CB300848CE2 /* ECSlidingViewController.m */; };
+		F099D6051B048CB300848CE2 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5FF1B048CB300848CE2 /* UIViewController+ECSlidingViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F099D5E21B048BC900848CE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F099D5C41B048BC900848CE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F099D5CB1B048BC900848CE2;
+			remoteInfo = HSCardsSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCardsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F099D5D01B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F099D5D11B048BC900848CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F099D5D31B048BC900848CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F099D5D61B048BC900848CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F099D5D81B048BC900848CE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F099D5DB1B048BC900848CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F099D5E11B048BC900848CE2 /* HSCardsSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSCardsSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F099D5E61B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSCardsSwiftTests.swift; sourceTree = "<group>"; };
+		F099D5F31B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		F099D5F41B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		F099D5F51B048CB300848CE2 /* ECSlidingAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingAnimationController.h; sourceTree = "<group>"; };
+		F099D5F61B048CB300848CE2 /* ECSlidingAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingAnimationController.m; sourceTree = "<group>"; };
+		F099D5F71B048CB300848CE2 /* ECSlidingConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingConstants.h; sourceTree = "<group>"; };
+		F099D5F81B048CB300848CE2 /* ECSlidingInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingInteractiveTransition.h; sourceTree = "<group>"; };
+		F099D5F91B048CB300848CE2 /* ECSlidingInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingInteractiveTransition.m; sourceTree = "<group>"; };
+		F099D5FA1B048CB300848CE2 /* ECSlidingSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingSegue.h; sourceTree = "<group>"; };
+		F099D5FB1B048CB300848CE2 /* ECSlidingSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingSegue.m; sourceTree = "<group>"; };
+		F099D5FC1B048CB300848CE2 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
+		F099D5FD1B048CB300848CE2 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
+		F099D5FE1B048CB300848CE2 /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
+		F099D5FF1B048CB300848CE2 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F099D5C91B048BC900848CE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F099D5DE1B048BC900848CE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F099D5C31B048BC900848CE2 = {
+			isa = PBXGroup;
+			children = (
+				F099D5F11B048C9900848CE2 /* Frameworks */,
+				F099D5CE1B048BC900848CE2 /* HSCardsSwift */,
+				F099D5E41B048BC900848CE2 /* HSCardsSwiftTests */,
+				F099D5CD1B048BC900848CE2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F099D5CD1B048BC900848CE2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */,
+				F099D5E11B048BC900848CE2 /* HSCardsSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F099D5CE1B048BC900848CE2 /* HSCardsSwift */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5D11B048BC900848CE2 /* AppDelegate.swift */,
+				F099D5D31B048BC900848CE2 /* ViewController.swift */,
+				F099D5D51B048BC900848CE2 /* Main.storyboard */,
+				F099D5D81B048BC900848CE2 /* Images.xcassets */,
+				F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */,
+				F099D5CF1B048BC900848CE2 /* Supporting Files */,
+			);
+			path = HSCardsSwift;
+			sourceTree = "<group>";
+		};
+		F099D5CF1B048BC900848CE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5D01B048BC900848CE2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F099D5E41B048BC900848CE2 /* HSCardsSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */,
+				F099D5E51B048BC900848CE2 /* Supporting Files */,
+			);
+			path = HSCardsSwiftTests;
+			sourceTree = "<group>";
+		};
+		F099D5E51B048BC900848CE2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5E61B048BC900848CE2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F099D5F11B048C9900848CE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5F21B048CB300848CE2 /* ECSlidingViewController */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F099D5F21B048CB300848CE2 /* ECSlidingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F099D5F31B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.h */,
+				F099D5F41B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m */,
+				F099D5F51B048CB300848CE2 /* ECSlidingAnimationController.h */,
+				F099D5F61B048CB300848CE2 /* ECSlidingAnimationController.m */,
+				F099D5F71B048CB300848CE2 /* ECSlidingConstants.h */,
+				F099D5F81B048CB300848CE2 /* ECSlidingInteractiveTransition.h */,
+				F099D5F91B048CB300848CE2 /* ECSlidingInteractiveTransition.m */,
+				F099D5FA1B048CB300848CE2 /* ECSlidingSegue.h */,
+				F099D5FB1B048CB300848CE2 /* ECSlidingSegue.m */,
+				F099D5FC1B048CB300848CE2 /* ECSlidingViewController.h */,
+				F099D5FD1B048CB300848CE2 /* ECSlidingViewController.m */,
+				F099D5FE1B048CB300848CE2 /* UIViewController+ECSlidingViewController.h */,
+				F099D5FF1B048CB300848CE2 /* UIViewController+ECSlidingViewController.m */,
+			);
+			name = ECSlidingViewController;
+			path = ../HSCards/ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F099D5CB1B048BC900848CE2 /* HSCardsSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F099D5EB1B048BCA00848CE2 /* Build configuration list for PBXNativeTarget "HSCardsSwift" */;
+			buildPhases = (
+				F099D5C81B048BC900848CE2 /* Sources */,
+				F099D5C91B048BC900848CE2 /* Frameworks */,
+				F099D5CA1B048BC900848CE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HSCardsSwift;
+			productName = HSCardsSwift;
+			productReference = F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F099D5E01B048BC900848CE2 /* HSCardsSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F099D5EE1B048BCA00848CE2 /* Build configuration list for PBXNativeTarget "HSCardsSwiftTests" */;
+			buildPhases = (
+				F099D5DD1B048BC900848CE2 /* Sources */,
+				F099D5DE1B048BC900848CE2 /* Frameworks */,
+				F099D5DF1B048BC900848CE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F099D5E31B048BC900848CE2 /* PBXTargetDependency */,
+			);
+			name = HSCardsSwiftTests;
+			productName = HSCardsSwiftTests;
+			productReference = F099D5E11B048BC900848CE2 /* HSCardsSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F099D5C41B048BC900848CE2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "song jufeng";
+				TargetAttributes = {
+					F099D5CB1B048BC900848CE2 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					F099D5E01B048BC900848CE2 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = F099D5CB1B048BC900848CE2;
+					};
+				};
+			};
+			buildConfigurationList = F099D5C71B048BC900848CE2 /* Build configuration list for PBXProject "HSCardsSwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F099D5C31B048BC900848CE2;
+			productRefGroup = F099D5CD1B048BC900848CE2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F099D5CB1B048BC900848CE2 /* HSCardsSwift */,
+				F099D5E01B048BC900848CE2 /* HSCardsSwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F099D5CA1B048BC900848CE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */,
+				F099D5DC1B048BC900848CE2 /* LaunchScreen.xib in Resources */,
+				F099D5D91B048BC900848CE2 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F099D5DF1B048BC900848CE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F099D5C81B048BC900848CE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F099D6021B048CB300848CE2 /* ECSlidingInteractiveTransition.m in Sources */,
+				F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */,
+				F099D6041B048CB300848CE2 /* ECSlidingViewController.m in Sources */,
+				F099D6031B048CB300848CE2 /* ECSlidingSegue.m in Sources */,
+				F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */,
+				F099D6001B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				F099D6051B048CB300848CE2 /* UIViewController+ECSlidingViewController.m in Sources */,
+				F099D6011B048CB300848CE2 /* ECSlidingAnimationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F099D5DD1B048BC900848CE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F099D5E81B048BCA00848CE2 /* HSCardsSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F099D5E31B048BC900848CE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F099D5CB1B048BC900848CE2 /* HSCardsSwift */;
+			targetProxy = F099D5E21B048BC900848CE2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F099D5D51B048BC900848CE2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F099D5D61B048BC900848CE2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F099D5DB1B048BC900848CE2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F099D5E91B048BCA00848CE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F099D5EA1B048BCA00848CE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F099D5EC1B048BCA00848CE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HSCardsSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F099D5ED1B048BCA00848CE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HSCardsSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F099D5EF1B048BCA00848CE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HSCardsSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSCardsSwift.app/HSCardsSwift";
+			};
+			name = Debug;
+		};
+		F099D5F01B048BCA00848CE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HSCardsSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HSCardsSwift.app/HSCardsSwift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F099D5C71B048BC900848CE2 /* Build configuration list for PBXProject "HSCardsSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F099D5E91B048BCA00848CE2 /* Debug */,
+				F099D5EA1B048BCA00848CE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F099D5EB1B048BCA00848CE2 /* Build configuration list for PBXNativeTarget "HSCardsSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F099D5EC1B048BCA00848CE2 /* Debug */,
+				F099D5ED1B048BCA00848CE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F099D5EE1B048BCA00848CE2 /* Build configuration list for PBXNativeTarget "HSCardsSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F099D5EF1B048BCA00848CE2 /* Debug */,
+				F099D5F01B048BCA00848CE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F099D5C41B048BC900848CE2 /* Project object */;
+}
