@@ -9,6 +9,12 @@
 #ifndef HSCardsSwift_Bridging_Header_h
 #define HSCardsSwift_Bridging_Header_h
 
+
+
 #import "../HSCards/ECSlidingViewController/ECSlidingViewController.h"
 #import "../HSCards/ECSlidingViewController/ECSlidingConstants.h"
+
+#import "HSCardsSwift/CommonDefineSwift.h"
+
+
 #endif

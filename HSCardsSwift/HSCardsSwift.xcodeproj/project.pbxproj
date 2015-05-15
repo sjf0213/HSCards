@@ -11,6 +11,7 @@
 		F081E8271B049FC500B7EFD8 /* MainTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */; };
 		F081E8291B049FDA00B7EFD8 /* MainLeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */; };
 		F081E82B1B049FEB00B7EFD8 /* MainRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */; };
+		F081E82F1B05CCE200B7EFD8 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E82E1B05CCE200B7EFD8 /* CardListView.swift */; };
 		F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D11B048BC900848CE2 /* AppDelegate.swift */; };
 		F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D31B048BC900848CE2 /* ViewController.swift */; };
 		F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D51B048BC900848CE2 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 		F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLeftViewController.swift; sourceTree = "<group>"; };
 		F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRightViewController.swift; sourceTree = "<group>"; };
 		F081E82C1B04A0F000B7EFD8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		F081E82D1B058CF500B7EFD8 /* CommonDefineSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefineSwift.h; sourceTree = "<group>"; };
+		F081E82E1B05CCE200B7EFD8 /* CardListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCardsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F099D5D01B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F099D5D11B048BC900848CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F081E82C1B04A0F000B7EFD8 /* Bridging-Header.h */,
+				F081E82D1B058CF500B7EFD8 /* CommonDefineSwift.h */,
 				F099D5D11B048BC900848CE2 /* AppDelegate.swift */,
 				F099D5D31B048BC900848CE2 /* ViewController.swift */,
 				F099D5D51B048BC900848CE2 /* Main.storyboard */,
@@ -117,6 +121,7 @@
 				F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */,
 				F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */,
 				F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */,
+				F081E82E1B05CCE200B7EFD8 /* CardListView.swift */,
 			);
 			path = HSCardsSwift;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				F099D6001B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				F099D6051B048CB300848CE2 /* UIViewController+ECSlidingViewController.m in Sources */,
 				F081E82B1B049FEB00B7EFD8 /* MainRightViewController.swift in Sources */,
+				F081E82F1B05CCE200B7EFD8 /* CardListView.swift in Sources */,
 				F099D6011B048CB300848CE2 /* ECSlidingAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

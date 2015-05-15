@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var slidingViewController:ECSlidingViewController?
-    var topController:MainTopViewController?
-    var mainNavi:MainNaviViewController?
-    var rightController:MainRightViewController?
+    var topController:MainTopViewController = MainTopViewController()
+    var mainNavi:MainNaviViewController = MainNaviViewController()
+    var rightController:MainRightViewController = MainRightViewController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -26,19 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var rightTitle:String = "FILTER"
         var anchorLeftButton:UIBarButtonItem = UIBarButtonItem(title: rightTitle, style: UIBarButtonItemStyle.Plain, target: self, action: "anchorLeft")
         self.topController = MainTopViewController()
-        self.topController?.navigationItem.title = "卡牌列表"
-        self.topController?.navigationItem.rightBarButtonItem = anchorLeftButton
-        self.mainNavi = MainNaviViewController(rootViewController: self.topController!)
+        self.topController.navigationItem.title = "卡牌列表"
+        self.topController.navigationItem.rightBarButtonItem = anchorLeftButton
+        self.mainNavi = MainNaviViewController(rootViewController: self.topController)
         
-        self.rightController = MainRightViewController()
         
-        self.slidingViewController = ECSlidingViewController(topViewController: self.mainNavi);
+        self.slidingViewController = ECSlidingViewController(topViewController: self.mainNavi)
+        self.mainNavi.view.addGestureRecognizer(self.slidingViewController!.panGesture)
+        
         self.slidingViewController!.underRightViewController = self.rightController
-        self.slidingViewController!.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
-        self.slidingViewController!.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
+        self.slidingViewController!.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount
+        self.slidingViewController!.anchorRightRevealAmount = SlidingAnchorRightRevealAmount
 
         self.window!.rootViewController = self.slidingViewController
         self.window!.makeKeyAndVisible()
+        
         return true
     }
 
