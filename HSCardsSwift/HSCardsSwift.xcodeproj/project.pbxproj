@@ -610,7 +610,6 @@
 		F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D31B048BC900848CE2 /* ViewController.swift */; };
 		F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D51B048BC900848CE2 /* Main.storyboard */; };
 		F099D5D91B048BC900848CE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D81B048BC900848CE2 /* Images.xcassets */; };
-		F099D5DC1B048BC900848CE2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */; };
 		F099D5E81B048BCA00848CE2 /* HSCardsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */; };
 		F099D6001B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5F41B048CB300848CE2 /* ECPercentDrivenInteractiveTransition.m */; };
 		F099D6011B048CB300848CE2 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F099D5F61B048CB300848CE2 /* ECSlidingAnimationController.m */; };
@@ -1250,7 +1249,6 @@
 		F099D5D31B048BC900848CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F099D5D61B048BC900848CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F099D5D81B048BC900848CE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F099D5DB1B048BC900848CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F099D5E11B048BC900848CE2 /* HSCardsSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSCardsSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F099D5E61B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSCardsSwiftTests.swift; sourceTree = "<group>"; };
@@ -1979,8 +1977,7 @@
 				F099D5D31B048BC900848CE2 /* ViewController.swift */,
 				F099D5D51B048BC900848CE2 /* Main.storyboard */,
 				F099D5D81B048BC900848CE2 /* Images.xcassets */,
-				F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */,
-				F099D5CF1B048BC900848CE2 /* Supporting Files */,
+				F099D5D01B048BC900848CE2 /* Info.plist */,
 				F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */,
 				F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */,
 				F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */,
@@ -1988,14 +1985,6 @@
 				F081E82E1B05CCE200B7EFD8 /* CardListView.swift */,
 			);
 			path = HSCardsSwift;
-			sourceTree = "<group>";
-		};
-		F099D5CF1B048BC900848CE2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F099D5D01B048BC900848CE2 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F099D5E41B048BC900848CE2 /* HSCardsSwiftTests */ = {
@@ -2583,7 +2572,6 @@
 				F081EC591B05E58100B7EFD8 /* GVG_028.png in Resources */,
 				F081EAFA1B05E57F00B7EFD8 /* CS2_097.png in Resources */,
 				F081EC541B05E58100B7EFD8 /* GVG_023.png in Resources */,
-				F099D5DC1B048BC900848CE2 /* LaunchScreen.xib in Resources */,
 				F081EC741B05E58100B7EFD8 /* GVG_055.png in Resources */,
 				F081EB571B05E58000B7EFD8 /* EX1_048.png in Resources */,
 				F081EAD61B05E57F00B7EFD8 /* CS2_027.png in Resources */,
@@ -2783,14 +2771,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		F099D5DA1B048BC900848CE2 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F099D5DB1B048BC900848CE2 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2881,6 +2861,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HSCardsSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -2895,6 +2876,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HSCardsSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
