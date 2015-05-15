@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var slidingViewController:ECSlidingViewController?
     var topController:MainTopViewController = MainTopViewController()
-    var mainNavi:MainNaviViewController = MainNaviViewController()
+    var mainNavi:UINavigationController = UINavigationController()
     var rightController:MainRightViewController = MainRightViewController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.topController = MainTopViewController()
         self.topController.navigationItem.title = "卡牌列表"
         self.topController.navigationItem.rightBarButtonItem = anchorLeftButton
-        self.mainNavi = MainNaviViewController(rootViewController: self.topController)
+        self.mainNavi = UINavigationController(rootViewController: self.topController)
         
         
         self.slidingViewController = ECSlidingViewController(topViewController: self.mainNavi)

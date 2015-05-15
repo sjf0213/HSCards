@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F081E8251B049EC800B7EFD8 /* MainNaviViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */; };
 		F081E8271B049FC500B7EFD8 /* MainTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */; };
 		F081E8291B049FDA00B7EFD8 /* MainLeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */; };
 		F081E82B1B049FEB00B7EFD8 /* MainRightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */; };
@@ -607,7 +606,6 @@
 		F081ECE51B05E58200B7EFD8 /* back_btn_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F081EAA11B05E57F00B7EFD8 /* back_btn_gray@3x.png */; };
 		F081ECE61B05E58200B7EFD8 /* phone_comic_show_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F081EAA21B05E57F00B7EFD8 /* phone_comic_show_list@2x.png */; };
 		F099D5D21B048BC900848CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D11B048BC900848CE2 /* AppDelegate.swift */; };
-		F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5D31B048BC900848CE2 /* ViewController.swift */; };
 		F099D5D71B048BC900848CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D51B048BC900848CE2 /* Main.storyboard */; };
 		F099D5D91B048BC900848CE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F099D5D81B048BC900848CE2 /* Images.xcassets */; };
 		F099D5E81B048BCA00848CE2 /* HSCardsSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F099D5E71B048BCA00848CE2 /* HSCardsSwiftTests.swift */; };
@@ -630,7 +628,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNaviViewController.swift; sourceTree = "<group>"; };
 		F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTopViewController.swift; sourceTree = "<group>"; };
 		F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLeftViewController.swift; sourceTree = "<group>"; };
 		F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRightViewController.swift; sourceTree = "<group>"; };
@@ -1246,7 +1243,6 @@
 		F099D5CC1B048BC900848CE2 /* HSCardsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HSCardsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F099D5D01B048BC900848CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F099D5D11B048BC900848CE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F099D5D31B048BC900848CE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F099D5D61B048BC900848CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F099D5D81B048BC900848CE2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F099D5E11B048BC900848CE2 /* HSCardsSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HSCardsSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1973,12 +1969,10 @@
 			children = (
 				F081E82C1B04A0F000B7EFD8 /* Bridging-Header.h */,
 				F081E82D1B058CF500B7EFD8 /* CommonDefineSwift.h */,
-				F099D5D11B048BC900848CE2 /* AppDelegate.swift */,
-				F099D5D31B048BC900848CE2 /* ViewController.swift */,
+				F099D5D01B048BC900848CE2 /* Info.plist */,
 				F099D5D51B048BC900848CE2 /* Main.storyboard */,
 				F099D5D81B048BC900848CE2 /* Images.xcassets */,
-				F099D5D01B048BC900848CE2 /* Info.plist */,
-				F081E8241B049EC800B7EFD8 /* MainNaviViewController.swift */,
+				F099D5D11B048BC900848CE2 /* AppDelegate.swift */,
 				F081E8261B049FC500B7EFD8 /* MainTopViewController.swift */,
 				F081E8281B049FDA00B7EFD8 /* MainLeftViewController.swift */,
 				F081E82A1B049FEB00B7EFD8 /* MainRightViewController.swift */,
@@ -2719,9 +2713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F099D6021B048CB300848CE2 /* ECSlidingInteractiveTransition.m in Sources */,
-				F081E8251B049EC800B7EFD8 /* MainNaviViewController.swift in Sources */,
 				F081E8451B05E4B500B7EFD8 /* AFHTTPRequestOperationManager.m in Sources */,
-				F099D5D41B048BC900848CE2 /* ViewController.swift in Sources */,
 				F081E8491B05E4B500B7EFD8 /* AFURLConnectionOperation.m in Sources */,
 				F081E8271B049FC500B7EFD8 /* MainTopViewController.swift in Sources */,
 				F081E8291B049FDA00B7EFD8 /* MainLeftViewController.swift in Sources */,

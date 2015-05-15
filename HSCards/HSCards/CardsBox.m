@@ -108,8 +108,10 @@ static CardsBox * m_Instance;
 
 -(void)downloadSingleCardByUrl:(NSString*)sourcePath saveToPath:(NSString*)targetPath
 {
+#ifdef DEBUG
     static NSUInteger indexSuccess = 0;
     static NSUInteger indexFailure = 0;
+#endif
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];

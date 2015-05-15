@@ -14,14 +14,13 @@
 #import "MainLeftViewController.h"
 #import "../OtherFiles/FileHelp.h"
 #import "CardsBox.h"
-#import "TopNaviViewController.h"
 #import "MobClick.h"
 #import "MenuNaviDelegate.h"
 #import "AdViewController.h"
 
 @interface AppDelegate ()<MenuNaviDelegate>
 @property (nonatomic, strong) ECSlidingViewController *slidingViewController;
-@property (nonatomic, strong) TopNaviViewController *topNavigationController;
+@property (nonatomic, strong) UINavigationController *topNavigationController;
 @property (nonatomic, strong) MainTopViewController *topViewController;
 //@property (nonatomic, strong) MainLeftViewController *underLeftViewController;
 @property (nonatomic, strong) MainRightViewController *underRightViewController;
@@ -36,7 +35,6 @@
     
     // 友盟统计
     [MobClick startWithAppkey:@"55024415fd98c5c424000e7a" reportPolicy:BATCH channelId:@""];
-    
     
 /*    Class cls = NSClassFromString(@"UMANUtil");
     SEL deviceIDSelector = @selector(openUDIDString);
@@ -57,10 +55,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     _topViewController        = [[MainTopViewController alloc] init];
-//    _underLeftViewController  = [[MainLeftViewController alloc] init];
     _underRightViewController = [[MainRightViewController alloc] init];
     
-//    _underLeftViewController.delegate = self;
     
     // configure top view controller
     NSString* rightTitle = NSLocalizedString(@"FILTER", @"");
@@ -82,7 +78,7 @@
     });
     
     //Navi
-    _topNavigationController = [[TopNaviViewController alloc] initWithRootViewController:_topViewController];
+    _topNavigationController = [[UINavigationController alloc] initWithRootViewController:_topViewController];
     UINavigationController* rightNaviController = [[UINavigationController alloc] initWithRootViewController:_underRightViewController];
     
     // configure under right view controller
@@ -98,18 +94,14 @@
     [_topNavigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
     
     // configure anchored layout
-    //self.slidingViewController.anchorRightPeekAmount  = SlidingAnchorRightPeekAmount;
     self.slidingViewController.anchorLeftRevealAmount = SlidingAnchorLeftRevealAmount;
     self.slidingViewController.anchorRightRevealAmount = SlidingAnchorRightRevealAmount;
     
     self.window.rootViewController = self.slidingViewController;
-    
     [self.window makeKeyAndVisible];
-    
-    
+
     return YES;
 }
-
 
 -(void)navigateToPage:(NSString*)str
 {
@@ -135,9 +127,6 @@
         }
     }
 }
-
-
-
 
 - (void)anchorRight {
     [self.slidingViewController anchorTopViewToRightAnimated:YES ];

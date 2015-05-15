@@ -616,7 +616,6 @@
 		F0AFD2C21A93218F00E9B2DD /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BA1A93218F00E9B2DD /* ECSlidingSegue.m */; };
 		F0AFD2C31A93218F00E9B2DD /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BC1A93218F00E9B2DD /* ECSlidingViewController.m */; };
 		F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */; };
-		F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B842581AAD489400588C5A /* TopNaviViewController.m */; };
 		F0B8425C1AAD809C00588C5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0B8425E1AAD809C00588C5A /* Localizable.strings */; };
 		F0BBDB341ADFAB560024270E /* MainSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0BBDB331ADFAB560024270E /* MainSearchController.m */; };
 		F0D9DE7E1A9D744100FDCBCB /* MainTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */; };
@@ -1270,8 +1269,6 @@
 		F0AFD2BC1A93218F00E9B2DD /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		F0AFD2BD1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
 		F0AFD2BE1A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
-		F0B842571AAD489400588C5A /* TopNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopNaviViewController.h; sourceTree = "<group>"; };
-		F0B842581AAD489400588C5A /* TopNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopNaviViewController.m; sourceTree = "<group>"; };
 		F0B8425D1AAD809C00588C5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F0B842621AAD832000588C5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F0BBDB321ADFAB560024270E /* MainSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSearchController.h; sourceTree = "<group>"; };
@@ -1973,8 +1970,6 @@
 				F096E09C1A92DF6800F4A69F /* AppDelegate.m */,
 				F0D9DE991A9EBEA300FDCBCB /* ArrayDataSource.h */,
 				F0D9DE9A1A9EBEA300FDCBCB /* ArrayDataSource.m */,
-				F0B842571AAD489400588C5A /* TopNaviViewController.h */,
-				F0B842581AAD489400588C5A /* TopNaviViewController.m */,
 				F0D9DE7C1A9D744100FDCBCB /* MainTopViewController.h */,
 				F0D9DE7D1A9D744100FDCBCB /* MainTopViewController.m */,
 				F0D9E72C1A9EFB3000FDCBCB /* MainRightViewController.h */,
@@ -2742,7 +2737,6 @@
 				F08F39D91AA825BA00BF4D39 /* AFURLRequestSerialization.m in Sources */,
 				F0ACD19F1B0447BC008DE48F /* AdWebView.m in Sources */,
 				F08F39D81AA825BA00BF4D39 /* AFURLConnectionOperation.m in Sources */,
-				F0B842591AAD489400588C5A /* TopNaviViewController.m in Sources */,
 				F0AFD2C41A93218F00E9B2DD /* UIViewController+ECSlidingViewController.m in Sources */,
 				F0D9DE9B1A9EBEA300FDCBCB /* ArrayDataSource.m in Sources */,
 				F0AEE36A1AB6E3790023E425 /* MainLeftViewController.m in Sources */,
