@@ -63,7 +63,7 @@
     UIBarButtonItem *anchorLeftButton   = [[UIBarButtonItem alloc] initWithTitle:rightTitle style:UIBarButtonItemStylePlain target:self action:@selector(anchorLeft)];
     _topViewController.navigationItem.title = @"卡牌列表";
     _topViewController.navigationItem.rightBarButtonItem = anchorLeftButton;
-    
+    /*
     typeof(self)__weak wself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         wself.adURLString = [MobClick getAdURL];
@@ -75,7 +75,7 @@
                 _topViewController.navigationItem.leftBarButtonItem  = anchorRightButton;
             });
         }
-    });
+    });*/
     
     //Navi
     _topNavigationController = [[UINavigationController alloc] initWithRootViewController:_topViewController];
