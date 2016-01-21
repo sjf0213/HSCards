@@ -2503,7 +2503,7 @@
 		F096E08C1A92DF6800F4A69F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "song jufeng";
 				TargetAttributes = {
 					F096E0931A92DF6800F4A69F = {
@@ -3334,7 +3334,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -3377,6 +3379,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: jufeng song (6Q594BP2YT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jufeng song (6Q594BP2YT)";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3407,8 +3410,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Umeng",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjufeng.hscards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eaaeaa70-d983-48e1-bcf5-d41f1d1b919b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -3417,16 +3421,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: jufeng song";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: jufeng song";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = HSCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Umeng",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.songjufeng.hscards;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "eaaeaa70-d983-48e1-bcf5-d41f1d1b919b";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

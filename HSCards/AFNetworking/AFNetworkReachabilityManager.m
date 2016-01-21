@@ -119,7 +119,7 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
         address.sin_len = sizeof(address);
         address.sin_family = AF_INET;
 
-        _sharedManager = [self managerForAddress:&address];
+        _sharedManager = [AFNetworkReachabilityManager managerForAddress:&address];
     });
 
     return _sharedManager;
